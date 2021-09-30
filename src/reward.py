@@ -13,8 +13,8 @@ CNT_DISTANCE_SENSITIVITY_EXP = 3.00  # higher number gives more freedom on the t
 ACTION_SPEED_SENSITIVITY_EXP = 3.00  # higher number increases penalty for low speed
 ACTION_STEER_SENSITIVITY_EXP = 0.70  # higher number decreases penalty for high steering
 DIR_STEERING_SENSITIVITY_EXP = 2.00  # lower number accelerates penalty increase for not following track direction
-TOTAL_PENALTY_ON_OFF_TRACK = 0.85  # maximum penalty in percentage of total reward on being off track
-TOTAL_PENALTY_ON_OFF_DIR_STEER = 0.30  # maximum penalty in percentage of total reward on off directional steering
+TOTAL_PENALTY_ON_OFF_TRACK = 0.95  # maximum penalty in percentage of total reward on being off track
+TOTAL_PENALTY_ON_OFF_DIR_STEER = 0.50  # maximum penalty in percentage of total reward on off directional steering
 TOTAL_PENALTY_ON_HIGH_STEERING = 0.15  # maximum penalty in percentage of total reward on high steering
 REWARD_WEIGHT_ON_TRACK = 5.00
 REWARD_WEIGHT_DIR_STEER = 2.50
@@ -95,7 +95,8 @@ def reward_function(params):
     # initialize central line
     global smoothed_central_line
     if smoothed_central_line is None:
-        smoothed_central_line = smooth_central_line(waypoints, track_width * 0.45, 0.10, 0.05, 0.70, 0.05, 0.10)
+        max_offset = track_width * ((1.0 - FOLLOWING_CENTRAL_LINE_RATIO) / 2.0)
+        smoothed_central_line = smooth_central_line(waypoints, max_offset, 0.10, 0.05, 0.70, 0.05, 0.10)
         print("track_waypoints:", "original =", waypoints, ", smoothed =", smoothed_central_line)
 
     # re-initialize was_off_track_at_step
@@ -125,9 +126,9 @@ def reward_function(params):
     wp_indices = params['closest_waypoints']
     curr_point = [params['x'], params['y']]
     prev_point = smoothed_central_line[wp_indices[0]]
-    next_point_1 = smoothed_central_line[(wp_indices[1] + 0) % wp_length]
-    next_point_2 = smoothed_central_line[(wp_indices[1] + 1) % wp_length]
-    next_point_3 = smoothed_central_line[(wp_indices[1] + 2) % wp_length]
+    next_point_1 = smoothed_central_line[(wp_indices[1] + 1) % wp_length]
+    next_point_2 = smoothed_central_line[(wp_indices[1] + 2) % wp_length]
+    next_point_3 = smoothed_central_line[(wp_indices[1] + 3) % wp_length]
     track_direction_1 = calc_slope(prev_point, next_point_1)
     track_direction_2 = calc_slope(curr_point, next_point_2)
     track_direction_3 = calc_slope(prev_point, next_point_3)
