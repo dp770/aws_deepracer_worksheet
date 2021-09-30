@@ -13,7 +13,7 @@ CNT_DISTANCE_SENSITIVITY_EXP = 3.00  # higher number gives more freedom on the t
 ACTION_SPEED_SENSITIVITY_EXP = 3.00  # higher number increases penalty for low speed
 ACTION_STEER_SENSITIVITY_EXP = 0.70  # higher number decreases penalty for high steering
 DIR_STEERING_SENSITIVITY_EXP = 2.00  # lower number accelerates penalty increase for not following track direction
-TOTAL_PENALTY_ON_OFF_TRACK = 0.85      # maximum penalty in percentage of total reward on being off track
+TOTAL_PENALTY_ON_OFF_TRACK = 0.85  # maximum penalty in percentage of total reward on being off track
 TOTAL_PENALTY_ON_OFF_DIR_STEER = 0.30  # maximum penalty in percentage of total reward on off directional steering
 TOTAL_PENALTY_ON_HIGH_STEERING = 0.15  # maximum penalty in percentage of total reward on high steering
 REWARD_WEIGHT_ON_TRACK = 5.00
@@ -43,25 +43,37 @@ def calc_direction_diff(steering, heading, track_direction):
     return abs(direction_diff)
 
 
-def smooth_central_line(center_line, pp, p, c, n, nn, skip_step=3):
-    length = len(center_line)
-    new_line = [[None for _ in range(2)] for _ in range(length)]
-    for i in range(0, length):
-        wpp = center_line[(i - 2 * skip_step + length) % length]
-        wp = center_line[(i - skip_step + length) % length]
-        wc = center_line[i]
-        wn = center_line[(i + skip_step) % length]
-        wnn = center_line[(i + 2 * skip_step) % length]
-        new_line[i][0] = pp * wpp[0] + p * wp[0] + c * wc[0] + n * wn[0] + nn * wnn[0]
-        new_line[i][1] = pp * wpp[1] + p * wp[1] + c * wc[1] + n * wn[1] + nn * wnn[1]
-    return new_line
-
-
-# Returns distance between teo points in meters
+# Returns distance between two points in meters
 def calc_distance(prev_point, next_point):
     delta_x = next_point[0] - prev_point[0]
     delta_y = next_point[1] - prev_point[1]
     return math.sqrt(delta_x * delta_x + delta_y * delta_y)
+
+
+def smooth_central_line(center_line, max_offset, pp, p, c, n, nn, iterations=7, skip_step=3):
+    smoothed_line = center_line
+    for i in range(0, iterations):
+        smoothed_line = smooth_central_line_internal(center_line, max_offset, smoothed_line, pp, p, c, n, nn, skip_step)
+    return smoothed_line
+
+
+def smooth_central_line_internal(center_line, max_offset, smoothed_line, pp, p, c, n, nn, skip_step=3):
+    length = len(center_line)
+    new_line = [[None for _ in range(2)] for _ in range(length)]
+    for i in range(0, length):
+        wpp = smoothed_line[(i - 2 * skip_step + length) % length]
+        wp = smoothed_line[(i - skip_step + length) % length]
+        wc = smoothed_line[i]
+        wn = smoothed_line[(i + skip_step) % length]
+        wnn = smoothed_line[(i + 2 * skip_step) % length]
+        new_line[i][0] = pp * wpp[0] + p * wp[0] + c * wc[0] + n * wn[0] + nn * wnn[0]
+        new_line[i][1] = pp * wpp[1] + p * wp[1] + c * wc[1] + n * wn[1] + nn * wnn[1]
+        while calc_distance(new_line[i], center_line[i]) >= max_offset:
+            new_line[i][0] *= 0.9
+            new_line[i][0] += 0.1 * center_line[i][0]
+            new_line[i][1] *= 0.9
+            new_line[i][1] += 0.1 * center_line[i][1]
+    return new_line
 
 
 # Calculate distance between current point and closest point on line between prev_point and next_point
@@ -83,9 +95,7 @@ def reward_function(params):
     # initialize central line
     global smoothed_central_line
     if smoothed_central_line is None:
-        smoothed_central_line = waypoints
-        for i in range(0, 7):
-            smoothed_central_line = smooth_central_line(smoothed_central_line, 0.10, 0.05, 0.70, 0.05, 0.10)
+        smoothed_central_line = smooth_central_line(waypoints, track_width * 0.45, 0.10, 0.05, 0.70, 0.05, 0.10)
         print("track_waypoints:", "original =", waypoints, ", smoothed =", smoothed_central_line)
 
     # re-initialize was_off_track_at_step
@@ -98,7 +108,7 @@ def reward_function(params):
 
     # Calculate penalty for wheels being or have recently been off track
     wheels_off_track_penalty = min(steps - was_off_track_at_step, MAX_STEPS_TO_DECAY_PENALTY) / (
-                                                            1.0 * MAX_STEPS_TO_DECAY_PENALTY)
+            1.0 * MAX_STEPS_TO_DECAY_PENALTY)
 
     # Speed penalty to keep the car moving fast
     speed = params['speed']  # Range: 0.0:4.0
