@@ -8,7 +8,7 @@ MAX_STEPS_TO_DECAY_PENALTY = 10
 MAX_STEPS_TO_PROGRESS_RATIO = 2.5
 TRACK_WIDTH_FREE_ZONE = 0.05
 TRACK_WIDTH_SAFE_ZONE = 0.15
-FOLLOWING_CENTRAL_LINE_RATIO = 0.05  # number in range of [0, 1]. Zero forces to follow smoothed line, 1 - central line
+FOLLOWING_CENTRAL_LINE_RATIO = 0.10  # number in range of [0, 1]. Zero forces to follow smoothed line, 1 - central line
 CNT_DISTANCE_SENSITIVITY_EXP = 3.00  # higher number gives more freedom on the track, can cause zig-zags
 ACTION_SPEED_SENSITIVITY_EXP = 3.00  # higher number increases penalty for low speed
 ACTION_STEER_SENSITIVITY_EXP = 0.70  # higher number decreases penalty for high steering
@@ -59,7 +59,7 @@ def smooth_central_line(center_line, max_offset, pp, p, c, n, nn, iterations=7, 
 
 def smooth_central_line_internal(center_line, max_offset, smoothed_line, pp, p, c, n, nn, skip_step=3):
     length = len(center_line)
-    new_line = [[None for _ in range(2)] for _ in range(length)]
+    new_line = [[0.0 for _ in range(2)] for _ in range(length)]
     for i in range(0, length):
         wpp = smoothed_line[(i - 2 * skip_step + length) % length]
         wp = smoothed_line[(i - skip_step + length) % length]
@@ -69,10 +69,8 @@ def smooth_central_line_internal(center_line, max_offset, smoothed_line, pp, p, 
         new_line[i][0] = pp * wpp[0] + p * wp[0] + c * wc[0] + n * wn[0] + nn * wnn[0]
         new_line[i][1] = pp * wpp[1] + p * wp[1] + c * wc[1] + n * wn[1] + nn * wnn[1]
         while calc_distance(new_line[i], center_line[i]) >= max_offset:
-            new_line[i][0] *= 0.9
-            new_line[i][0] += 0.1 * center_line[i][0]
-            new_line[i][1] *= 0.9
-            new_line[i][1] += 0.1 * center_line[i][1]
+            new_line[i][0] = (0.9 * new_line[i][0]) + (0.1 * center_line[i][0])
+            new_line[i][1] = (0.9 * new_line[i][1]) + (0.1 * center_line[i][1])
     return new_line
 
 
@@ -96,7 +94,7 @@ def reward_function(params):
     global smoothed_central_line
     if smoothed_central_line is None:
         max_offset = track_width * ((1.0 - FOLLOWING_CENTRAL_LINE_RATIO) / 2.0)
-        smoothed_central_line = smooth_central_line(waypoints, max_offset, 0.10, 0.05, 0.70, 0.05, 0.10)
+        smoothed_central_line = smooth_central_line(waypoints, max_offset, 0.10, 0.15, 0.50, 0.15, 0.10)
         print("track_waypoints:", "original =", waypoints, ", smoothed =", smoothed_central_line)
 
     # re-initialize was_off_track_at_step
