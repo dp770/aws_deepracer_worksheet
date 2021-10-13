@@ -4,23 +4,24 @@ import math
 MAX_SPEED = 4.0
 MAX_STEERING = 30.0
 MAX_DIRECTION_DIFF = 30.0
-MAX_STEPS_TO_DECAY_PENALTY = 5
+MAX_STEPS_TO_DECAY_PENALTY = 0     # Value of zero or below disables penalty of having wheels off track
 MAX_STEPS_TO_PROGRESS_RATIO = 2.5
-TRACK_WIDTH_FREE_ZONE = 0.125
+TRACK_WIDTH_FREE_ZONE = 0.05
 TRACK_WIDTH_SAFE_ZONE = 0.25
-FOLLOWING_CENTRAL_LINE_RATIO = 0.05  # number in range of [0, 1]. Zero forces to follow smoothed line, 1 - central line
+FOLLOWING_CENTRAL_LINE_RATIO = 0.01  # number in range of [0, 1]. Zero forces to follow smoothed line, 1 - central line
 CNT_DISTANCE_SENSITIVITY_EXP = 3.00  # higher number gives more freedom on the track, can cause zig-zags
 ACTION_SPEED_SENSITIVITY_EXP = 3.00  # higher number increases penalty for low speed
 ACTION_STEER_SENSITIVITY_EXP = 0.70  # higher number decreases penalty for high steering
 DIR_STEERING_SENSITIVITY_EXP = 2.00  # lower number accelerates penalty increase for not following track direction
 TOTAL_PENALTY_ON_OFF_TRACK = 0.95  # maximum penalty in percentage of total reward on being off track
-TOTAL_PENALTY_ON_OFF_DIR_STEER = 0.10  # maximum penalty in percentage of total reward on off directional steering
+TOTAL_PENALTY_ON_OFF_DIR_STEER = 0.75  # maximum penalty in percentage of total reward on off directional steering
 TOTAL_PENALTY_ON_HIGH_STEERING = 0.30  # maximum penalty in percentage of total reward on high steering
-REWARD_WEIGHT_ON_TRACK = 5.00
-REWARD_WEIGHT_DIR_STEER = 1.00
-REWARD_WEIGHT_PROG_STEP = 1.25
-REWARD_WEIGHT_MAX_SPEED = 2.50
-REWARD_WEIGHT_MIN_STEER = 0.25
+REWARD_WEIGHT_ON_TRACK = 50
+REWARD_WEIGHT_PROG_STEP = 20
+REWARD_WEIGHT_MAX_SPEED = 15
+REWARD_WEIGHT_DIR_STEER = 10
+REWARD_WEIGHT_MIN_STEER = 5
+
 
 # static
 smoothed_central_line = None
@@ -50,14 +51,14 @@ def calc_distance(prev_point, next_point):
     return math.sqrt(delta_x * delta_x + delta_y * delta_y)
 
 
-def smooth_central_line(center_line, max_offset, pp, p, c, n, nn, iterations=7, skip_step=3):
+def smooth_central_line(center_line, max_offset, pp, p, c, n, nn, iterations=72, skip_step=1):
     smoothed_line = center_line
     for i in range(0, iterations):
         smoothed_line = smooth_central_line_internal(center_line, max_offset, smoothed_line, pp, p, c, n, nn, skip_step)
     return smoothed_line
 
 
-def smooth_central_line_internal(center_line, max_offset, smoothed_line, pp, p, c, n, nn, skip_step=3):
+def smooth_central_line_internal(center_line, max_offset, smoothed_line, pp, p, c, n, nn, skip_step):
     length = len(center_line)
     new_line = [[0.0 for _ in range(2)] for _ in range(length)]
     for i in range(0, length):
@@ -69,8 +70,8 @@ def smooth_central_line_internal(center_line, max_offset, smoothed_line, pp, p, 
         new_line[i][0] = pp * wpp[0] + p * wp[0] + c * wc[0] + n * wn[0] + nn * wnn[0]
         new_line[i][1] = pp * wpp[1] + p * wp[1] + c * wc[1] + n * wn[1] + nn * wnn[1]
         while calc_distance(new_line[i], center_line[i]) >= max_offset:
-            new_line[i][0] = (0.95 * new_line[i][0]) + (0.05 * center_line[i][0])
-            new_line[i][1] = (0.95 * new_line[i][1]) + (0.05 * center_line[i][1])
+            new_line[i][0] = (0.98 * new_line[i][0]) + (0.02 * center_line[i][0])
+            new_line[i][1] = (0.98 * new_line[i][1]) + (0.02 * center_line[i][1])
     return new_line
 
 
@@ -94,7 +95,7 @@ def reward_function(params):
     global smoothed_central_line
     if smoothed_central_line is None:
         max_offset = track_width * ((1.0 - FOLLOWING_CENTRAL_LINE_RATIO) / 2.0)
-        smoothed_central_line = smooth_central_line(waypoints, max_offset, 0.10, 0.15, 0.50, 0.15, 0.10)
+        smoothed_central_line = smooth_central_line(waypoints, max_offset, 0.10, 0.05, 0.70, 0.05, 0.10)
         print("track_waypoints:",
               "track_width =", track_width, ", original =", waypoints, ", smoothed =", smoothed_central_line)
 
@@ -107,7 +108,9 @@ def reward_function(params):
         was_off_track_at_step = steps
 
     # Calculate penalty for wheels being or have recently been off track
-    wheels_off_track_penalty = min(steps - was_off_track_at_step, MAX_STEPS_TO_DECAY_PENALTY) / (
+    wheels_off_track_penalty = 1.0
+    if MAX_STEPS_TO_DECAY_PENALTY > 0:
+        wheels_off_track_penalty = min(steps - was_off_track_at_step, MAX_STEPS_TO_DECAY_PENALTY) / (
             1.0 * MAX_STEPS_TO_DECAY_PENALTY)
 
     # Speed penalty to keep the car moving fast
@@ -129,15 +132,15 @@ def reward_function(params):
     next_point_2 = smoothed_central_line[(wp_indices[1] + 2) % wp_length]
     next_point_3 = smoothed_central_line[(wp_indices[1] + 3) % wp_length]
     track_direction_1 = calc_slope(prev_point, next_point_1)
-    track_direction_2 = calc_slope(curr_point, next_point_2)
+    track_direction_2 = calc_slope(prev_point, next_point_2)
     track_direction_3 = calc_slope(prev_point, next_point_3)
 
     heading = params['heading']  # Range: -180:+180
-    direction_diff_ratio = 0.20 * min(
+    direction_diff_ratio = 0.50 * min(
         (calc_direction_diff(steering, heading, track_direction_1) / MAX_DIRECTION_DIFF), 1.00)
     direction_diff_ratio += 0.30 * min(
         (calc_direction_diff(steering, heading, track_direction_2) / MAX_DIRECTION_DIFF), 1.00)
-    direction_diff_ratio += 0.50 * min(
+    direction_diff_ratio += 0.20 * min(
         (calc_direction_diff(steering, heading, track_direction_3) / MAX_DIRECTION_DIFF), 1.00)
     dir_steering_ratio = 1.0 - pow(direction_diff_ratio, DIR_STEERING_SENSITIVITY_EXP)
     reward_dir_steering = REWARD_WEIGHT_DIR_STEER * dir_steering_ratio
