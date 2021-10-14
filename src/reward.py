@@ -4,7 +4,7 @@ import math
 MAX_SPEED = 4.0
 MAX_STEERING = 30.0
 MAX_DIRECTION_DIFF = 30.0
-MAX_STEPS_TO_DECAY_PENALTY = 0     # Value of zero or below disables penalty of having wheels off track
+MAX_STEPS_TO_DECAY_PENALTY = 0      # Value of zero or below disables penalty for having wheels off track
 MAX_STEPS_TO_PROGRESS_RATIO = 2.5
 TRACK_WIDTH_FREE_ZONE = 0.05
 TRACK_WIDTH_SAFE_ZONE = 0.25
@@ -136,19 +136,17 @@ def reward_function(params):
     track_direction_3 = calc_slope(prev_point, next_point_3)
 
     heading = params['heading']  # Range: -180:+180
-    direction_diff_ratio = 0.50 * min(
-        (calc_direction_diff(steering, heading, track_direction_1) / MAX_DIRECTION_DIFF), 1.00)
-    direction_diff_ratio += 0.30 * min(
-        (calc_direction_diff(steering, heading, track_direction_2) / MAX_DIRECTION_DIFF), 1.00)
-    direction_diff_ratio += 0.20 * min(
-        (calc_direction_diff(steering, heading, track_direction_3) / MAX_DIRECTION_DIFF), 1.00)
+    direction_diff_ratio = (
+            0.50 * min((calc_direction_diff(steering, heading, track_direction_1) / MAX_DIRECTION_DIFF), 1.00) +
+            0.30 * min((calc_direction_diff(steering, heading, track_direction_2) / MAX_DIRECTION_DIFF), 1.00) +
+            0.20 * min((calc_direction_diff(steering, heading, track_direction_3) / MAX_DIRECTION_DIFF), 1.00))
     dir_steering_ratio = 1.0 - pow(direction_diff_ratio, DIR_STEERING_SENSITIVITY_EXP)
     reward_dir_steering = REWARD_WEIGHT_DIR_STEER * dir_steering_ratio
 
     # Reward on close distance to the racing line
     free_zone = track_width * TRACK_WIDTH_FREE_ZONE
     safe_zone = track_width * TRACK_WIDTH_SAFE_ZONE
-    dislocation = calc_distance_from_line(curr_point, prev_point, next_point_2)
+    dislocation = calc_distance_from_line(curr_point, prev_point, next_point_1)
     on_track_ratio = 0.0
     if dislocation <= free_zone:
         on_track_ratio = 1.0
