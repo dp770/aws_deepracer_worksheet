@@ -21,12 +21,13 @@ REWARD_WEIGHT_PROG_STEP = 25
 REWARD_WEIGHT_DIR_STEER = 15
 REWARD_WEIGHT_MAX_SPEED = 10
 REWARD_WEIGHT_MIN_STEER = 5
-
+MAX_TOTAL_REWARD = REWARD_WEIGHT_ON_TRACK + REWARD_WEIGHT_PROG_STEP + REWARD_WEIGHT_DIR_STEER + \
+                   REWARD_WEIGHT_MAX_SPEED + REWARD_WEIGHT_MIN_STEER
 
 # static
 smoothed_central_line = None
 was_off_track_at_step = -MAX_STEPS_TO_DECAY_PENALTY
-
+previous_steps_reward = MAX_TOTAL_REWARD
 
 # Range [-180:+180]
 def calc_slope(prev_point, next_point):
@@ -87,6 +88,11 @@ def calc_distance_from_line(curr_point, prev_point, next_point):
     return distance_cp_to_pp * math.sin(angle_pp)
 
 
+def ema(prev, new, period):
+    k = 2.0 / (1.0 + period)
+    return k * new + (1.0 - k) * prev
+
+
 # Reward function expected by AWS DeepRacer API
 def reward_function(params):
     track_width = params['track_width']
@@ -95,7 +101,7 @@ def reward_function(params):
     global smoothed_central_line
     if smoothed_central_line is None:
         max_offset = track_width * ((1.0 - FOLLOWING_CENTRAL_LINE_RATIO) / 2.0)
-        smoothed_central_line = smooth_central_line(waypoints, max_offset, 0.10, 0.05, 0.70, 0.05, 0.10)
+        smoothed_central_line = smooth_central_line(waypoints, max_offset, 0.10, 0.05, 0.70, 0.05, 0.10, skip_step=2)
         print("track_waypoints:",
               "track_width =", track_width, ", original =", waypoints, ", smoothed =", smoothed_central_line)
 
@@ -106,6 +112,10 @@ def reward_function(params):
         was_off_track_at_step = -MAX_STEPS_TO_DECAY_PENALTY
     if not params['all_wheels_on_track']:
         was_off_track_at_step = steps
+
+    global previous_steps_reward
+    if steps <= 2:
+        previous_steps_reward = MAX_TOTAL_REWARD
 
     # Calculate penalty for wheels being or have recently been off track
     wheels_off_track_penalty = 1.0
@@ -171,4 +181,5 @@ def reward_function(params):
         waypoints[wp_indices[0]][0], waypoints[wp_indices[0]][1], prev_point[0], prev_point[1],
         next_point_1[0], next_point_1[1], next_point_2[0], next_point_2[1], next_point_3[0], next_point_3[1]))
 
-    return float(0.0001 + reward_total)
+    previous_steps_reward = ema(previous_steps_reward, reward_total, 5)
+    return float(0.0001 + previous_steps_reward)
