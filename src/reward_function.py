@@ -1,4 +1,5 @@
 import math
+import os
 
 # constants
 MAX_SPEED = 4.0
@@ -90,7 +91,7 @@ def calc_distance_from_line(curr_point, prev_point, next_point):
 
 def ema(prev, new, period):
     k = 2.0 / (1.0 + period)
-    return k * new + (1.0 - k) * prev
+    return (new - prev) * k + prev
 
 
 # Reward function expected by AWS DeepRacer API
@@ -102,8 +103,8 @@ def reward_function(params):
     if smoothed_central_line is None:
         max_offset = track_width * ((1.0 - FOLLOWING_CENTRAL_LINE_RATIO) / 2.0)
         smoothed_central_line = smooth_central_line(waypoints, max_offset, 0.10, 0.05, 0.70, 0.05, 0.10, skip_step=2)
-        print("track_waypoints:",
-              "track_width =", track_width, ", original =", waypoints, ", smoothed =", smoothed_central_line)
+        print("track_waypoints:", "track_width =", track_width, os.linesep,
+              "track_original =", waypoints, os.linesep, "track_smoothed =", smoothed_central_line)
 
     # re-initialize was_off_track_at_step
     global was_off_track_at_step
@@ -174,9 +175,8 @@ def reward_function(params):
     reward_total -= reward_total * steering_ratio * TOTAL_PENALTY_ON_HIGH_STEERING
     reward_total *= wheels_off_track_penalty
 
-    print("rewards:" + (20 * "{:.4f}," + "{:.4f}").format(
-        wheels_off_track_penalty, reward_on_track, reward_max_speed, reward_min_steering, reward_dir_steering,
-        reward_prog_step,
+    print("rewards:" + (20 * "{:.4f}," + "{:.4f}").format(reward_total, wheels_off_track_penalty,
+        reward_on_track, reward_max_speed, reward_min_steering, reward_dir_steering, reward_prog_step,
         dislocation, track_direction_1, track_direction_2, track_direction_3, direction_diff_ratio,
         waypoints[wp_indices[0]][0], waypoints[wp_indices[0]][1], prev_point[0], prev_point[1],
         next_point_1[0], next_point_1[1], next_point_2[0], next_point_2[1], next_point_3[0], next_point_3[1]))
