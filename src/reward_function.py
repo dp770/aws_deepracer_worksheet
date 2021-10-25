@@ -1,5 +1,5 @@
+# Source URL: https://github.com/dp770/aws_deep_racer/blob/main/src/reward_function.py
 import math
-import os
 
 # constants
 MAX_SPEED = 4.0
@@ -7,15 +7,16 @@ MAX_STEERING = 30.0
 MAX_DIRECTION_DIFF = 30.0
 MAX_STEPS_TO_DECAY_PENALTY = 0      # Value of zero or below disables penalty for having wheels off track
 MAX_STEPS_TO_PROGRESS_RATIO = 2.0
-TRACK_WIDTH_FREE_ZONE = 0.015
-TRACK_WIDTH_SAFE_ZONE = 0.035
+TRACK_WIDTH_FREE_ZONE = 0.03
+TRACK_WIDTH_SAFE_ZONE = 0.35
 FOLLOWING_CENTRAL_LINE_RATIO = 0.02  # number in range of [0, 1]. Zero forces to follow smoothed line, 1 - central line
+CENTRAL_LINE_SMOOTHING_STEPS = 2
 CNT_DISTANCE_SENSITIVITY_EXP = 3.00  # higher number gives more freedom on the track, can cause zig-zags
 ACTION_SPEED_SENSITIVITY_EXP = 3.00  # higher number increases penalty for low speed
 ACTION_STEER_SENSITIVITY_EXP = 0.70  # higher number decreases penalty for high steering
 DIR_STEERING_SENSITIVITY_EXP = 2.00  # lower number accelerates penalty increase for not following track direction
 TOTAL_PENALTY_ON_OFF_TRACK = 0.98  # maximum penalty in percentage of total reward on being off track
-TOTAL_PENALTY_ON_OFF_DIR_STEER = 0.30  # maximum penalty in percentage of total reward on off directional steering
+TOTAL_PENALTY_ON_OFF_DIR_STEER = 0.50  # maximum penalty in percentage of total reward on off directional steering
 TOTAL_PENALTY_ON_HIGH_STEERING = 0.25  # maximum penalty in percentage of total reward on high steering
 REWARD_WEIGHT_ON_TRACK = 35
 REWARD_WEIGHT_PROG_STEP = 25
@@ -53,7 +54,7 @@ def calc_distance(prev_point, next_point):
     return math.sqrt(delta_x * delta_x + delta_y * delta_y)
 
 
-def smooth_central_line(center_line, max_offset, pp, p, c, n, nn, iterations=72, skip_step=1):
+def smooth_central_line(center_line, max_offset, pp=0.10, p=0.05, c=0.70, n=0.05, nn=0.10, iterations=72, skip_step=1):
     smoothed_line = center_line
     for i in range(0, iterations):
         smoothed_line = smooth_central_line_internal(center_line, max_offset, smoothed_line, pp, p, c, n, nn, skip_step)
@@ -102,9 +103,9 @@ def reward_function(params):
     global smoothed_central_line
     if smoothed_central_line is None:
         max_offset = track_width * ((1.0 - FOLLOWING_CENTRAL_LINE_RATIO) / 2.0)
-        smoothed_central_line = smooth_central_line(waypoints, max_offset, 0.10, 0.05, 0.70, 0.05, 0.10, skip_step=2)
-        print("track_waypoints:", "track_width =", track_width, os.linesep,
-              "track_original =", waypoints, os.linesep, "track_smoothed =", smoothed_central_line)
+        smoothed_central_line = smooth_central_line(waypoints, max_offset, skip_step=CENTRAL_LINE_SMOOTHING_STEPS)
+        print("track_waypoints:", "track_width =", track_width,
+              "\ntrack_original =", waypoints, "\ntrack_smoothed =", smoothed_central_line)
 
     # re-initialize was_off_track_at_step
     global was_off_track_at_step
@@ -155,8 +156,8 @@ def reward_function(params):
     reward_dir_steering = REWARD_WEIGHT_DIR_STEER * dir_steering_ratio
 
     # Reward on close distance to the racing line
-    free_zone = track_width * TRACK_WIDTH_FREE_ZONE
-    safe_zone = track_width * TRACK_WIDTH_SAFE_ZONE
+    free_zone = track_width * TRACK_WIDTH_FREE_ZONE * 0.5
+    safe_zone = track_width * TRACK_WIDTH_SAFE_ZONE * 0.5
     dislocation = calc_distance_from_line(curr_point, prev_point, next_point_1)
     on_track_ratio = 0.0
     if dislocation <= free_zone:
