@@ -1,4 +1,4 @@
-# Source URL: https://github.com/dp770/aws_deep_racer/blob/main/src/reward_function.py
+# Source URL: https://github.com/dp770/aws_deepracer_worksheet/blob/main/src/reward_function.py
 import math
 
 # constants
@@ -15,13 +15,13 @@ CNT_DISTANCE_SENSITIVITY_EXP = 3.00  # higher number gives more freedom on the t
 ACTION_SPEED_SENSITIVITY_EXP = 3.00  # higher number increases penalty for low speed
 ACTION_STEER_SENSITIVITY_EXP = 0.70  # higher number decreases penalty for high steering
 DIR_STEERING_SENSITIVITY_EXP = 2.00  # lower number accelerates penalty increase for not following track direction
-TOTAL_PENALTY_ON_OFF_TRACK = 0.98  # maximum penalty in percentage of total reward on being off track
+TOTAL_PENALTY_ON_OFF_TRACK = 0.9999  # maximum penalty in percentage of total reward on being off track
 TOTAL_PENALTY_ON_OFF_DIR_STEER = 0.50  # maximum penalty in percentage of total reward on off directional steering
 TOTAL_PENALTY_ON_HIGH_STEERING = 0.25  # maximum penalty in percentage of total reward on high steering
 REWARD_WEIGHT_ON_TRACK = 35
 REWARD_WEIGHT_PROG_STEP = 25
-REWARD_WEIGHT_DIR_STEER = 15
-REWARD_WEIGHT_MAX_SPEED = 10
+REWARD_WEIGHT_MAX_SPEED = 15
+REWARD_WEIGHT_DIR_STEER = 10
 REWARD_WEIGHT_MIN_STEER = 5
 MAX_TOTAL_REWARD = REWARD_WEIGHT_ON_TRACK + REWARD_WEIGHT_PROG_STEP + REWARD_WEIGHT_DIR_STEER + \
                    REWARD_WEIGHT_MAX_SPEED + REWARD_WEIGHT_MIN_STEER
@@ -182,5 +182,5 @@ def reward_function(params):
         waypoints[wp_indices[0]][0], waypoints[wp_indices[0]][1], prev_point[0], prev_point[1],
         next_point_1[0], next_point_1[1], next_point_2[0], next_point_2[1], next_point_3[0], next_point_3[1]))
 
-    previous_steps_reward = ema(previous_steps_reward, reward_total, 5)
+    previous_steps_reward = ema(previous_steps_reward, reward_total, 3)
     return float(0.0001 + previous_steps_reward)
