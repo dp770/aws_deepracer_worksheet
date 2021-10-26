@@ -34,9 +34,9 @@ points contributes to the final score. Conditional points also have sensitivity 
 #### Sample reward weights
 ```python
 REWARD_WEIGHT_ON_TRACK = 35
-REWARD_WEIGHT_PROG_STEP = 25
-REWARD_WEIGHT_MAX_SPEED = 15
-REWARD_WEIGHT_DIR_STEER = 10
+REWARD_WEIGHT_DIR_STEER = 25
+REWARD_WEIGHT_PROG_STEP = 15
+REWARD_WEIGHT_MAX_SPEED = 10
 REWARD_WEIGHT_MIN_STEER = 5
 ```
 
@@ -46,13 +46,13 @@ score. The effectiveness of every penalty indicator is configurable in percentag
 #### The penalties are:
 1. Penalty to overall score in percentage for being off or far from racing line.
 2. Penalty to taking turn (having steering) which takes the car further away from the next waypoint on the racing line. 
-3. Penalty for taking sharp turn /having high steering (regardless of track conditions).
+3. Penalty for taking sharp turn / having high steering (regardless of track conditions).
 4. Penalty for having at least one  wheel off track.
 
 #### Sample penalty weights
 ````python
-TOTAL_PENALTY_ON_OFF_TRACK = 0.9999  # maximum penalty in percentage of total reward on being off track
-TOTAL_PENALTY_ON_OFF_DIR_STEER = 0.50  # maximum penalty in percentage of total reward on off directional steering
+TOTAL_PENALTY_ON_OFF_TRACK = 0.98  # maximum penalty in percentage of total reward on being off track
+TOTAL_PENALTY_ON_OFF_DIR_STEER = 0.30  # maximum penalty in percentage of total reward on off directional steering
 TOTAL_PENALTY_ON_HIGH_STEERING = 0.25  # maximum penalty in percentage of total reward on high steering
 MAX_STEPS_TO_DECAY_PENALTY = 5      # Value of zero or below disables penalty for having wheels off track
 ````
