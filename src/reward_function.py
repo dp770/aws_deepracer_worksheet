@@ -6,23 +6,23 @@ MAX_SPEED = 4.0
 MAX_STEERING = 30.0
 MAX_DIRECTION_DIFF = 30.0
 MAX_STEPS_TO_DECAY_PENALTY = 0      # Value of zero or below disables penalty for having wheels off track
-MAX_STEPS_TO_PROGRESS_RATIO = 2.0
-TRACK_WIDTH_FREE_ZONE = 0.03
-TRACK_WIDTH_SAFE_ZONE = 0.35
-FOLLOWING_CENTRAL_LINE_RATIO = 0.02  # number in range of [0, 1]. Zero forces to follow smoothed line, 1 - central line
-CENTRAL_LINE_SMOOTHING_STEPS = 2
-CNT_DISTANCE_SENSITIVITY_EXP = 3.00  # higher number gives more freedom on the track, can cause zig-zags
-ACTION_SPEED_SENSITIVITY_EXP = 3.00  # higher number increases penalty for low speed
-ACTION_STEER_SENSITIVITY_EXP = 0.70  # higher number decreases penalty for high steering
-DIR_STEERING_SENSITIVITY_EXP = 2.00  # lower number accelerates penalty increase for not following track direction
-TOTAL_PENALTY_ON_OFF_TRACK = 0.9999  # maximum penalty in percentage of total reward on being off track
-TOTAL_PENALTY_ON_OFF_DIR_STEER = 0.30  # maximum penalty in percentage of total reward on off directional steering
-TOTAL_PENALTY_ON_HIGH_STEERING = 0.25  # maximum penalty in percentage of total reward on high steering
-REWARD_WEIGHT_ON_TRACK = 35
-REWARD_WEIGHT_PROG_STEP = 25
-REWARD_WEIGHT_MAX_SPEED = 15
-REWARD_WEIGHT_DIR_STEER = 10
-REWARD_WEIGHT_MIN_STEER = 5
+MAX_STEPS_TO_PROGRESS_RATIO = 1.8   # Desired maximum number of steps to be taken for 1% of progress
+RACING_LINE_SMOOTHING_STEPS = 2
+RACING_LINE_WIDTH_FREE_ZONE = 0.05  # Percentage of racing line width for 100% of "being on track" reward
+RACING_LINE_WIDTH_SAFE_ZONE = 0.15  # Percentage of racing line width for distance relative "being on track" reward
+RACING_LINE_VS_CENTRAL_LINE = 0.95  # Number in range of [0, 1]. Zero forces to follow central line, 1 - racing line
+SENSITIVITY_EXP_CNT_DISTANCE = 3.00  # Higher number gives more freedom on the track, can cause zig-zags
+SENSITIVITY_EXP_ACTION_SPEED = 3.00  # Higher number increases penalty for low speed
+SENSITIVITY_EXP_ACTION_STEER = 0.70  # Higher number decreases penalty for high steering
+SENSITIVITY_EXP_DIR_STEERING = 2.00  # Lower number accelerates penalty increase for not following track direction
+TOTAL_PENALTY_ON_OFF_TRACK = 0.999999  # Maximum penalty in percentage of total reward for being off track
+TOTAL_PENALTY_ON_OFF_DIR_STEER = 0.50  # Maximum penalty in percentage of total reward for off directional steering
+TOTAL_PENALTY_ON_HIGH_STEERING = 0.25  # Maximum penalty in percentage of total reward for high steering
+REWARD_WEIGHT_PROG_STEP = 30
+REWARD_WEIGHT_MAX_SPEED = 25
+REWARD_WEIGHT_MIN_STEER = 20
+REWARD_WEIGHT_DIR_STEER = 15
+REWARD_WEIGHT_ON_TRACK = 10
 MAX_TOTAL_REWARD = REWARD_WEIGHT_ON_TRACK + REWARD_WEIGHT_PROG_STEP + REWARD_WEIGHT_DIR_STEER + \
                    REWARD_WEIGHT_MAX_SPEED + REWARD_WEIGHT_MIN_STEER
 
@@ -102,8 +102,8 @@ def reward_function(params):
     # initialize central line
     global smoothed_central_line
     if smoothed_central_line is None:
-        max_offset = track_width * ((1.0 - FOLLOWING_CENTRAL_LINE_RATIO) / 2.0)
-        smoothed_central_line = smooth_central_line(waypoints, max_offset, skip_step=CENTRAL_LINE_SMOOTHING_STEPS)
+        max_offset = track_width * RACING_LINE_VS_CENTRAL_LINE * 0.5
+        smoothed_central_line = smooth_central_line(waypoints, max_offset, skip_step=RACING_LINE_SMOOTHING_STEPS)
         print("track_waypoints:", "track_width =", track_width,
               "\ntrack_original =", waypoints, "\ntrack_smoothed =", smoothed_central_line)
 
@@ -128,12 +128,12 @@ def reward_function(params):
     # Speed penalty to keep the car moving fast
     speed = params['speed']  # Range: 0.0:4.0
     speed_ratio = speed / MAX_SPEED
-    reward_max_speed = REWARD_WEIGHT_MAX_SPEED * pow(speed_ratio, ACTION_SPEED_SENSITIVITY_EXP)
+    reward_max_speed = REWARD_WEIGHT_MAX_SPEED * pow(speed_ratio, SENSITIVITY_EXP_ACTION_SPEED)
 
     # Steering penalty to discourage zig-zags
     steering = params['steering_angle']  # Range: -30:30
     steering_ratio = abs(steering / MAX_STEERING)
-    reward_min_steering = REWARD_WEIGHT_MIN_STEER * (1.0 - pow(steering_ratio, ACTION_STEER_SENSITIVITY_EXP))
+    reward_min_steering = REWARD_WEIGHT_MIN_STEER * (1.0 - pow(steering_ratio, SENSITIVITY_EXP_ACTION_STEER))
 
     # Reward on directional move to the next milestone
     wp_length = len(smoothed_central_line)
@@ -149,21 +149,21 @@ def reward_function(params):
 
     heading = params['heading']  # Range: -180:+180
     direction_diff_ratio = (
-            0.50 * min((calc_direction_diff(steering, heading, track_direction_1) / MAX_DIRECTION_DIFF), 1.00) +
+            0.20 * min((calc_direction_diff(steering, heading, track_direction_1) / MAX_DIRECTION_DIFF), 1.00) +
             0.30 * min((calc_direction_diff(steering, heading, track_direction_2) / MAX_DIRECTION_DIFF), 1.00) +
-            0.20 * min((calc_direction_diff(steering, heading, track_direction_3) / MAX_DIRECTION_DIFF), 1.00))
-    dir_steering_ratio = 1.0 - pow(direction_diff_ratio, DIR_STEERING_SENSITIVITY_EXP)
+            0.50 * min((calc_direction_diff(steering, heading, track_direction_3) / MAX_DIRECTION_DIFF), 1.00))
+    dir_steering_ratio = 1.0 - pow(direction_diff_ratio, SENSITIVITY_EXP_DIR_STEERING)
     reward_dir_steering = REWARD_WEIGHT_DIR_STEER * dir_steering_ratio
 
     # Reward on close distance to the racing line
-    free_zone = track_width * TRACK_WIDTH_FREE_ZONE * 0.5
-    safe_zone = track_width * TRACK_WIDTH_SAFE_ZONE * 0.5
+    free_zone = track_width * RACING_LINE_WIDTH_FREE_ZONE * 0.5
+    safe_zone = track_width * RACING_LINE_WIDTH_SAFE_ZONE * 0.5
     dislocation = calc_distance_from_line(curr_point, prev_point, next_point_1)
     on_track_ratio = 0.0
     if dislocation <= free_zone:
         on_track_ratio = 1.0
     elif dislocation <= safe_zone:
-        on_track_ratio = 1.0 - pow(dislocation / safe_zone, CNT_DISTANCE_SENSITIVITY_EXP)
+        on_track_ratio = 1.0 - pow(dislocation / safe_zone, SENSITIVITY_EXP_CNT_DISTANCE)
     reward_on_track = on_track_ratio * REWARD_WEIGHT_ON_TRACK
 
     # Reward on good progress per step
@@ -182,5 +182,5 @@ def reward_function(params):
         waypoints[wp_indices[0]][0], waypoints[wp_indices[0]][1], prev_point[0], prev_point[1],
         next_point_1[0], next_point_1[1], next_point_2[0], next_point_2[1], next_point_3[0], next_point_3[1]))
 
-    previous_steps_reward = ema(previous_steps_reward, reward_total, 3)
-    return float(0.0001 + previous_steps_reward)
+    # previous_steps_reward = ema(previous_steps_reward, reward_total, 3)
+    return float(0.0000001 + reward_total)

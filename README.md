@@ -33,11 +33,11 @@ points contributes to the final score. Conditional points also have sensitivity 
 
 #### Sample reward weights
 ```python
-REWARD_WEIGHT_ON_TRACK = 35
-REWARD_WEIGHT_DIR_STEER = 25
-REWARD_WEIGHT_PROG_STEP = 15
-REWARD_WEIGHT_MAX_SPEED = 10
-REWARD_WEIGHT_MIN_STEER = 5
+REWARD_WEIGHT_PROG_STEP = 30
+REWARD_WEIGHT_MAX_SPEED = 25
+REWARD_WEIGHT_MIN_STEER = 20
+REWARD_WEIGHT_DIR_STEER = 15
+REWARD_WEIGHT_ON_TRACK = 10
 ```
 
 In addition to contributing criteria points, there are 4 types of penalty indicators which reduce the total calculates 
@@ -51,11 +51,41 @@ score. The effectiveness of every penalty indicator is configurable in percentag
 
 #### Sample penalty weights
 ````python
-TOTAL_PENALTY_ON_OFF_TRACK = 0.98  # maximum penalty in percentage of total reward on being off track
-TOTAL_PENALTY_ON_OFF_DIR_STEER = 0.30  # maximum penalty in percentage of total reward on off directional steering
-TOTAL_PENALTY_ON_HIGH_STEERING = 0.25  # maximum penalty in percentage of total reward on high steering
 MAX_STEPS_TO_DECAY_PENALTY = 5      # Value of zero or below disables penalty for having wheels off track
+
+TOTAL_PENALTY_ON_OFF_TRACK = 0.999999  # Maximum penalty in percentage of total reward for being off track
+TOTAL_PENALTY_ON_OFF_DIR_STEER = 0.50  # Maximum penalty in percentage of total reward for off directional steering
+TOTAL_PENALTY_ON_HIGH_STEERING = 0.25  # Maximum penalty in percentage of total reward for high steering
 ````
 
+## Other Useful Repositories to look at
+1. [AWS DeepRacer League (https://aws.amazon.com/deepracer/league/)](https://aws.amazon.com/deepracer/league/)
+2. [DeepRacer Logs Analysis tools (https://github.com/aws-deepracer-community/deepracer-analysis)](https://github.com/aws-deepracer-community/deepracer-analysis)
+3. [AWS Deepracer Workshop Lab Github (https://github.com/aws-samples/aws-deepracer-workshops)](https://github.com/aws-samples/aws-deepracer-workshops)
+4. [DeepRacer K1999 Racing Line Algo (https://github.com/cdthompson/deepracer-k1999-race-lines)](https://github.com/cdthompson/deepracer-k1999-race-lines)
+5. [DeepRacer Utils CLI commands (https://github.com/aws-deepracer-community/deepracer-utils)](https://github.com/aws-deepracer-community/deepracer-utils)
+
 ## License
-MIT License (located in the root of directory of this repo)
+```
+MIT License
+
+Copyright (c) 2021 AWS DeepRacer Worksheet contributors community
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
