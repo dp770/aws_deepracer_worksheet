@@ -11,14 +11,29 @@ The objective is to smooth central line of a given track. This is achieved by mi
 
 This algorithm does not search for an optimal arc of corners to race at the maximum possible speed for a given steering.
 
-### Sample Results 
-| Original Track | Race Line v1 | Race Line v2 | Race Line v3 |
-|----------------|--------------|--------------|--------------|
-| ![](tracks/Vivalas_Speedway.png) | ![](tracks/Vivalas_Speedway_v1.png) | ![](tracks/Vivalas_Speedway_v2.png) | ![](tracks/Vivalas_Speedway_v3.png) |
-| ![](tracks/Vivalas_Loop.png) | ![](tracks/Vivalas_Loop_v1.png) | ![](tracks/Vivalas_Loop_v2.png) | ![](tracks/Vivalas_Loop_v3.png) |
-| ![](tracks/Baadal_Track.png) | ![](tracks/Baadal_Track_v1.png) | ![](tracks/Baadal_Track_v2.png) | ![](tracks/Baadal_Track_v3.png) |
-| ![](tracks/Playa_Raceway.png) | ![](tracks/Playa_Raceway_v1.png) | ![](tracks/Playa_Raceway_v2.png) | ![](tracks/Playa_Raceway_v3.png) |
-| ![](tracks/Expedition_Super_Loop.png) | ![](tracks/Expedition_Super_Loop_v1.png) | ![](tracks/Expedition_Super_Loop_v2.png) | ![](tracks/Expedition_Super_Loop_v3.png) |
+### Sample Results
+
+| Track Name             | Original Track                         | Racing Line v1                            | Racing Line v2                            |
+|------------------------|----------------------------------------|-------------------------------------------|-------------------------------------------|
+| Vivalas Loop           | ![](tracks/Vivalas_Loop.png)           | ![](tracks/Vivalas_Loop_v1.png)           | ![](tracks/Vivalas_Loop_v2.png)           |
+| Vivalas Speedway       | ![](tracks/Vivalas_Speedway.png)       | ![](tracks/Vivalas_Speedway_v1.png)       | ![](tracks/Vivalas_Speedway_v2.png)       |
+| Expedition Loop        | ![](tracks/Expedition_Loop.png)        | ![](tracks/Expedition_Loop_v1.png)        | ![](tracks/Expedition_Loop_v2.png)        |
+| Expedition Super Loop  | ![](tracks/Expedition_Super_Loop.png)  | ![](tracks/Expedition_Super_Loop_v1.png)  | ![](tracks/Expedition_Super_Loop_v2.png)  |
+| Playa Super Raceway    | ![](tracks/Playa_Super_Raceway.png)    | ![](tracks/Playa_Super_Raceway_v1.png)    | ![](tracks/Playa_Super_Raceway_v2.png)    |
+| Playa Raceway          | ![](tracks/Playa_Raceway.png)          | ![](tracks/Playa_Raceway_v1.png)          | ![](tracks/Playa_Raceway_v2.png)          |
+| Hot Rod Super Speedway | ![](tracks/Hot_Rod_Super_Speedway.png) | ![](tracks/Hot_Rod_Super_Speedway_v1.png) | ![](tracks/Hot_Rod_Super_Speedway_v2.png) |
+| Hot Rod Speedway       | ![](tracks/Hot_Rod_Speedway.png)       | ![](tracks/Hot_Rod_Speedway_v1.png)       | ![](tracks/Hot_Rod_Speedway_v2.png)       |
+| Baja Highway           | ![](tracks/Baja_Highway.png)           | ![](tracks/Baja_Highway_v1.png)           | ![](tracks/Baja_Highway_v2.png)           |
+| Baja Turnpike          | ![](tracks/Baja_Turnpike.png)          | ![](tracks/Baja_Turnpike_v1.png)          | ![](tracks/Baja_Turnpike_v2.png)          |
+| Kuei Raceway           | ![](tracks/Kuei_Raceway.png)           | ![](tracks/Kuei_Raceway_v1.png)           | ![](tracks/Kuei_Raceway_v2.png)           |
+| Kuei Super Raceway     | ![](tracks/Kuei_Super_Raceway.png)     | ![](tracks/Kuei_Super_Raceway_v1.png)     | ![](tracks/Kuei_Super_Raceway_v2.png)     |
+| Cosmic Circuit         | ![](tracks/Cosmic_Circuit.png)         | ![](tracks/Cosmic_Circuit_v1.png)         | ![](tracks/Cosmic_Circuit_v2.png)         |
+| Cosmic Loop            | ![](tracks/Cosmic_Loop.png)            | ![](tracks/Cosmic_Loop_v1.png)            | ![](tracks/Cosmic_Loop_v2.png)            |
+| Lars Circuit           | ![](tracks/Lars_Circuit.png)           | ![](tracks/Lars_Circuit_v1.png)           | ![](tracks/Lars_Circuit_v2.png)           |
+| Lars Loop              | ![](tracks/Lars_Loop.png)              | ![](tracks/Lars_Loop_v1.png)              | ![](tracks/Lars_Loop_v2.png)              |
+| Po-Chun Speedway       | ![](tracks/Po-Chun_Speedway.png)       | ![](tracks/Po-Chun_Speedway_v1.png)       | ![](tracks/Po-Chun_Speedway_v2.png)       |
+| Po-Chun Super Speedway | ![](tracks/Po-Chun_Super_Speedway.png) | ![](tracks/Po-Chun_Super_Speedway_v1.png) | ![](tracks/Po-Chun_Super_Speedway_v2.png) |
+| Baadal Track           | ![](tracks/Baadal_Track.png)           | ![](tracks/Baadal_Track_v1.png)           | ![](tracks/Baadal_Track_v2.png)           |
 
 
 ## Reward Function
