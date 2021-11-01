@@ -14,6 +14,8 @@ This algorithm does not search for an optimal arc of corners to race at the maxi
 ### Sample Results 
 | Original Track | Race Line v1 | Race Line v2 | Race Line v3 |
 |----------------|--------------|--------------|--------------|
+| ![](tracks/Vivalas_Speedway.png) | ![](tracks/Vivalas_Speedway_v1.png) | ![](tracks/Vivalas_Speedway_v2.png) | ![](tracks/Vivalas_Speedway_v3.png) |
+| ![](tracks/Vivalas_Loop.png) | ![](tracks/Vivalas_Loop_v1.png) | ![](tracks/Vivalas_Loop_v2.png) | ![](tracks/Vivalas_Loop_v3.png) |
 | ![](tracks/Baadal_Track.png) | ![](tracks/Baadal_Track_v1.png) | ![](tracks/Baadal_Track_v2.png) | ![](tracks/Baadal_Track_v3.png) |
 | ![](tracks/Playa_Raceway.png) | ![](tracks/Playa_Raceway_v1.png) | ![](tracks/Playa_Raceway_v2.png) | ![](tracks/Playa_Raceway_v3.png) |
 | ![](tracks/Expedition_Super_Loop.png) | ![](tracks/Expedition_Super_Loop_v1.png) | ![](tracks/Expedition_Super_Loop_v2.png) | ![](tracks/Expedition_Super_Loop_v3.png) |
