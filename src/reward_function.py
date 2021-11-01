@@ -8,16 +8,16 @@ MAX_DIRECTION_DIFF = 30.0
 MAX_STEPS_TO_DECAY_PENALTY = 0      # Value of zero or below disables penalty for having wheels off track
 MAX_STEPS_TO_PROGRESS_RATIO = 1.8   # Desired maximum number of steps to be taken for 1% of progress
 RACING_LINE_SMOOTHING_STEPS = 2
-RACING_LINE_WIDTH_FREE_ZONE = 0.05  # Percentage of racing line width for 100% of "being on track" reward
-RACING_LINE_WIDTH_SAFE_ZONE = 0.15  # Percentage of racing line width for distance relative "being on track" reward
-RACING_LINE_VS_CENTRAL_LINE = 0.95  # Number in range of [0, 1]. Zero forces to follow central line, 1 - racing line
+RACING_LINE_WIDTH_FREE_ZONE = 0.10  # Percentage of racing line width for 100% of "being on track" reward
+RACING_LINE_WIDTH_SAFE_ZONE = 0.35  # Percentage of racing line width for distance relative "being on track" reward
+RACING_LINE_VS_CENTRAL_LINE = 0.90  # Number in range of [0, 1]. Zero forces to follow central line, 1 - racing line
 SENSITIVITY_EXP_CNT_DISTANCE = 3.00  # Higher number gives more freedom on the track, can cause zig-zags
 SENSITIVITY_EXP_ACTION_SPEED = 3.00  # Higher number increases penalty for low speed
 SENSITIVITY_EXP_ACTION_STEER = 0.70  # Higher number decreases penalty for high steering
 SENSITIVITY_EXP_DIR_STEERING = 2.00  # Lower number accelerates penalty increase for not following track direction
 TOTAL_PENALTY_ON_OFF_TRACK = 0.999999  # Maximum penalty in percentage of total reward for being off track
-TOTAL_PENALTY_ON_OFF_DIR_STEER = 0.50  # Maximum penalty in percentage of total reward for off directional steering
-TOTAL_PENALTY_ON_HIGH_STEERING = 0.25  # Maximum penalty in percentage of total reward for high steering
+TOTAL_PENALTY_ON_OFF_DIR_STEER = 0.35  # Maximum penalty in percentage of total reward for off directional steering
+TOTAL_PENALTY_ON_HIGH_STEERING = 0.15  # Maximum penalty in percentage of total reward for high steering
 REWARD_WEIGHT_PROG_STEP = 30
 REWARD_WEIGHT_MAX_SPEED = 25
 REWARD_WEIGHT_MIN_STEER = 20
@@ -51,10 +51,12 @@ def calc_direction_diff(steering, heading, track_direction):
 def calc_distance(prev_point, next_point):
     delta_x = next_point[0] - prev_point[0]
     delta_y = next_point[1] - prev_point[1]
-    return math.sqrt(delta_x * delta_x + delta_y * delta_y)
+    return math.hypot(delta_x, delta_y)
 
 
 def smooth_central_line(center_line, max_offset, pp=0.10, p=0.05, c=0.70, n=0.05, nn=0.10, iterations=72, skip_step=1):
+    if max_offset < 0.0001:
+        return center_line
     smoothed_line = center_line
     for i in range(0, iterations):
         smoothed_line = smooth_central_line_internal(center_line, max_offset, smoothed_line, pp, p, c, n, nn, skip_step)
