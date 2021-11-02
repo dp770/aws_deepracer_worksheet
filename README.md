@@ -1,42 +1,5 @@
 # AWS Deep Racer Worksheet
 
-## Racing line calculation and visualisation
-
-The objective is to smooth central line of a given track. This is achieved by minimising the distance between each pair
- of two closes waypoints. Selected closes waypoints are not always the nearest waypoints, such as between a pair of
- selected waypoints, there might be others waypoints located closer. However, these are still close enough to be used.
- This is controlled by skipp_step parameter, which allows acceleration of the algorithm. The optimisation algorithm
- takes into account track's inner and outer borders to ensure that new calculated waypoints do not touch the borders or
- go beyond the borders or located too close to the borders. This is controlled by  max_offset parameter.
-
-This algorithm does not search for an optimal arc of corners to race at the maximum possible speed for a given steering.
-
-### Sample Results
-
-| Track Name             | Original Track                         | Racing Line v1                            | Racing Line v2                            |
-|------------------------|----------------------------------------|-------------------------------------------|-------------------------------------------|
-| Vivalas Loop           | ![](tracks/Vivalas_Loop.png)           | ![](tracks/Vivalas_Loop_v1.png)           | ![](tracks/Vivalas_Loop_v2.png)           |
-| Vivalas Speedway       | ![](tracks/Vivalas_Speedway.png)       | ![](tracks/Vivalas_Speedway_v1.png)       | ![](tracks/Vivalas_Speedway_v2.png)       |
-| Expedition Loop        | ![](tracks/Expedition_Loop.png)        | ![](tracks/Expedition_Loop_v1.png)        | ![](tracks/Expedition_Loop_v2.png)        |
-| Expedition Super Loop  | ![](tracks/Expedition_Super_Loop.png)  | ![](tracks/Expedition_Super_Loop_v1.png)  | ![](tracks/Expedition_Super_Loop_v2.png)  |
-| Playa Super Raceway    | ![](tracks/Playa_Super_Raceway.png)    | ![](tracks/Playa_Super_Raceway_v1.png)    | ![](tracks/Playa_Super_Raceway_v2.png)    |
-| Playa Raceway          | ![](tracks/Playa_Raceway.png)          | ![](tracks/Playa_Raceway_v1.png)          | ![](tracks/Playa_Raceway_v2.png)          |
-| Hot Rod Super Speedway | ![](tracks/Hot_Rod_Super_Speedway.png) | ![](tracks/Hot_Rod_Super_Speedway_v1.png) | ![](tracks/Hot_Rod_Super_Speedway_v2.png) |
-| Hot Rod Speedway       | ![](tracks/Hot_Rod_Speedway.png)       | ![](tracks/Hot_Rod_Speedway_v1.png)       | ![](tracks/Hot_Rod_Speedway_v2.png)       |
-| Baja Highway           | ![](tracks/Baja_Highway.png)           | ![](tracks/Baja_Highway_v1.png)           | ![](tracks/Baja_Highway_v2.png)           |
-| Baja Turnpike          | ![](tracks/Baja_Turnpike.png)          | ![](tracks/Baja_Turnpike_v1.png)          | ![](tracks/Baja_Turnpike_v2.png)          |
-| Kuei Raceway           | ![](tracks/Kuei_Raceway.png)           | ![](tracks/Kuei_Raceway_v1.png)           | ![](tracks/Kuei_Raceway_v2.png)           |
-| Kuei Super Raceway     | ![](tracks/Kuei_Super_Raceway.png)     | ![](tracks/Kuei_Super_Raceway_v1.png)     | ![](tracks/Kuei_Super_Raceway_v2.png)     |
-| Cosmic Circuit         | ![](tracks/Cosmic_Circuit.png)         | ![](tracks/Cosmic_Circuit_v1.png)         | ![](tracks/Cosmic_Circuit_v2.png)         |
-| Cosmic Loop            | ![](tracks/Cosmic_Loop.png)            | ![](tracks/Cosmic_Loop_v1.png)            | ![](tracks/Cosmic_Loop_v2.png)            |
-| Lars Circuit           | ![](tracks/Lars_Circuit.png)           | ![](tracks/Lars_Circuit_v1.png)           | ![](tracks/Lars_Circuit_v2.png)           |
-| Lars Loop              | ![](tracks/Lars_Loop.png)              | ![](tracks/Lars_Loop_v1.png)              | ![](tracks/Lars_Loop_v2.png)              |
-| Po-Chun Speedway       | ![](tracks/Po-Chun_Speedway.png)       | ![](tracks/Po-Chun_Speedway_v1.png)       | ![](tracks/Po-Chun_Speedway_v2.png)       |
-| Po-Chun Super Speedway | ![](tracks/Po-Chun_Super_Speedway.png) | ![](tracks/Po-Chun_Super_Speedway_v1.png) | ![](tracks/Po-Chun_Super_Speedway_v2.png) |
-| Baadal Track           | ![](tracks/Baadal_Track.png)           | ![](tracks/Baadal_Track_v1.png)           | ![](tracks/Baadal_Track_v2.png)           |
-
-Full list of available tracks' data can be checked here: <https://github.com/dp770/aws_deepracer_worksheet/tree/main/tracks>.
-
 ## Reward Function
 
 Rewards calculation is based on a number of conditional points, which are all configurabTHatle. Sum of all conditional
@@ -75,6 +38,43 @@ TOTAL_PENALTY_ON_OFF_TRACK = 0.999999  # Maximum penalty in percentage of total 
 TOTAL_PENALTY_ON_OFF_DIR_STEER = 0.50  # Maximum penalty in percentage of total reward for off directional steering
 TOTAL_PENALTY_ON_HIGH_STEERING = 0.25  # Maximum penalty in percentage of total reward for high steering
 ````
+
+## Racing line calculation and visualisation
+
+The objective is to smooth central line of a given track. This is achieved by minimising the distance between each pair
+ of two closes waypoints. Selected closes waypoints are not always the nearest waypoints, such as between a pair of
+ selected waypoints, there might be others waypoints located closer. However, these are still close enough to be used.
+ This is controlled by skipp_step parameter, which allows acceleration of the algorithm. The optimisation algorithm
+ takes into account track's inner and outer borders to ensure that new calculated waypoints do not touch the borders or
+ go beyond the borders or located too close to the borders. This is controlled by  max_offset parameter.
+
+This algorithm does not search for an optimal arc of corners to race at the maximum possible speed for a given steering.
+
+### Sample Results
+
+| Track Name             | Original Track                         | Racing Line v1                            | Racing Line v2                            |
+|------------------------|----------------------------------------|-------------------------------------------|-------------------------------------------|
+| Vivalas Loop           | ![](tracks/Vivalas_Loop.png)           | ![](tracks/Vivalas_Loop_v1.png)           | ![](tracks/Vivalas_Loop_v2.png)           |
+| Vivalas Speedway       | ![](tracks/Vivalas_Speedway.png)       | ![](tracks/Vivalas_Speedway_v1.png)       | ![](tracks/Vivalas_Speedway_v2.png)       |
+| Expedition Loop        | ![](tracks/Expedition_Loop.png)        | ![](tracks/Expedition_Loop_v1.png)        | ![](tracks/Expedition_Loop_v2.png)        |
+| Expedition Super Loop  | ![](tracks/Expedition_Super_Loop.png)  | ![](tracks/Expedition_Super_Loop_v1.png)  | ![](tracks/Expedition_Super_Loop_v2.png)  |
+| Playa Super Raceway    | ![](tracks/Playa_Super_Raceway.png)    | ![](tracks/Playa_Super_Raceway_v1.png)    | ![](tracks/Playa_Super_Raceway_v2.png)    |
+| Playa Raceway          | ![](tracks/Playa_Raceway.png)          | ![](tracks/Playa_Raceway_v1.png)          | ![](tracks/Playa_Raceway_v2.png)          |
+| Hot Rod Super Speedway | ![](tracks/Hot_Rod_Super_Speedway.png) | ![](tracks/Hot_Rod_Super_Speedway_v1.png) | ![](tracks/Hot_Rod_Super_Speedway_v2.png) |
+| Hot Rod Speedway       | ![](tracks/Hot_Rod_Speedway.png)       | ![](tracks/Hot_Rod_Speedway_v1.png)       | ![](tracks/Hot_Rod_Speedway_v2.png)       |
+| Baja Highway           | ![](tracks/Baja_Highway.png)           | ![](tracks/Baja_Highway_v1.png)           | ![](tracks/Baja_Highway_v2.png)           |
+| Baja Turnpike          | ![](tracks/Baja_Turnpike.png)          | ![](tracks/Baja_Turnpike_v1.png)          | ![](tracks/Baja_Turnpike_v2.png)          |
+| Kuei Raceway           | ![](tracks/Kuei_Raceway.png)           | ![](tracks/Kuei_Raceway_v1.png)           | ![](tracks/Kuei_Raceway_v2.png)           |
+| Kuei Super Raceway     | ![](tracks/Kuei_Super_Raceway.png)     | ![](tracks/Kuei_Super_Raceway_v1.png)     | ![](tracks/Kuei_Super_Raceway_v2.png)     |
+| Cosmic Circuit         | ![](tracks/Cosmic_Circuit.png)         | ![](tracks/Cosmic_Circuit_v1.png)         | ![](tracks/Cosmic_Circuit_v2.png)         |
+| Cosmic Loop            | ![](tracks/Cosmic_Loop.png)            | ![](tracks/Cosmic_Loop_v1.png)            | ![](tracks/Cosmic_Loop_v2.png)            |
+| Lars Circuit           | ![](tracks/Lars_Circuit.png)           | ![](tracks/Lars_Circuit_v1.png)           | ![](tracks/Lars_Circuit_v2.png)           |
+| Lars Loop              | ![](tracks/Lars_Loop.png)              | ![](tracks/Lars_Loop_v1.png)              | ![](tracks/Lars_Loop_v2.png)              |
+| Po-Chun Speedway       | ![](tracks/Po-Chun_Speedway.png)       | ![](tracks/Po-Chun_Speedway_v1.png)       | ![](tracks/Po-Chun_Speedway_v2.png)       |
+| Po-Chun Super Speedway | ![](tracks/Po-Chun_Super_Speedway.png) | ![](tracks/Po-Chun_Super_Speedway_v1.png) | ![](tracks/Po-Chun_Super_Speedway_v2.png) |
+| Baadal Track           | ![](tracks/Baadal_Track.png)           | ![](tracks/Baadal_Track_v1.png)           | ![](tracks/Baadal_Track_v2.png)           |
+
+Full list of available tracks' data can be checked here: <https://github.com/dp770/aws_deepracer_worksheet/tree/main/tracks>.
 
 ## Other Useful Repositories to look at
 1. [AWS DeepRacer League (https://aws.amazon.com/deepracer/league/)](https://aws.amazon.com/deepracer/league/)
