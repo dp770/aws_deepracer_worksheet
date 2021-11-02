@@ -57,6 +57,8 @@ def calc_distance(prev_point, next_point):
 def smooth_central_line(center_line, max_offset, pp=0.10, p=0.05, c=0.70, n=0.05, nn=0.10, iterations=72, skip_step=1):
     if max_offset < 0.0001:
         return center_line
+    if skip_step < 1:
+        skip_step = 1
     smoothed_line = center_line
     for i in range(0, iterations):
         smoothed_line = smooth_central_line_internal(center_line, max_offset, smoothed_line, pp, p, c, n, nn, skip_step)
@@ -75,8 +77,8 @@ def smooth_central_line_internal(center_line, max_offset, smoothed_line, pp, p, 
         new_line[i][0] = pp * wpp[0] + p * wp[0] + c * wc[0] + n * wn[0] + nn * wnn[0]
         new_line[i][1] = pp * wpp[1] + p * wp[1] + c * wc[1] + n * wn[1] + nn * wnn[1]
         while calc_distance(new_line[i], center_line[i]) >= max_offset:
-            new_line[i][0] = (0.98 * new_line[i][0]) + (0.02 * center_line[i][0])
-            new_line[i][1] = (0.98 * new_line[i][1]) + (0.02 * center_line[i][1])
+            new_line[i][0] = (0.99 * new_line[i][0]) + (0.01 * center_line[i][0])
+            new_line[i][1] = (0.99 * new_line[i][1]) + (0.01 * center_line[i][1])
     return new_line
 
 

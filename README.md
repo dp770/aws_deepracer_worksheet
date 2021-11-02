@@ -35,10 +35,11 @@ This algorithm does not search for an optimal arc of corners to race at the maxi
 | Po-Chun Super Speedway | ![](tracks/Po-Chun_Super_Speedway.png) | ![](tracks/Po-Chun_Super_Speedway_v1.png) | ![](tracks/Po-Chun_Super_Speedway_v2.png) |
 | Baadal Track           | ![](tracks/Baadal_Track.png)           | ![](tracks/Baadal_Track_v1.png)           | ![](tracks/Baadal_Track_v2.png)           |
 
+Full list of available tracks' data can be checked here: <https://github.com/dp770/aws_deepracer_worksheet/tree/main/tracks>.
 
 ## Reward Function
 
-Rewards calculation is based on a number of conditional points, which are all configurable. Sum of all conditional
+Rewards calculation is based on a number of conditional points, which are all configurabTHatle. Sum of all conditional
 points contributes to the final score. Conditional points also have sensitivity parameter to control rewards curve. 
 
 #### The points are:
