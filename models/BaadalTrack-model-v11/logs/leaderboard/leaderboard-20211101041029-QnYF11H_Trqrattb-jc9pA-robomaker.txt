@@ -1,0 +1,1346 @@
+[s3] Successfully downloaded yaml file from s3 key data-bf2623f9-3113-4f98-98e7-f406ae1ec22c/models/e480b373-8b2b-468d-9d96-946b87dc4fc2/sagemaker-robomaker-artifacts/eval_params_2cf3c661-e14a-412c-97c7-7e37d9a54317.yaml to local ./custom_files/eval_params_2cf3c661-e14a-412c-97c7-7e37d9a54317.yaml.
+{'METRICS_S3_BUCKET': ['aws-deepracer-data-us-east-1-1'], 'METRICS_S3_OBJECT_KEY': ['leaderboard/private/acct-424669432633/02ab026e-cc20-4945-9adb-d0a8957f7519/metrics/evaluation-20211101040510-QnYF11H_Trqrattb-jc9pA.json'], 'RACER_NAME': 'JPMC-Manhattan-#1', 'LEADERBOARD_TYPE': 'COMMUNITY', 'JOB_TYPE': 'EVALUATION', 'VIDEO_JOB_TYPE': 'RACING', 'LEADERBOARD_NAME': 'Baadal Race', 'RACE_TYPE': 'TIME_TRIAL', 'WORLD_NAME': 'AmericasGeneratedInclStart', 'MP4_S3_OBJECT_PREFIX': 'leaderboard/private/acct-424669432633/02ab026e-cc20-4945-9adb-d0a8957f7519/videos/evaluation-20211101040510-QnYF11H_Trqrattb-jc9pA', 'MODEL_S3_PREFIX': ['data-bf2623f9-3113-4f98-98e7-f406ae1ec22c/models/e480b373-8b2b-468d-9d96-946b87dc4fc2/sagemaker-robomaker-artifacts'], 'MODEL_NAME': 'JPMC-Manhattan-1-v11', 'BODY_SHELL_TYPE': ['deepracer'], 'S3_KMS_CMK_ARN': 'arn:aws:kms:us-east-1:372026249783:key/85febbbd-eabb-4c9e-b761-c4f5131f384a', 'NUMBER_OF_TRIALS': '3', 'MODEL_S3_BUCKET': ['aws-deepracer-data-us-east-1-1'], 'AWS_REGION': 'us-east-1', 'MP4_S3_BUCKET': 'aws-deepracer-data-us-east-1-1', 'KINESIS_VIDEO_STREAM_NAME': 'dr-kvs-372026249783-20211101040510-b14ff8b5-61d8-41d1-8814-d784c4e8da91', 'SIMTRACE_S3_BUCKET': 'aws-deepracer-data-us-east-1-1', 'SIMTRACE_S3_PREFIX': 'leaderboard/private/acct-424669432633/02ab026e-cc20-4945-9adb-d0a8957f7519/sim-trace/evaluation-20211101040510-QnYF11H_Trqrattb-jc9pA', 'NUMBER_OF_RESETS': '10000', 'ROBOMAKER_SIMULATION_JOB_ACCOUNT_ID': '372026249783', 'IS_CONTINUOUS': 'true', 'CAR_COLOR': ['Black'], 'OFF_TRACK_PENALTY': '3.00', 'MODEL_METADATA_FILE_S3_KEY': ['data-bf2623f9-3113-4f98-98e7-f406ae1ec22c/models/e480b373-8b2b-468d-9d96-946b87dc4fc2/sagemaker-robomaker-artifacts/model/model_metadata.json']}
+[s3] Successfully downloaded model metadata                  from s3 key data-bf2623f9-3113-4f98-98e7-f406ae1ec22c/models/e480b373-8b2b-468d-9d96-946b87dc4fc2/sagemaker-robomaker-artifacts/model/model_metadata.json to local ./custom_files/racecar/model_metadata.json.
+Sensor list [u'FRONT_FACING_CAMERA'], network DEEP_CONVOLUTIONAL_NETWORK_SHALLOW, simapp_version 4.0, training_algorithm clipped_ppo, action_space_type discrete lidar_config {'num_values_per_sector': 8, 'clipping_dist': 2.0, 'num_sectors': 8}
+xacro: in-order processing became default in ROS Melodic. You can drop the option.
+... logging to /home/robomaker/.ros/log/1513a4a0-3ac9-11ec-8f6c-0242a9fe0102/roslaunch-036d208c45d6-282.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/robomaker/workspace/applications/simulation-application/bundle/opt/install/deepracer_simulation_environment/share/deepracer_simulation_environment/launch/evaluation_rl_agent.launch
+started roslaunch server http://169.254.1.2:37063/
+SUMMARY
+========
+PARAMETERS
+ * /AWS_REGION: us-east-1
+ * /BODY_SHELL_TYPE: ['deepracer']
+ * /IS_CONTINUOUS: true
+ * /JOB_TYPE: EVALUATION
+ * /KINESIS_VIDEO_STREAM_NAME: dr-kvs-3720262497...
+ * /LEADERBOARD_NAME: Baadal Race
+ * /LEADERBOARD_TYPE: COMMUNITY
+ * /METRICS_S3_BUCKET: aws-deepracer-dat...
+ * /METRICS_S3_OBJECT_KEY: leaderboard/priva...
+ * /MODEL_NAME: JPMC-Manhattan-1-v11
+ * /MODEL_S3_BUCKET: aws-deepracer-dat...
+ * /MODEL_S3_PREFIX: data-bf2623f9-311...
+ * /MP4_S3_BUCKET: aws-deepracer-dat...
+ * /MP4_S3_OBJECT_PREFIX: leaderboard/priva...
+ * /NUMBER_OF_RESETS: 10000
+ * /NUMBER_OF_TRIALS: 3
+ * /OFF_TRACK_PENALTY: 3.00
+ * /RACER_NAME: JPMC-Manhattan-#1
+ * /RACE_TYPE: TIME_TRIAL
+ * /ROBOMAKER_SIMULATION_JOB_ACCOUNT_ID: 372026249783
+ * /S3_KMS_CMK_ARN: arn:aws:kms:us-ea...
+ * /SIMTRACE_S3_BUCKET: aws-deepracer-dat...
+ * /SIMTRACE_S3_PREFIX: leaderboard/priva...
+ * /VIDEO_JOB_TYPE: RACING
+ * /WORLD_NAME: AmericasGenerated...
+ * /racecar/joint_state_controller/publish_rate: 60
+ * /racecar/joint_state_controller/type: joint_state_contr...
+ * /racecar/left_front_wheel_velocity_controller/joint: left_front_wheel_...
+ * /racecar/left_front_wheel_velocity_controller/pid/d: 0.0
+ * /racecar/left_front_wheel_velocity_controller/pid/i: 0.0
+ * /racecar/left_front_wheel_velocity_controller/pid/i_clamp: 0.0
+ * /racecar/left_front_wheel_velocity_controller/pid/p: 0.5
+ * /racecar/left_front_wheel_velocity_controller/type: effort_controller...
+ * /racecar/left_rear_wheel_velocity_controller/joint: left_rear_wheel_j...
+ * /racecar/left_rear_wheel_velocity_controller/pid/d: 0.0
+ * /racecar/left_rear_wheel_velocity_controller/pid/i: 0.0
+ * /racecar/left_rear_wheel_velocity_controller/pid/i_clamp: 0.0
+ * /racecar/left_rear_wheel_velocity_controller/pid/p: 1.0
+ * /racecar/left_rear_wheel_velocity_controller/type: effort_controller...
+ * /racecar/left_steering_hinge_position_controller/joint: left_steering_hin...
+ * /racecar/left_steering_hinge_position_controller/pid/d: 0.5
+ * /racecar/left_steering_hinge_position_controller/pid/i: 0.0
+ * /racecar/left_steering_hinge_position_controller/pid/p: 1.0
+ * /racecar/left_steering_hinge_position_controller/type: effort_controller...
+ * /racecar/right_front_wheel_velocity_controller/joint: right_front_wheel...
+ * /racecar/right_front_wheel_velocity_controller/pid/d: 0.0
+ * /racecar/right_front_wheel_velocity_controller/pid/i: 0.0
+ * /racecar/right_front_wheel_velocity_controller/pid/i_clamp: 0.0
+ * /racecar/right_front_wheel_velocity_controller/pid/p: 0.5
+ * /racecar/right_front_wheel_velocity_controller/type: effort_controller...
+ * /racecar/right_rear_wheel_velocity_controller/joint: right_rear_wheel_...
+ * /racecar/right_rear_wheel_velocity_controller/pid/d: 0.0
+ * /racecar/right_rear_wheel_velocity_controller/pid/i: 0.0
+ * /racecar/right_rear_wheel_velocity_controller/pid/i_clamp: 0.0
+ * /racecar/right_rear_wheel_velocity_controller/pid/p: 1.0
+ * /racecar/right_rear_wheel_velocity_controller/type: effort_controller...
+ * /racecar/right_steering_hinge_position_controller/joint: right_steering_hi...
+ * /racecar/right_steering_hinge_position_controller/pid/d: 0.5
+ * /racecar/right_steering_hinge_position_controller/pid/i: 0.0
+ * /racecar/right_steering_hinge_position_controller/pid/p: 1.0
+ * /racecar/right_steering_hinge_position_controller/type: effort_controller...
+ * /racecar/robot_description: <?xml version="1....
+ * /rosdistro: melodic
+ * /rosversion: 1.14.12
+ * /use_sim_time: True
+NODES
+  /
+    agent (deepracer_simulation_environment/run_evaluation_rl_agent.sh)
+    agents_video_editor (deepracer_s+ export PYTHONUNBUFFERED=1
++ PYTHONUNBUFFERED=1
++ python3 -m markov.evaluation_worker
++ '[' '' == true ']'
++ /opt/amazon/RoboMakerGazebo/bin/gzserver -s librobomaker_gazebo_metrics_plugin.so -e ode /home/robomaker/workspace/applications/simulation-application/bundle/opt/install/deepracer_simulation_environment/share/deepracer_simulation_environment/worlds/AmericasGeneratedInclStart.world -s libdeepracer_gazebo_system_plugin.so -s /home/robomaker/workspace/applications/simulation-application/bundle/opt/ros/melodic/lib/libgazebo_ros_paths_plugin.so -s /home/robomaker/workspace/applications/simulation-application/bundle/opt/ros/melodic/lib/libgazebo_ros_api_plugin.so __name:=gazebo __log:=/home/robomaker/.ros/log/1513a4a0-3ac9-11ec-8f6c-0242a9fe0102/gazebo-4.log
+the rosdep view is empty: call 'sudo rosdep init' and 'rosdep update'
+Publishing to KVS stream is enabled: False
+[ERROR] [1635739596.784101582]: GetModelStates: model [racecar] does not exist
+[INFO] [1635739594.596963, 0.000000]: Loading model XML from ros parameter /racecar/robot_description
+[INFO] [1635739594.603265, 0.000000]: Waiting for service /gazebo/spawn_urdf_model
+[INFO] [1635739597.013210, 0.205000]: Calling service /gazebo/spawn_urdf_model
+[INFO] [1635739597.187992, 0.324000]: Spawn status: SpawnModel: Successfully spawned entity
+[CameraManager]: Added <markov.cameras.handlers.follow_car_camera.FollowCarCamera object at 0x7f4528836910> to camera_namespaces racecar
+[CameraManager]: Added <markov.cameras.handlers.top_camera.TopCamera object at 0x7f4528836890> to camera_namespaces racecar
+[CameraManager]: Removed <markov.cameras.handlers.follow_car_camera.FollowCarCamera object at 0x7f4528836910> from camera_namespaces racecar
+[CameraManager]: Removed <markov.cameras.handlers.top_camera.TopCamera object at 0x7f4528836890> from camera_namespaces racecar
+S3 bucket: aws-deepracer-data-us-east-1-1 
+ S3 prefix: data-bf2623f9-3113-4f98-98e7-f406ae1ec22c/models/e480b373-8b2b-468d-9d96-946b87dc4fc2/sagemaker-robomaker-artifacts
+[CameraManager]: Added <markov.cameras.handlers.follow_car_camera.FollowCarCamera object at 0x7f3e8dce6198> to camera_namespaces racecar
+[CameraManager]: Added <markov.cameras.handlers.top_camera.TopCamera object at 0x7f3e71a37be0> to camera_namespaces racecar
+[s3] Successfully downloaded model metadata                  from s3 key data-bf2623f9-3113-4f98-98e7-f406ae1ec22c/models/e480b373-8b2b-468d-9d96-946b87dc4fc2/sagemaker-robomaker-artifacts/model/model_metadata.json to local ./custom_files/agent/model_metadata.json.
+Sensor list ['FRONT_FACING_CAMERA'], network DEEP_CONVOLUTIONAL_NETWORK_SHALLOW, simapp_version 4.0, training_algorithm clipped_ppo, action_space_type discrete lidar_config {'num_sectors': 8, 'num_values_per_sector': 8, 'clipping_dist': 2.0}
+[s3] Successfully downloaded deepracer checkpoint json from                  s3 key data-bf2623f9-3113-4f98-98e7-f406ae1ec22c/models/e480b373-8b2b-468d-9d96-946b87dc4fc2/sagemaker-robomaker-artifacts/model/deepracer_checkpoints.json to local checkpoint/agent/deepracer_checkpoints.json.
+[s3] Successfully uploaded temp coach checkpoint to                   s3 bucket aws-deepracer-data-us-east-1-1 with s3 key data-bf2623f9-3113-4f98-98e7-f406ae1ec22c/models/e480b373-8b2b-468d-9d96-946b87dc4fc2/sagemaker-robomaker-artifacts/model/.coach_checkpoint.
+Action space from file: [{'steering_angle': -30, 'speed': 2.2, 'index': 0}, {'steering_angle': -24, 'speed': 2.6, 'index': 1}, {'steering_angle': -18, 'speed': 3, 'index': 2}, {'steering_angle': -12, 'speed': 3.3, 'index': 3}, {'steering_angle': -6, 'speed': 3.7, 'index': 4}, {'steering_angle': 0, 'speed': 4, 'index': 5}, {'steering_angle': 0, 'speed': 3.6, 'index': 6}, {'steering_angle': 0, 'speed': 3.2, 'index': 7}, {'steering_angle': 0, 'speed': 2.8, 'index': 8}, {'steering_angle': 5, 'speed': 3.8, 'index': 9}, {'steering_angle': 10, 'speed': 3.5, 'index': 10}, {'steering_angle': 15, 'speed': 3.2, 'index': 11}, {'steering_angle': 20, 'speed': 2.9, 'index': 12}, {'steering_angle': 25, 'speed': 2.5, 'index': 13}, {'steering_angle': 30, 'speed': 2.1, 'index': 14}]
+Using the following hyper-parameters
+{
+  "batch_size": 64,
+  "beta_entropy": 0.01,
+  "discount_factor": 0.999,
+  "e_greedy_value": 0.05,
+  "epsilon_steps": 10000,
+  "exploration_type": "categorical",
+  "loss_type": "mean squared error",
+  "lr": 0.0003,
+  "num_episodes_between_training": 20,
+  "num_epochs": 10,
+  "stack_size": 1,
+  "term_cond_avg_score": 100000.0,
+  "term_cond_max_episodes": 100000
+}
+Pausing physics after initializing the cars
+[ INFO] [1635739595.786507648]: DeepRacerGazeboSystemPlugin: Load
+[ INFO] [1635739595.787220446]: DeepRacerGazeboSystemPlugin: Finished loading.
+[ INFO] [1635739595.795879807]: Finished loading Gazebo ROS API Plugin.
+[ INFO] [1635739595.797714307]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...
+[ INFO] [1635739596.759541647]: DeepRacerGazeboSystemPlugin: Init Complete
+[ INFO] [1635739596.782830602]: waitForService: Service [/gazebo/set_physics_properties] is now available.
+[ INFO] [1635739596.815422500, 0.012000000]: Physics dynamic reconfigure ready.
+[ INFO] [1635739598.264027773, 0.324000000]: Camera Plugin: Using the 'robotNamespace' param: '/racecar/'
+[ INFO] [1635739598.266728880, 0.324000000]: Camera Plugin (ns = /racecar/)  <tf_prefix_>, set to "/racecar"
+[ INFO] [1635739598.349935269, 0.324000000]: Loading gazebo_ros_control plugin
+[ INFO] [1635739598.350002841, 0.324000000]: Starting gazebo_ros_control plugin in namespace: /racecar
+[ INFO] [1635739598.351050357, 0.324000000]: gazebo_ros_control plugin is waiting for model URDF in parameter [/racecar/robot_description] on the ROS param server.
+[ INFO] [1635739598.466746791, 0.324000000]: Loaded gazebo_ros_control.
+Topic [AmericasGeneratedInclStart//racecar/main_camera/camera_link/camera_sensor/image] is not valid.
+Spawning sub camera model
+[ INFO] [1635739600.292549034, 2.066000000]: Camera Plugin: Using the 'robotNamespace' param: '/racecar/main_camera'
+[ INFO] [1635739600.294598813, 2.066000000]: Camera Plugin (ns = /racecar/main_camera)  <tf_prefix_>, set to "/racecar/main_camera"
+Warning [parser.cc:950] XML Element[projection_type], child of element[camera] not defined in SDF. Ignoring[projection_type]. You may have an incorrect SDF file, or an sdformat version that doesn't support this element.
+Topic [AmericasGeneratedInclStart//sub_camera/camera_link/camera_sensor/image] is not valid.
+[s3] Successfully downloaded 1345_Step-0.ckpt.data-00000-of-00001 from                  s3 key data-bf2623f9-3113-4f98-98e7-f406ae1ec22c/models/e480b373-8b2b-468d-9d96-946b87dc4fc2/sagemaker-robomaker-artifacts/model/1345_Step-0.ckpt.data-00000-of-00001 to local checkpoint/agent/1345_Step-0.ckpt.data-00000-of-00001.
+[s3] Successfully downloaded 1345_Step-0.ckpt.index from                  s3 key data-bf2623f9-3113-4f98-98e7-f406ae1ec22c/models/e480b373-8b2b-468d-9d96-946b87dc4fc2/sagemaker-robomaker-artifacts/model/1345_Step-0.ckpt.index to local checkpoint/agent/1345_Step-0.ckpt.index.
+[s3] Successfully downloaded 1345_Step-0.ckpt.meta from                  s3 key data-bf2623f9-3113-4f98-98e7-f406ae1ec22c/models/e480b373-8b2b-468d-9d96-946b87dc4fc2/sagemaker-robomaker-artifacts/model/1345_Step-0.ckpt.meta to local checkpoint/agent/1345_Step-0.ckpt.meta.
+[s3] Successfully downloaded .ready from                  s3 key data-bf2623f9-3113-4f98-98e7-f406ae1ec22c/models/e480b373-8b2b-468d-9d96-946b87dc4fc2/sagemaker-robomaker-artifacts/model/.ready to local checkpoint/agent/.ready.
+Renaming checkpoint from checkpoint_dir: checkpoint/agent for agent: agent
+2021-11-01 04:06:41.733354: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+Saving updated checkpoint to ./renamed_checkpoint/1345_Step-0.ckpt
+Exception when checking for DEEPRACER_JOB_TYPE_ENV None is not a valid DeepRacerJobType
+Creating graph - name: MultiAgentGraphManager
+Start physics before creating graph
+Create graph
+Creating agent - name: agent
+[RL] Created agent loggers
+[RL] Dynamic import of memory:  "DeepRacerMemoryParameters" {
+    "load_memory_from_file_path": null,
+    "max_size": [
+        "<MemoryGranularity.Transitions: 0>",
+        1000000
+    ],
+    "n_step": -1,
+    "shared_memory": false,
+    "train_to_eval_ratio": 1
+}
+[RL] Dynamically imported of memory <markov.memories.deepracer_memory.DeepRacerMemory object at 0x7f3e495216a0>
+[RL] Setting devices
+[RL] Setting filters
+[RL] Setting filter devices: numpy
+[RL] Setting Phase
+[RL] After setting Phase
+[RL] Setting signals
+[RL] Agent init successful
+[RL] ActorCriticAgent init
+[RL] ActorCriticAgent  init successful
+Created agent: agent
+Stop physics after creating graph
+Creating session
+Checkpoint - Restoring from path: ./checkpoint/agent/1345_Step-0.ckpt 
+Graph manager successfully created the graph: Unpausing physics
+agent: Starting evaluation phase
+Reset agent
+Reset agent finished
+SIM_TRACE_LOG:0,1,-5.7505,3.8519,-130.2072,25.00,2.50,13,0.0000,False,True,0.3586,1,39.07,5.809,prepare,0.00
+SIM_TRACE_LOG:0,2,-5.7504,3.8520,-130.2102,25.00,2.50,13,1.0000,False,True,0.3583,1,39.07,5.871,in_progress,0.00
+SIM_TRACE_LOG:0,3,-5.7578,3.8459,-130.6673,0.00,2.80,8,1.0000,False,True,0.3825,1,39.07,5.945,in_progress,0.00
+SIM_TRACE_LOG:0,4,-5.7729,3.8251,-130.2283,0.00,3.60,6,1.0000,False,True,0.4481,1,39.07,6.009,in_progress,0.00
+SIM_TRACE_LOG:0,5,-5.7976,3.7934,-129.8350,15.00,3.20,11,1.0000,False,True,0.5507,1,39.07,6.081,in_progress,0.00
+SIM_TRACE_LOG:0,6,-5.8324,3.7412,-128.2446,0.00,3.60,6,1.0000,False,True,0.7104,2,39.07,6.143,in_progress,0.00
+SIM_TRACE_LOG:0,7,-5.8707,3.6763,-125.9929,0.00,2.80,8,1.0000,False,True,0.9010,2,39.07,6.208,in_progress,0.00
+SIM_TRACE_LOG:0,8,-5.9163,3.5992,-124.1566,0.00,2.80,8,1.0000,False,True,1.1271,3,39.07,6.279,in_progress,0.00
+SIM_TRACE_LOG:0,9,-5.9704,3.5035,-122.3249,0.00,2.80,8,1.0000,False,True,1.4047,4,39.07,6.346,in_progress,0.00
+SIM_TRACE_LOG:0,10,-6.0265,3.3978,-120.4432,0.00,2.80,8,1.0000,False,True,1.7060,4,39.07,6.409,in_progress,0.00
+SIM_TRACE_LOG:0,11,-6.0859,3.2820,-118.9388,0.00,2.80,8,1.0000,False,True,2.0338,5,39.07,6.476,in_progress,0.00
+SIM_TRACE_LOG:0,12,-6.1543,3.1436,-117.5425,0.00,2.80,8,0.5000,False,True,2.4227,6,39.07,6.541,in_progress,0.00
+SIM_TRACE_LOG:0,13,-6.2234,2.9962,-116.2203,-24.00,2.60,1,0.5000,False,True,2.8330,7,39.07,6.612,in_progress,0.00
+SIM_TRACE_LOG:0,14,-6.2980,2.8438,-116.2008,0.00,2.80,8,0.5000,False,True,3.2651,8,39.07,6.677,in_progress,0.00
+SIM_TRACE_LOG:0,15,-6.3814,2.6824,-116.9329,0.00,2.80,8,0.5000,False,True,3.7331,10,39.07,6.748,in_progress,0.00
+SIM_TRACE_LOG:0,16,-6.4669,2.5186,-117.3434,0.00,2.80,8,0.5000,False,True,4.2134,11,39.07,6.8100000000000005,in_progress,0.00
+SIM_TRACE_LOG:0,17,-6.5428,2.3679,-116.9888,25.00,2.50,13,0.1000,False,True,4.6774,12,39.07,6.877,in_progress,0.00
+SIM_TRACE_LOG:0,18,-6.6176,2.2049,-115.4643,25.00,2.50,13,0.1000,False,True,5.1588,13,39.07,6.939,in_progress,0.00
+SIM_TRACE_LOG:0,19,-6.6796,2.0377,-112.3720,25.00,2.50,13,0.1000,False,True,5.6432,15,39.07,7.009,in_progress,0.00
+SIM_TRACE_LOG:0,20,-6.7264,1.8718,-108.4219,30.00,2.10,14,0.1000,False,True,6.1193,16,39.07,7.078,in_progress,0.00
+SIM_TRACE_LOG:0,21,-6.7601,1.7055,-104.2799,30.00,2.10,14,0.1000,False,True,6.6631,17,39.07,7.144,in_progress,0.00
+SIM_TRACE_LOG:0,22,-6.7799,1.5471,-100.3771,30.00,2.10,14,0.1000,False,True,7.1425,19,39.07,7.21,in_progress,0.00
+SIM_TRACE_LOG:0,23,-6.7895,1.3985,-96.9701,0.00,2.80,8,0.1000,False,True,7.6084,20,39.07,7.272,in_progress,0.00
+SIM_TRACE_LOG:0,24,-6.7860,1.2423,-92.3842,0.00,2.80,8,0.1000,False,True,8.2087,21,39.07,7.336,in_progress,0.00
+SIM_TRACE_LOG:0,25,-6.7643,1.0734,-86.6931,0.00,4.00,5,0.1000,False,True,8.7517,23,39.07,7.408,in_progress,0.00
+SIM_TRACE_LOG:0,26,-6.7292,0.9027,-81.5728,-6.00,3.70,4,0.1000,False,False,9.4087,24,39.07,7.479,in_progress,0.00
+SIM_TRACE_LOG:0,27,-6.6681,0.7140,-74.4985,-6.00,3.70,4,0.1000,False,False,10.1055,26,39.07,7.542,in_progress,0.00
+SIM_TRACE_LOG:0,28,-6.5905,0.5312,-66.6194,25.00,2.50,13,0.1000,False,True,10.6959,28,39.07,7.602,in_progress,0.00
+SIM_TRACE_LOG:0,29,-6.5015,0.3507,-59.4640,25.00,2.50,13,0.1000,False,True,11.3518,30,39.07,7.667,in_progress,0.00
+SIM_TRACE_LOG:0,30,-6.4187,0.2000,-54.0241,30.00,2.10,14,0.1000,False,True,11.8427,31,39.07,7.74,in_progress,0.00
+SIM_TRACE_LOG:0,31,-6.3192,0.0355,-48.8881,20.00,2.90,12,0.1000,False,True,12.4145,32,39.07,7.8100000000000005,in_progress,0.00
+SIM_TRACE_LOG:0,32,-6.2192,-0.1118,-46.1805,20.00,2.90,12,0.5000,False,True,12.8839,33,39.07,7.873,in_progress,0.00
+SIM_TRACE_LOG:0,33,-6.1006,-0.2561,-43.6986,25.00,2.50,13,0.5000,False,True,13.3689,35,39.07,7.906,in_progress,0.00
+SIM_TRACE_LOG:0,34,-5.8514,-0.4994,-39.9717,25.00,2.50,13,1.0000,False,True,14.2673,37,39.07,8.019,in_progress,0.00
+SIM_TRACE_LOG:0,35,-5.8390,-0.5098,-39.7938,20.00,2.90,12,1.0000,False,True,14.3073,37,39.07,8.072,in_progress,0.00
+SIM_TRACE_LOG:0,36,-5.7021,-0.6140,-37.5569,30.00,2.10,14,1.0000,False,True,14.7402,38,39.07,8.143,in_progress,0.00
+SIM_TRACE_LOG:0,37,-5.5451,-0.7141,-34.3479,0.00,2.80,8,1.0000,False,True,15.2116,40,39.07,8.209,in_progress,0.00
+SIM_TRACE_LOG:0,38,-5.3917,-0.7954,-30.4085,0.00,4.00,5,1.0000,False,True,15.6551,41,39.07,8.275,in_progress,0.00
+SIM_TRACE_LOG:0,39,-5.2241,-0.8672,-25.6860,30.00,2.10,14,1.0000,False,True,16.1215,42,39.07,8.346,in_progress,0.00
+SIM_TRACE_LOG:0,40,-5.0379,-0.9254,-18.7984,0.00,2.80,8,1.0000,False,True,16.6198,43,39.07,8.412,in_progress,0.00
+SIM_TRACE_LOG:0,41,-4.8646,-0.9658,-12.8613,30.00,2.10,14,1.0000,False,True,17.0737,44,39.07,8.475,in_progress,0.00
+SIM_TRACE_LOG:0,42,-4.6927,-0.9924,-7.1914,0.00,2.80,8,1.0000,False,True,17.5187,46,39.07,8.541,in_progress,0.00
+SIM_TRACE_LOG:0,43,-4.5136,-1.0051,-1.4837,0.00,4.00,5,0.5000,False,True,17.9805,47,39.07,8.606,in_progress,0.00
+SIM_TRACE_LOG:0,44,-4.3489,-1.0006,3.9854,0.00,3.20,7,0.5000,False,True,18.4102,48,39.07,8.675,in_progress,0.00
+SIM_TRACE_LOG:0,45,-4.1562,-0.9801,9.3751,0.00,2.80,8,0.5000,False,True,18.9643,49,39.07,8.744,in_progress,0.00
+SIM_TRACE_LOG:0,46,-3.9603,-0.9464,13.2692,0.00,2.80,8,0.5000,False,True,19.5186,51,39.07,8.82,in_progress,0.00
+SIM_TRACE_LOG:0,47,-3.7688,-0.9004,16.5232,0.00,2.80,8,0.5000,False,True,20.1435,52,39.07,8.864,in_progress,0.00
+SIM_TRACE_LOG:0,48,-3.6321,-0.8613,17.5376,-18.00,3.00,2,0.5000,False,True,20.5646,53,39.07,8.94,in_progress,0.00
+SIM_TRACE_LOG:0,49,-3.4124,-0.7860,18.6668,-18.00,3.00,2,0.5000,False,True,21.2310,56,39.07,9.001,in_progress,0.00
+SIM_TRACE_LOG:0,50,-3.1895,-0.7028,19.9831,-18.00,3.00,2,0.5000,False,True,21.8448,58,39.07,9.066,in_progress,0.00
+SIM_TRACE_LOG:0,51,-3.0389,-0.6507,19.4536,-30.00,2.20,0,1.0000,False,True,22.2455,59,39.07,9.158,in_progress,0.00
+SIM_TRACE_LOG:0,52,-2.8023,-0.5834,16.7422,-30.00,2.20,0,1.0000,False,True,22.8395,60,39.07,9.192,in_progress,0.00
+SIM_TRACE_LOG:0,53,-2.2477,-0.5075,6.3814,-30.00,2.20,0,0.5000,False,True,24.3175,64,39.07,9.234,in_progress,0.00
+SIM_TRACE_LOG:0,54,-2.2246,-0.5071,5.8440,-30.00,2.20,0,0.5000,False,True,24.3752,64,39.07,9.477,in_progress,0.00
+SIM_TRACE_LOG:0,55,-2.0182,-0.5122,1.1491,-12.00,3.30,3,0.5000,False,True,25.0449,66,39.07,9.541,in_progress,0.00
+SIM_TRACE_LOG:0,56,-1.8615,-0.5307,-3.3228,-24.00,2.60,1,0.5000,False,True,25.5323,67,39.07,9.606,in_progress,0.00
+SIM_TRACE_LOG:0,57,-1.6987,-0.5687,-9.4229,0.00,2.80,8,0.5000,False,True,26.0640,69,39.07,9.659,in_progress,0.00
+SIM_TRACE_LOG:0,58,-1.5590,-0.6124,-14.2559,-30.00,2.20,0,0.5000,False,True,26.6242,70,39.07,9.747,in_progress,0.00
+SIM_TRACE_LOG:0,59,-1.3714,-0.6860,-19.5809,-24.00,2.60,1,0.5000,False,True,27.1674,72,39.07,9.806000000000001,in_progress,0.00
+SIM_TRACE_LOG:0,60,-1.2251,-0.7543,-22.6855,-12.00,3.30,3,1.0000,False,True,27.5794,73,39.07,9.881,in_progress,0.00
+SIM_TRACE_LOG:0,61,-1.0561,-0.8535,-27.7923,0.00,2.80,8,1.0000,False,True,28.0653,74,39.07,9.927,in_progress,0.00
+SIM_TRACE_LOG:0,62,-0.9269,-0.9413,-31.6859,25.00,2.50,13,1.0000,False,True,28.4521,75,39.07,10.018,in_progress,0.00
+SIM_TRACE_LOG:0,63,-0.7582,-1.0743,-36.4386,25.00,2.50,13,1.0000,False,True,28.9920,76,39.07,10.075,in_progress,0.00
+SIM_TRACE_LOG:0,64,-0.6273,-1.1802,-37.7830,25.00,2.50,13,1.0000,False,True,29.4205,77,39.07,10.146,in_progress,0.00
+SIM_TRACE_LOG:0,65,-0.4990,-1.2762,-37.2424,30.00,2.10,14,1.0000,False,True,29.8328,79,39.07,10.214,in_progress,0.00
+SIM_TRACE_LOG:0,66,-0.3626,-1.3656,-34.9655,20.00,2.90,12,0.5000,False,True,30.2590,80,39.07,10.271,in_progress,0.00
+SIM_TRACE_LOG:0,67,-0.2224,-1.4418,-31.4134,25.00,2.50,13,0.5000,False,True,30.6854,81,39.07,10.347,in_progress,0.00
+SIM_TRACE_LOG:0,68,-0.0640,-1.5145,-27.3699,25.00,2.50,13,0.5000,False,True,31.2123,82,39.07,10.411,in_progress,0.00
+SIM_TRACE_LOG:0,69,0.0972,-1.5773,-23.9036,25.00,2.50,13,0.5000,False,True,31.7074,83,39.07,10.472,in_progress,0.00
+SIM_TRACE_LOG:0,70,0.2602,-1.6312,-20.7740,20.00,2.90,12,0.5000,False,True,32.1962,85,39.07,10.54,in_progress,0.00
+SIM_TRACE_LOG:0,71,0.4274,-1.6737,-16.9659,0.00,2.80,8,0.5000,False,True,32.6751,86,39.07,10.608,in_progress,0.00
+SIM_TRACE_LOG:0,72,0.6143,-1.7056,-12.3377,0.00,2.80,8,0.5000,False,True,33.1997,87,39.07,10.68,in_progress,0.00
+SIM_TRACE_LOG:0,73,0.8006,-1.7243,-7.7637,0.00,3.20,7,0.5000,False,True,33.6881,89,39.07,10.743,in_progress,0.00
+SIM_TRACE_LOG:0,74,0.9977,-1.7324,-4.1304,-12.00,3.30,3,0.5000,False,True,34.1974,90,39.07,10.814,in_progress,0.00
+SIM_TRACE_LOG:0,75,1.2085,-1.7298,-0.7611,-12.00,3.30,3,0.5000,False,True,34.7401,91,39.07,10.857,in_progress,0.00
+SIM_TRACE_LOG:0,76,1.3883,-1.7229,0.9783,-24.00,2.60,1,0.5000,False,True,35.1994,93,39.07,10.939,in_progress,0.00
+SIM_TRACE_LOG:0,77,1.6225,-1.7227,0.2854,-24.00,2.60,1,0.5000,False,True,35.8018,94,39.07,11.008,in_progress,0.00
+SIM_TRACE_LOG:0,78,1.8233,-1.7377,-2.6705,-12.00,3.30,3,0.5000,False,True,36.3204,95,39.07,11.069,in_progress,0.00
+SIM_TRACE_LOG:0,79,1.9985,-1.7600,-5.4661,-24.00,2.60,1,0.5000,False,True,36.7752,97,39.07,11.137,in_progress,0.00
+SIM_TRACE_LOG:0,80,2.1994,-1.7969,-8.6766,0.00,2.80,8,0.5000,False,True,37.2977,98,39.07,11.203,in_progress,0.00
+SIM_TRACE_LOG:0,81,2.3852,-1.8423,-11.8468,0.00,2.80,8,0.5000,False,True,37.7855,99,39.07,11.276,in_progress,0.00
+SIM_TRACE_LOG:0,82,2.5639,-1.8964,-14.8956,0.00,2.80,8,0.5000,False,True,38.2509,100,39.07,11.339,in_progress,0.00
+SIM_TRACE_LOG:0,83,2.7422,-1.9632,-18.3947,20.00,2.90,12,1.0000,False,True,38.7144,102,39.07,11.399000000000001,in_progress,0.00
+SIM_TRACE_LOG:0,84,2.9170,-2.0334,-20.7110,-30.00,2.20,0,1.0000,False,True,39.1671,103,39.07,11.471,in_progress,0.00
+SIM_TRACE_LOG:0,85,3.1065,-2.1138,-22.3992,25.00,2.50,13,1.0000,False,True,39.6537,104,39.07,11.533,in_progress,0.00
+SIM_TRACE_LOG:0,86,3.2520,-2.1822,-23.9019,25.00,2.50,13,0.5000,False,True,40.0244,105,39.07,11.609,in_progress,0.00
+SIM_TRACE_LOG:0,87,3.4168,-2.2565,-24.0393,25.00,2.50,13,0.5000,False,True,40.4417,106,39.07,11.681000000000001,in_progress,0.00
+SIM_TRACE_LOG:0,88,3.5840,-2.3225,-22.6076,30.00,2.10,14,0.1000,False,True,40.8619,107,39.07,11.745,in_progress,0.00
+SIM_TRACE_LOG:0,89,3.7411,-2.3743,-20.1206,30.00,2.10,14,0.1000,False,True,41.2543,108,39.07,11.806000000000001,in_progress,0.00
+SIM_TRACE_LOG:0,90,3.8944,-2.4120,-16.7242,30.00,2.10,14,0.1000,False,True,41.6355,109,39.07,11.866,in_progress,0.00
+SIM_TRACE_LOG:0,91,4.0413,-2.4406,-13.8528,30.00,2.10,14,0.1000,False,True,41.9986,110,39.07,11.942,in_progress,0.00
+SIM_TRACE_LOG:0,92,4.1906,-2.4600,-10.5105,25.00,2.50,13,0.1000,False,True,42.3666,111,39.07,11.999,in_progress,0.00
+SIM_TRACE_LOG:0,93,4.3443,-2.4655,-6.0481,25.00,2.50,13,0.1000,False,True,42.7454,112,39.07,12.073,in_progress,0.00
+SIM_TRACE_LOG:0,94,4.4991,-2.4568,-1.1625,20.00,2.90,12,0.1000,False,True,43.1273,113,39.07,12.145,in_progress,0.00
+SIM_TRACE_LOG:0,95,4.6654,-2.4335,4.0515,20.00,2.90,12,0.1000,False,True,43.5399,114,39.07,12.203,in_progress,0.00
+SIM_TRACE_LOG:0,96,4.8374,-2.3925,9.9085,25.00,2.50,13,0.1000,False,True,43.9701,115,39.07,12.261,in_progress,0.00
+SIM_TRACE_LOG:0,97,4.9837,-2.3465,14.9973,20.00,2.90,12,0.1000,False,True,44.3359,116,39.07,12.338,in_progress,0.00
+SIM_TRACE_LOG:0,98,5.1764,-2.2724,20.2917,0.00,2.80,8,0.1000,False,True,44.8299,118,39.07,12.398,in_progress,0.00
+SIM_TRACE_LOG:0,99,5.3369,-2.1925,24.7435,25.00,2.50,13,0.1000,False,True,45.2480,119,39.07,12.475,in_progress,0.00
+SIM_TRACE_LOG:0,100,5.4906,-2.1055,27.7449,0.00,2.80,8,0.5000,False,True,45.6570,120,39.07,12.542,in_progress,0.00
+SIM_TRACE_LOG:0,101,5.6479,-2.0038,30.9248,25.00,2.50,13,0.5000,False,True,46.0904,121,39.07,12.612,in_progress,0.00
+SIM_TRACE_LOG:0,102,5.7933,-1.8935,34.7071,30.00,2.10,14,1.0000,False,True,46.5100,122,39.07,12.68,in_progress,0.00
+SIM_TRACE_LOG:0,103,5.9173,-1.7877,37.8581,30.00,2.10,14,1.0000,False,True,46.8861,123,39.07,12.743,in_progress,0.00
+SIM_TRACE_LOG:0,104,6.0338,-1.6775,40.8810,25.00,2.50,13,1.0000,False,True,47.2615,124,39.07,12.808,in_progress,0.00
+SIM_TRACE_LOG:0,105,6.1409,-1.5623,44.2331,30.00,2.10,14,1.0000,False,True,47.6360,125,39.07,12.881,in_progress,0.00
+SIM_TRACE_LOG:0,106,6.2492,-1.4289,48.0742,25.00,2.50,13,0.5000,False,True,48.0541,126,39.07,12.938,in_progress,0.00
+SIM_TRACE_LOG:0,107,6.3374,-1.3042,51.6233,25.00,2.50,13,0.5000,False,True,48.4857,127,39.07,13.003,in_progress,0.00
+SIM_TRACE_LOG:0,108,6.4127,-1.1722,56.1954,25.00,2.50,13,0.5000,False,True,48.9067,128,39.07,13.073,in_progress,0.00
+SIM_TRACE_LOG:0,109,6.4880,-1.0070,61.9709,25.00,2.50,13,0.1000,False,True,49.4202,129,39.07,13.136,in_progress,0.00
+SIM_TRACE_LOG:0,110,6.5429,-0.8567,66.4411,0.00,2.80,8,0.1000,False,True,49.9009,131,39.07,13.207,in_progress,0.00
+SIM_TRACE_LOG:0,111,6.5922,-0.6803,71.5685,0.00,2.80,8,0.1000,False,True,50.5462,132,39.07,13.273,in_progress,0.00
+SIM_TRACE_LOG:0,112,6.6259,-0.5011,76.3169,0.00,2.80,8,0.1000,False,True,51.0932,134,39.07,13.346,in_progress,0.00
+SIM_TRACE_LOG:0,113,6.6481,-0.3127,80.6130,0.00,2.80,8,0.1000,False,False,51.7306,135,39.07,13.405,in_progress,0.00
+SIM_TRACE_LOG:0,114,6.6606,-0.1390,83.6675,25.00,2.50,13,0.1000,False,False,52.2408,137,39.07,13.47,in_progress,0.00
+SIM_TRACE_LOG:0,115,6.6651,0.0494,86.7628,25.00,2.50,13,0.1000,False,False,52.8470,138,39.07,13.541,in_progress,0.00
+SIM_TRACE_LOG:0,116,6.6594,0.2205,89.7058,30.00,2.10,14,0.0010,False,False,53.3490,140,39.07,13.607,in_progress,0.00
+SIM_TRACE_LOG:0,117,6.6462,0.3760,92.4632,30.00,2.10,14,0.0010,False,False,53.9026,141,39.07,13.674,in_progress,0.00
+SIM_TRACE_LOG:0,118,6.6207,0.5637,95.6907,30.00,2.10,14,0.0010,False,False,54.4853,143,39.07,13.734,in_progress,0.00
+SIM_TRACE_LOG:0,119,6.5948,0.7013,98.1084,30.00,2.10,14,0.0010,False,False,55.0934,144,39.07,13.805,in_progress,0.00
+SIM_TRACE_LOG:0,120,6.5573,0.8494,101.3430,30.00,2.10,14,0.1000,False,False,55.6259,146,39.07,13.874,in_progress,0.00
+SIM_TRACE_LOG:0,121,6.5114,0.9915,104.7677,30.00,2.10,14,0.1000,False,False,56.2788,147,39.07,13.94,in_progress,0.00
+SIM_TRACE_LOG:0,122,6.4576,1.1246,108.2987,30.00,2.10,14,0.1000,False,False,56.7491,149,39.07,14.013,in_progress,0.00
+SIM_TRACE_LOG:0,123,6.3909,1.2616,112.2516,30.00,2.10,14,0.1000,False,False,57.2178,150,39.07,14.07,in_progress,0.00
+SIM_TRACE_LOG:0,124,6.3193,1.3863,116.0732,30.00,2.10,14,0.1000,False,True,57.6444,151,39.07,14.137,in_progress,0.00
+SIM_TRACE_LOG:0,125,6.2334,1.5112,120.4297,30.00,2.10,14,0.1000,False,True,58.1334,152,39.07,14.212,in_progress,0.00
+SIM_TRACE_LOG:0,126,6.1383,1.6293,124.7791,25.00,2.50,13,0.5000,False,True,58.5316,153,39.07,14.268,in_progress,0.00
+SIM_TRACE_LOG:0,127,6.0517,1.7213,128.6853,25.00,2.50,13,0.5000,False,True,58.8218,154,39.07,14.341,in_progress,0.00
+SIM_TRACE_LOG:0,128,5.9174,1.8374,135.0034,25.00,2.50,13,1.0000,False,True,59.2841,155,39.07,14.403,in_progress,0.00
+SIM_TRACE_LOG:0,129,5.7739,1.9352,142.2373,20.00,2.90,12,1.0000,False,True,59.6874,156,39.07,14.469,in_progress,0.00
+SIM_TRACE_LOG:0,130,5.6313,2.0168,147.8745,10.00,3.50,10,1.0000,False,True,60.0478,157,39.07,14.544,in_progress,0.00
+SIM_TRACE_LOG:0,131,5.4856,2.0878,153.0811,30.00,2.10,14,0.5000,False,True,60.3861,158,39.07,14.598,in_progress,0.00
+SIM_TRACE_LOG:0,132,5.3292,2.1540,158.2907,30.00,2.10,14,0.5000,False,True,60.7611,159,39.07,14.675,in_progress,0.00
+SIM_TRACE_LOG:0,133,5.1693,2.2147,161.8328,0.00,3.20,7,0.1000,False,True,61.0837,160,39.07,14.741,in_progress,0.00
+SIM_TRACE_LOG:0,134,5.0040,2.2664,164.0171,10.00,3.50,10,0.1000,False,True,61.3985,161,39.07,14.803,in_progress,0.00
+SIM_TRACE_LOG:0,135,4.8489,2.2994,166.4649,0.00,2.80,8,0.1000,False,True,61.6876,161,39.07,14.877,in_progress,0.00
+SIM_TRACE_LOG:0,136,4.6694,2.3226,170.1398,-12.00,3.30,3,0.0010,False,False,62.0450,162,39.07,14.946,in_progress,0.00
+SIM_TRACE_LOG:0,137,4.4750,2.3356,174.1339,0.00,2.80,8,0.0010,False,False,62.4625,163,39.07,15.009,in_progress,0.00
+SIM_TRACE_LOG:0,138,4.2836,2.3333,178.3955,-24.00,2.60,1,0.0010,False,False,62.9341,165,39.07,15.075,off_track,3.00
+SIM_TRACE_LOG:0,139,4.3206,1.8565,-158.5135,0.00,2.80,8,0.0000,False,False,63.3378,166,39.07,15.219,pause,2.85
+SIM_TRACE_LOG:0,140,4.3206,1.8568,-158.5720,-24.00,2.60,1,0.0000,False,True,63.3375,166,39.07,15.281,pause,2.79
+SIM_TRACE_LOG:0,141,4.3209,1.8566,-158.5177,-24.00,2.60,1,0.0000,False,True,63.3369,166,39.07,15.345,pause,2.73
+SIM_TRACE_LOG:0,142,4.3209,1.8565,-158.4808,-24.00,2.60,1,0.0000,False,True,63.3371,166,39.07,15.414,pause,2.66
+SIM_TRACE_LOG:0,143,4.3208,1.8565,-158.5026,-24.00,2.60,1,0.0000,False,True,63.3373,166,39.07,15.482,pause,2.59
+SIM_TRACE_LOG:0,144,4.3211,1.8567,-158.5493,-24.00,2.60,1,0.0000,False,True,63.3363,166,39.07,15.53,pause,2.54
+SIM_TRACE_LOG:0,145,4.3209,1.8565,-158.4808,-24.00,2.60,1,0.0000,False,True,63.3371,166,39.07,15.663,pause,2.41
+SIM_TRACE_LOG:0,146,4.3215,1.8569,-158.5568,-24.00,2.60,1,0.0000,False,True,63.3353,166,39.07,15.681000000000001,pause,2.39
+SIM_TRACE_LOG:0,147,4.3206,1.8564,-158.4821,-24.00,2.60,1,0.0000,False,True,63.3379,166,39.07,15.747,pause,2.32
+SIM_TRACE_LOG:0,148,4.3209,1.8565,-158.4808,-24.00,2.60,1,0.0000,False,True,63.3371,166,39.07,15.814,pause,2.26
+SIM_TRACE_LOG:0,149,4.3212,1.8566,-158.4763,-24.00,2.60,1,0.0000,False,True,63.3362,166,39.07,15.877,pause,2.19
+SIM_TRACE_LOG:0,150,4.3211,1.8567,-158.5276,-24.00,2.60,1,0.0000,False,True,63.3365,166,39.07,15.944,pause,2.13
+SIM_TRACE_LOG:0,151,4.3212,1.8568,-158.5731,-24.00,2.60,1,0.0000,False,True,63.3361,166,39.07,16.009,pause,2.06
+SIM_TRACE_LOG:0,152,4.3212,1.8567,-158.5493,-24.00,2.60,1,0.0000,False,True,63.3362,166,39.07,16.078,pause,1.99
+SIM_TRACE_LOG:0,153,4.3208,1.8565,-158.4940,-24.00,2.60,1,0.0000,False,True,63.3373,166,39.07,16.151,pause,1.92
+SIM_TRACE_LOG:0,154,4.3209,1.8565,-158.4808,-24.00,2.60,1,0.0000,False,True,63.3371,166,39.07,16.204,pause,1.87
+SIM_TRACE_LOG:0,155,4.3212,1.8568,-158.5559,-24.00,2.60,1,0.0000,False,True,63.3361,166,39.07,16.278,pause,1.79
+SIM_TRACE_LOG:0,156,4.3209,1.8565,-158.4808,-24.00,2.60,1,0.0000,False,True,63.3371,166,39.07,16.346,pause,1.72
+SIM_TRACE_LOG:0,157,4.3214,1.8567,-158.4838,-24.00,2.60,1,0.0000,False,True,63.3356,166,39.07,16.414,pause,1.66
+SIM_TRACE_LOG:0,158,4.3211,1.8565,-158.4599,-24.00,2.60,1,0.0000,False,True,63.3366,166,39.07,16.473,pause,1.60
+SIM_TRACE_LOG:0,159,4.3209,1.8565,-158.4808,-24.00,2.60,1,0.0000,False,True,63.3371,166,39.07,16.546,pause,1.53
+SIM_TRACE_LOG:0,160,4.3213,1.8567,-158.5076,-24.00,2.60,1,0.0000,False,True,63.3360,166,39.07,16.616,pause,1.46
+SIM_TRACE_LOG:0,161,4.3213,1.8568,-158.5198,-24.00,2.60,1,0.0000,False,True,63.3359,166,39.07,16.675,pause,1.40
+SIM_TRACE_LOG:0,162,4.3209,1.8565,-158.4808,-24.00,2.60,1,0.0000,False,True,63.3371,166,39.07,16.733,pause,1.34
+SIM_TRACE_LOG:0,163,4.3213,1.8568,-158.5338,-24.00,2.60,1,0.0000,False,True,63.3359,166,39.07,16.804,pause,1.27
+SIM_TRACE_LOG:0,164,4.3211,1.8566,-158.5325,-24.00,2.60,1,0.0000,False,True,63.3365,166,39.07,16.874,pause,1.20
+SIM_TRACE_LOG:0,165,4.3210,1.8566,-158.5089,-24.00,2.60,1,0.0000,False,True,63.3367,166,39.07,16.938,pause,1.13
+SIM_TRACE_LOG:0,166,4.3210,1.8566,-158.5028,-24.00,2.60,1,0.0000,False,True,63.3367,166,39.07,17.017,pause,1.05
+SIM_TRACE_LOG:0,167,4.3209,1.8565,-158.4808,-24.00,2.60,1,0.0000,False,True,63.3371,166,39.07,17.069,pause,1.00
+SIM_TRACE_LOG:0,168,4.3210,1.8566,-158.5084,-24.00,2.60,1,0.0000,False,True,63.3367,166,39.07,17.143,pause,0.93
+SIM_TRACE_LOG:0,169,4.3210,1.8565,-158.4849,-24.00,2.60,1,0.0000,False,True,63.3368,166,39.07,17.202,pause,0.87
+SIM_TRACE_LOG:0,170,4.3211,1.8567,-158.5093,-24.00,2.60,1,0.0000,False,True,63.3365,166,39.07,17.278,pause,0.79
+SIM_TRACE_LOG:0,171,4.3210,1.8566,-158.5020,-24.00,2.60,1,0.0000,False,True,63.3367,166,39.07,17.346,pause,0.72
+SIM_TRACE_LOG:0,172,4.3210,1.8565,-158.4839,-24.00,2.60,1,0.0000,False,True,63.3368,166,39.07,17.413,pause,0.66
+SIM_TRACE_LOG:0,173,4.3210,1.8566,-158.4949,-24.00,2.60,1,0.0000,False,True,63.3367,166,39.07,17.472,pause,0.60
+SIM_TRACE_LOG:0,174,4.3212,1.8567,-158.5261,-24.00,2.60,1,0.0000,False,True,63.3363,166,39.07,17.545,pause,0.53
+SIM_TRACE_LOG:0,175,4.3209,1.8565,-158.4808,-24.00,2.60,1,0.0000,False,True,63.3371,166,39.07,17.618,pause,0.45
+SIM_TRACE_LOG:0,176,4.3214,1.8568,-158.5253,-24.00,2.60,1,0.0000,False,True,63.3357,166,39.07,17.673000000000002,pause,0.40
+SIM_TRACE_LOG:0,177,4.3213,1.8567,-158.5057,-24.00,2.60,1,0.0000,False,True,63.3359,166,39.07,17.747,pause,0.32
+SIM_TRACE_LOG:0,178,4.3209,1.8565,-158.4808,-24.00,2.60,1,0.0000,False,True,63.3371,166,39.07,17.814,pause,0.26
+SIM_TRACE_LOG:0,179,4.3211,1.8566,-158.4784,-24.00,2.60,1,0.0000,False,True,63.3364,166,39.07,17.883,pause,0.19
+SIM_TRACE_LOG:0,180,4.3207,1.8566,-158.5253,-24.00,2.60,1,0.0000,False,True,63.3373,166,39.07,17.94,pause,0.13
+SIM_TRACE_LOG:0,181,4.3207,1.8565,-158.5038,-24.00,2.60,1,0.0000,False,True,63.3375,166,39.07,18.008,pause,0.06
+SIM_TRACE_LOG:0,182,4.3207,1.8566,-158.5101,-24.00,2.60,1,0.0000,False,True,63.3374,166,39.07,18.083,pause,-0.01
+SIM_TRACE_LOG:0,183,4.3206,1.8565,-158.5164,-24.00,2.60,1,0.5000,False,True,63.3377,166,39.07,18.149,in_progress,0.00
+SIM_TRACE_LOG:0,184,4.3131,1.8525,-158.2354,0.00,2.80,8,0.5000,False,True,63.3591,166,39.07,18.215,in_progress,0.00
+SIM_TRACE_LOG:0,185,4.2932,1.8446,-158.2172,-24.00,2.60,1,0.5000,False,True,63.5359,166,39.07,18.276,in_progress,0.00
+SIM_TRACE_LOG:0,186,4.2575,1.8333,-158.9218,-24.00,2.60,1,0.5000,False,True,63.6300,166,39.07,18.344,in_progress,0.00
+SIM_TRACE_LOG:0,187,4.2051,1.8204,-160.5542,-24.00,2.60,1,0.5000,False,True,63.9536,167,39.07,18.414,in_progress,0.00
+SIM_TRACE_LOG:0,188,4.1420,1.8089,-162.9185,-24.00,2.60,1,0.5000,False,True,64.1076,168,39.07,18.478,in_progress,0.00
+SIM_TRACE_LOG:0,189,4.0588,1.8023,-166.9516,-24.00,2.60,1,0.5000,False,True,64.4445,169,39.07,18.549,in_progress,0.00
+SIM_TRACE_LOG:0,190,3.9636,1.8040,-171.9940,-24.00,2.60,1,0.5000,False,True,64.6950,169,39.07,18.616,in_progress,0.00
+SIM_TRACE_LOG:0,191,3.8508,1.8186,-178.4597,-18.00,3.00,2,1.0000,False,True,64.9651,170,39.07,18.681,in_progress,0.00
+SIM_TRACE_LOG:0,192,3.7308,1.8460,175.1329,0.00,2.80,8,1.0000,False,True,65.2696,171,39.07,18.745,in_progress,0.00
+SIM_TRACE_LOG:0,193,3.6010,1.8883,168.4683,0.00,3.20,7,1.0000,False,True,65.6073,172,39.07,18.816,in_progress,0.00
+SIM_TRACE_LOG:0,194,3.4667,1.9429,162.5315,0.00,2.80,8,1.0000,False,True,65.9699,173,39.07,18.881,in_progress,0.00
+SIM_TRACE_LOG:0,195,3.3172,2.0196,155.7817,0.00,3.20,7,1.0000,False,True,66.3829,174,39.07,18.948,in_progress,0.00
+SIM_TRACE_LOG:0,196,3.1689,2.1104,149.5993,0.00,2.80,8,0.5000,False,True,66.7752,175,39.07,19.012,in_progress,0.00
+SIM_TRACE_LOG:0,197,3.0244,2.2151,143.3127,30.00,2.10,14,0.5000,False,True,67.1172,176,39.07,19.078,in_progress,0.00
+SIM_TRACE_LOG:0,198,2.8872,2.3296,137.3863,30.00,2.10,14,0.1000,False,True,67.3952,176,39.07,19.146,in_progress,0.00
+SIM_TRACE_LOG:0,199,2.7661,2.4396,133.2262,10.00,3.50,10,0.1000,False,True,67.6851,177,39.07,19.216,in_progress,0.00
+SIM_TRACE_LOG:0,200,2.6363,2.5581,132.7891,10.00,3.50,10,0.0010,False,False,67.9027,178,39.07,19.28,in_progress,0.00
+SIM_TRACE_LOG:0,201,2.5022,2.6807,135.1628,10.00,3.50,10,0.0010,False,False,68.1616,178,39.07,19.347,in_progress,0.00
+SIM_TRACE_LOG:0,202,2.3500,2.8048,138.9843,10.00,3.50,10,0.0010,False,False,68.5601,179,39.07,19.414,off_track,3.00
+SIM_TRACE_LOG:0,203,2.2854,2.1964,-172.7794,30.00,2.10,14,0.0000,False,False,68.9724,180,39.07,19.481,pause,2.93
+SIM_TRACE_LOG:0,204,2.2856,2.1964,-172.7785,-24.00,2.60,1,0.0000,False,True,68.9719,180,39.07,19.545,pause,2.87
+SIM_TRACE_LOG:0,205,2.2858,2.1965,-172.8091,-24.00,2.60,1,0.0000,False,True,68.9714,180,39.07,19.617,pause,2.80
+SIM_TRACE_LOG:0,206,2.2851,2.1961,-172.7299,-24.00,2.60,1,0.0000,False,True,68.9730,180,39.07,19.681,pause,2.73
+SIM_TRACE_LOG:0,207,2.2856,2.1964,-172.7785,-24.00,2.60,1,0.0000,False,True,68.9719,180,39.07,19.753,pause,2.66
+SIM_TRACE_LOG:0,208,2.2856,2.1964,-172.7785,-24.00,2.60,1,0.0000,False,True,68.9719,180,39.07,19.816,pause,2.60
+SIM_TRACE_LOG:0,209,2.2851,2.1963,-172.7781,-24.00,2.60,1,0.0000,False,True,68.9732,180,39.07,19.874,pause,2.54
+SIM_TRACE_LOG:0,210,2.2856,2.1964,-172.7785,-24.00,2.60,1,0.0000,False,True,68.9719,180,39.07,19.942,pause,2.47
+SIM_TRACE_LOG:0,211,2.2852,2.1963,-172.7705,-24.00,2.60,1,0.0000,False,True,68.9728,180,39.07,20.014,pause,2.40
+SIM_TRACE_LOG:0,212,2.2861,2.1967,-172.8689,-24.00,2.60,1,0.0000,False,True,68.9705,180,39.07,20.074,pause,2.34
+SIM_TRACE_LOG:0,213,2.2856,2.1966,-172.8526,-24.00,2.60,1,0.0000,False,True,68.9717,180,39.07,20.15,pause,2.26
+SIM_TRACE_LOG:0,214,2.2856,2.1964,-172.7785,-24.00,2.60,1,0.0000,False,True,68.9719,180,39.07,20.221,pause,2.19
+SIM_TRACE_LOG:0,215,2.2856,2.1964,-172.7785,-24.00,2.60,1,0.0000,False,True,68.9719,180,39.07,20.278,pause,2.14
+SIM_TRACE_LOG:0,216,2.2858,2.1966,-172.8226,-24.00,2.60,1,0.0000,False,True,68.9713,180,39.07,20.343,pause,2.07
+SIM_TRACE_LOG:0,217,2.2858,2.1966,-172.8652,-24.00,2.60,1,0.0000,False,True,68.9713,180,39.07,20.416,pause,2.00
+SIM_TRACE_LOG:0,218,2.2856,2.1964,-172.7785,-24.00,2.60,1,0.0000,False,True,68.9719,180,39.07,20.477,pause,1.94
+SIM_TRACE_LOG:0,219,2.2856,2.1964,-172.7785,-24.00,2.60,1,0.0000,False,True,68.9719,180,39.07,20.55,pause,1.86
+SIM_TRACE_LOG:0,220,2.2858,2.1966,-172.8063,-24.00,2.60,1,0.0000,False,True,68.9713,180,39.07,20.616,pause,1.80
+SIM_TRACE_LOG:0,221,2.2856,2.1964,-172.7785,-24.00,2.60,1,0.0000,False,True,68.9719,180,39.07,20.675,pause,1.74
+SIM_TRACE_LOG:0,222,2.2854,2.1965,-172.7925,-24.00,2.60,1,0.0000,False,True,68.9723,180,39.07,20.757,pause,1.66
+SIM_TRACE_LOG:0,223,2.2856,2.1964,-172.7785,-24.00,2.60,1,0.0000,False,True,68.9719,180,39.07,20.808,pause,1.61
+SIM_TRACE_LOG:0,224,2.2855,2.1966,-172.8544,-24.00,2.60,1,0.0000,False,True,68.9720,180,39.07,20.887,pause,1.53
+SIM_TRACE_LOG:0,225,2.2859,2.1966,-172.8566,-24.00,2.60,1,0.0000,False,True,68.9711,180,39.07,20.944,pause,1.47
+SIM_TRACE_LOG:0,226,2.2855,2.1964,-172.7811,-24.00,2.60,1,0.0000,False,True,68.9722,180,39.07,21.009,pause,1.41
+SIM_TRACE_LOG:0,227,2.2859,2.1967,-172.8692,-24.00,2.60,1,0.0000,False,True,68.9711,180,39.07,21.083,pause,1.33
+SIM_TRACE_LOG:0,228,2.2858,2.1965,-172.8024,-24.00,2.60,1,0.0000,False,True,68.9713,180,39.07,21.15,pause,1.26
+SIM_TRACE_LOG:0,229,2.2856,2.1964,-172.7785,-24.00,2.60,1,0.0000,False,True,68.9719,180,39.07,21.21,pause,1.20
+SIM_TRACE_LOG:0,230,2.2857,2.1965,-172.7882,-24.00,2.60,1,0.0000,False,True,68.9716,180,39.07,21.283,pause,1.13
+SIM_TRACE_LOG:0,231,2.2858,2.1965,-172.7949,-24.00,2.60,1,0.0000,False,True,68.9714,180,39.07,21.35,pause,1.06
+SIM_TRACE_LOG:0,232,2.2858,2.1966,-172.8046,-24.00,2.60,1,0.0000,False,True,68.9712,180,39.07,21.416,pause,1.00
+SIM_TRACE_LOG:0,233,2.2860,2.1966,-172.8243,-24.00,2.60,1,0.0000,False,True,68.9708,180,39.07,21.474,pause,0.94
+SIM_TRACE_LOG:0,234,2.2858,2.1966,-172.8386,-24.00,2.60,1,0.0000,False,True,68.9712,180,39.07,21.55,pause,0.86
+SIM_TRACE_LOG:0,235,2.2858,2.1966,-172.8386,-24.00,2.60,1,0.0000,False,True,68.9714,180,39.07,21.606,pause,0.81
+SIM_TRACE_LOG:0,236,2.2849,2.1965,-172.8981,-24.00,2.60,1,0.0000,False,True,68.9735,180,39.07,21.684,pause,0.73
+SIM_TRACE_LOG:0,237,2.2857,2.1966,-172.8321,-24.00,2.60,1,0.0000,False,True,68.9714,180,39.07,21.75,pause,0.66
+SIM_TRACE_LOG:0,238,2.2856,2.1964,-172.7785,-24.00,2.60,1,0.0000,False,True,68.9719,180,39.07,21.814,pause,0.60
+SIM_TRACE_LOG:0,239,2.2856,2.1965,-172.8101,-24.00,2.60,1,0.0000,False,True,68.9718,180,39.07,21.868,pause,0.55
+SIM_TRACE_LOG:0,240,2.2858,2.1966,-172.8173,-24.00,2.60,1,0.0000,False,True,68.9714,180,39.07,21.946,pause,0.47
+SIM_TRACE_LOG:0,241,2.2857,2.1966,-172.8174,-24.00,2.60,1,0.0000,False,True,68.9715,180,39.07,22.018,pause,0.40
+SIM_TRACE_LOG:0,242,2.2861,2.1966,-172.8124,-24.00,2.60,1,0.0000,False,True,68.9704,180,39.07,22.083,pause,0.33
+SIM_TRACE_LOG:0,243,2.2856,2.1964,-172.7785,-24.00,2.60,1,0.0000,False,True,68.9719,180,39.07,22.144,pause,0.27
+SIM_TRACE_LOG:0,244,2.2858,2.1965,-172.7915,-24.00,2.60,1,0.0000,False,True,68.9714,180,39.07,22.202,pause,0.21
+SIM_TRACE_LOG:0,245,2.2856,2.1964,-172.7785,-24.00,2.60,1,0.0000,False,True,68.9719,180,39.07,22.274,pause,0.14
+SIM_TRACE_LOG:0,246,2.2856,2.1968,-172.8720,-24.00,2.60,1,0.0000,False,True,68.9718,180,39.07,22.347,pause,0.07
+SIM_TRACE_LOG:0,247,2.2859,2.1966,-172.8000,-24.00,2.60,1,0.0000,False,True,68.9711,180,39.07,22.41,pause,0.00
+SIM_TRACE_LOG:0,248,2.2856,2.1964,-172.7785,-24.00,2.60,1,0.0000,False,True,68.9719,180,39.07,22.478,pause,-0.01
+SIM_TRACE_LOG:0,249,2.2861,2.1966,-172.8180,-24.00,2.60,1,0.5000,False,True,68.9704,180,39.07,22.538,in_progress,0.00
+SIM_TRACE_LOG:0,250,2.2753,2.1933,-172.3288,-30.00,2.20,0,0.5000,False,True,68.9987,180,39.07,22.617,in_progress,0.00
+SIM_TRACE_LOG:0,251,2.2509,2.1944,-173.3777,-24.00,2.60,1,0.5000,False,True,69.0608,181,39.07,22.68,in_progress,0.00
+SIM_TRACE_LOG:0,252,2.2142,2.1957,-174.7111,-12.00,3.30,3,0.5000,False,True,69.1544,181,39.07,22.746,in_progress,0.00
+SIM_TRACE_LOG:0,253,2.1642,2.1975,-176.2281,-24.00,2.60,1,0.5000,False,True,69.3635,181,39.07,22.811,in_progress,0.00
+SIM_TRACE_LOG:0,254,2.0964,2.2051,-178.9892,-24.00,2.60,1,0.1000,False,True,69.5381,182,39.07,22.876,in_progress,0.00
+SIM_TRACE_LOG:0,255,2.0164,2.2233,176.6311,-12.00,3.30,3,0.1000,False,True,69.8439,183,39.07,22.948,in_progress,0.00
+SIM_TRACE_LOG:0,256,1.9192,2.2495,172.2685,-24.00,2.60,1,0.1000,False,True,70.1977,184,39.07,23.014,in_progress,0.00
+SIM_TRACE_LOG:0,257,1.8195,2.2886,166.7999,-12.00,3.30,3,0.5000,False,True,70.5528,184,39.07,23.079,in_progress,0.00
+SIM_TRACE_LOG:0,258,1.7115,2.3462,160.0584,-24.00,2.60,1,0.5000,False,True,70.9273,185,39.07,23.143,in_progress,0.00
+SIM_TRACE_LOG:0,259,1.5903,2.4299,151.8758,0.00,3.20,7,0.1000,False,True,71.3465,187,39.07,23.214,in_progress,0.00
+SIM_TRACE_LOG:0,260,1.4697,2.5331,143.0108,0.00,2.80,8,0.1000,False,True,71.7761,188,39.07,23.278,in_progress,0.00
+SIM_TRACE_LOG:0,261,1.3635,2.6452,134.2730,20.00,2.90,12,0.1000,False,True,72.1748,189,39.07,23.348,in_progress,0.00
+SIM_TRACE_LOG:0,262,1.2530,2.7805,126.0306,25.00,2.50,13,0.1000,False,True,72.6044,190,39.07,23.414,in_progress,0.00
+SIM_TRACE_LOG:0,263,1.1528,2.9250,118.4312,30.00,2.10,14,0.1000,False,True,73.0123,191,39.07,23.478,in_progress,0.00
+SIM_TRACE_LOG:0,264,1.0767,3.0554,112.2229,30.00,2.10,14,0.1000,False,True,73.3318,192,39.07,23.548000000000002,in_progress,0.00
+SIM_TRACE_LOG:0,265,1.0058,3.1981,106.7022,25.00,2.50,13,0.0010,False,False,73.6386,192,39.07,23.615,in_progress,0.00
+SIM_TRACE_LOG:0,266,0.9454,3.3387,103.4173,25.00,2.50,13,0.0010,False,False,73.9000,193,39.07,23.676,in_progress,0.00
+SIM_TRACE_LOG:0,267,0.8914,3.4794,101.9970,25.00,2.50,13,0.0010,False,False,74.2014,194,39.07,23.745,in_progress,0.00
+SIM_TRACE_LOG:0,268,0.8220,3.6346,105.8782,25.00,2.50,13,0.0010,False,False,74.4778,195,39.07,23.815,off_track,3.00
+SIM_TRACE_LOG:0,269,0.4343,3.2095,151.7656,25.00,2.50,13,0.0000,False,False,74.8172,196,39.07,23.879,pause,2.93
+SIM_TRACE_LOG:0,270,0.4338,3.2097,151.8134,-30.00,2.20,0,0.0000,False,True,74.8185,196,39.07,23.944,pause,2.87
+SIM_TRACE_LOG:0,271,0.4347,3.2095,151.7468,-30.00,2.20,0,0.0000,False,True,74.8164,196,39.07,24.016,pause,2.80
+SIM_TRACE_LOG:0,272,0.4347,3.2095,151.7468,-30.00,2.20,0,0.0000,False,True,74.8164,196,39.07,24.081,pause,2.73
+SIM_TRACE_LOG:0,273,0.4347,3.2095,151.7468,-30.00,2.20,0,0.0000,False,True,74.8164,196,39.07,24.136,pause,2.68
+SIM_TRACE_LOG:0,274,0.4348,3.2095,151.7287,-30.00,2.20,0,0.0000,False,True,74.8161,196,39.07,24.212,pause,2.60
+SIM_TRACE_LOG:0,275,0.4346,3.2096,151.7232,-30.00,2.20,0,0.0000,False,True,74.8167,196,39.07,24.283,pause,2.53
+SIM_TRACE_LOG:0,276,0.4347,3.2095,151.7468,-30.00,2.20,0,0.0000,False,True,74.8164,196,39.07,24.342,pause,2.47
+SIM_TRACE_LOG:0,277,0.4347,3.2095,151.7468,-30.00,2.20,0,0.0000,False,True,74.8164,196,39.07,24.411,pause,2.40
+SIM_TRACE_LOG:0,278,0.4347,3.2095,151.7087,-30.00,2.20,0,0.0000,False,True,74.8162,196,39.07,24.438,pause,2.37
+SIM_TRACE_LOG:0,279,0.4345,3.2096,151.7427,-30.00,2.20,0,0.0000,False,True,74.8168,196,39.07,24.612,pause,2.20
+SIM_TRACE_LOG:0,280,0.4343,3.2096,151.7680,-30.00,2.20,0,0.0000,False,True,74.8173,196,39.07,24.684,pause,2.13
+SIM_TRACE_LOG:0,281,0.4347,3.2095,151.7468,-30.00,2.20,0,0.0000,False,True,74.8164,196,39.07,24.743,pause,2.07
+SIM_TRACE_LOG:0,282,0.4347,3.2095,151.7468,-30.00,2.20,0,0.0000,False,True,74.8164,196,39.07,24.813,pause,2.00
+SIM_TRACE_LOG:0,283,0.4346,3.2095,151.7450,-30.00,2.20,0,0.0000,False,True,74.8167,196,39.07,24.882,pause,1.93
+SIM_TRACE_LOG:0,284,0.4345,3.2095,151.7669,-30.00,2.20,0,0.0000,False,True,74.8167,196,39.07,24.951,pause,1.86
+SIM_TRACE_LOG:0,285,0.4345,3.2095,151.7511,-30.00,2.20,0,0.0000,False,True,74.8167,196,39.07,25.017,pause,1.79
+SIM_TRACE_LOG:0,286,0.4346,3.2095,151.7451,-30.00,2.20,0,0.0000,False,True,74.8167,196,39.07,25.079,pause,1.73
+SIM_TRACE_LOG:0,287,0.4347,3.2095,151.7468,-30.00,2.20,0,0.0000,False,True,74.8164,196,39.07,25.149,pause,1.66
+SIM_TRACE_LOG:0,288,0.4347,3.2095,151.7468,-30.00,2.20,0,0.0000,False,True,74.8164,196,39.07,25.208,pause,1.60
+SIM_TRACE_LOG:0,289,0.4349,3.2095,151.6940,-30.00,2.20,0,0.0000,False,True,74.8158,196,39.07,25.275,pause,1.54
+SIM_TRACE_LOG:0,290,0.4346,3.2095,151.7360,-30.00,2.20,0,0.0000,False,True,74.8165,196,39.07,25.343,pause,1.47
+SIM_TRACE_LOG:0,291,0.4346,3.2096,151.7132,-30.00,2.20,0,0.0000,False,True,74.8165,196,39.07,25.412,pause,1.40
+SIM_TRACE_LOG:0,292,0.4347,3.2096,151.7110,-30.00,2.20,0,0.0000,False,True,74.8165,196,39.07,25.478,pause,1.33
+SIM_TRACE_LOG:0,293,0.4347,3.2095,151.7468,-30.00,2.20,0,0.0000,False,True,74.8164,196,39.07,25.545,pause,1.27
+SIM_TRACE_LOG:0,294,0.4349,3.2094,151.7137,-30.00,2.20,0,0.0000,False,True,74.8157,196,39.07,25.614,pause,1.20
+SIM_TRACE_LOG:0,295,0.4347,3.2095,151.7468,-30.00,2.20,0,0.0000,False,True,74.8164,196,39.07,25.675,pause,1.14
+SIM_TRACE_LOG:0,296,0.4350,3.2094,151.6920,-30.00,2.20,0,0.0000,False,True,74.8154,196,39.07,25.731,pause,1.08
+SIM_TRACE_LOG:0,297,0.4351,3.2094,151.6970,-30.00,2.20,0,0.0000,False,True,74.8153,196,39.07,25.818,pause,0.99
+SIM_TRACE_LOG:0,298,0.4351,3.2093,151.7214,-30.00,2.20,0,0.0000,False,True,74.8152,196,39.07,25.884,pause,0.93
+SIM_TRACE_LOG:0,299,0.4351,3.2093,151.7259,-30.00,2.20,0,0.0000,False,True,74.8151,196,39.07,26.01,pause,0.80
+SIM_TRACE_LOG:0,300,0.4345,3.2097,151.6981,-30.00,2.20,0,0.0000,False,True,74.8170,196,39.07,26.078,pause,0.73
+SIM_TRACE_LOG:0,301,0.4347,3.2098,151.6882,-30.00,2.20,0,0.0000,False,True,74.8168,196,39.07,26.144,pause,0.67
+SIM_TRACE_LOG:0,302,0.4347,3.2095,151.7468,-30.00,2.20,0,0.0000,False,True,74.8164,196,39.07,26.213,pause,0.60
+SIM_TRACE_LOG:0,303,0.4347,3.2095,151.7468,-30.00,2.20,0,0.0000,False,True,74.8164,196,39.07,26.282,pause,0.53
+SIM_TRACE_LOG:0,304,0.4347,3.2095,151.7295,-30.00,2.20,0,0.0000,False,True,74.8163,196,39.07,26.339,pause,0.47
+SIM_TRACE_LOG:0,305,0.4348,3.2095,151.7179,-30.00,2.20,0,0.0000,False,True,74.8160,196,39.07,26.419,pause,0.39
+SIM_TRACE_LOG:0,306,0.4348,3.2095,151.7260,-30.00,2.20,0,0.0000,False,True,74.8161,196,39.07,26.485,pause,0.33
+SIM_TRACE_LOG:0,307,0.4348,3.2094,151.7265,-30.00,2.20,0,0.0000,False,True,74.8161,196,39.07,26.542,pause,0.27
+SIM_TRACE_LOG:0,308,0.4348,3.2094,151.7237,-30.00,2.20,0,0.0000,False,True,74.8160,196,39.07,26.599,pause,0.21
+SIM_TRACE_LOG:0,309,0.4347,3.2096,151.7003,-30.00,2.20,0,0.0000,False,True,74.8164,196,39.07,26.678,pause,0.13
+SIM_TRACE_LOG:0,310,0.4347,3.2096,151.7020,-30.00,2.20,0,0.0000,False,True,74.8164,196,39.07,26.749,pause,0.06
+SIM_TRACE_LOG:0,311,0.4347,3.2095,151.7468,-30.00,2.20,0,0.0000,False,True,74.8164,196,39.07,26.812,pause,-0.00
+SIM_TRACE_LOG:0,312,0.4347,3.2095,151.7468,-30.00,2.20,0,0.1000,False,True,74.8164,196,39.07,26.877,in_progress,0.00
+SIM_TRACE_LOG:0,313,0.4253,3.2129,152.0642,-30.00,2.20,0,0.1000,False,True,74.8418,196,39.07,26.949,in_progress,0.00
+SIM_TRACE_LOG:0,314,0.4008,3.2283,151.5291,-30.00,2.20,0,0.1000,False,True,74.9154,196,39.07,27.014,in_progress,0.00
+SIM_TRACE_LOG:0,315,0.3678,3.2527,150.1162,0.00,2.80,8,0.1000,False,True,75.0106,196,39.07,27.082,in_progress,0.00
+SIM_TRACE_LOG:0,316,0.3198,3.2912,147.9717,-30.00,2.20,0,0.1000,False,True,75.1642,196,39.07,27.143,in_progress,0.00
+SIM_TRACE_LOG:0,317,0.2663,3.3403,144.9549,-30.00,2.20,0,0.1000,False,True,75.3424,197,39.07,27.211,in_progress,0.00
+SIM_TRACE_LOG:0,318,0.2039,3.4138,139.7015,-30.00,2.20,0,0.1000,False,True,75.5833,198,39.07,27.282,in_progress,0.00
+SIM_TRACE_LOG:0,319,0.1460,3.5011,133.4807,-24.00,2.60,1,0.1000,False,True,75.8713,198,39.07,27.347,in_progress,0.00
+SIM_TRACE_LOG:0,320,0.0907,3.6077,126.3833,-18.00,3.00,2,0.1000,False,True,76.2404,199,39.07,27.414,in_progress,0.00
+SIM_TRACE_LOG:0,321,0.0394,3.7397,118.8058,0.00,2.80,8,0.0010,False,False,76.7179,200,39.07,27.48,in_progress,0.00
+SIM_TRACE_LOG:0,322,-0.0004,3.8779,111.8553,25.00,2.50,13,0.0010,False,False,77.4858,202,39.07,27.546,in_progress,0.00
+SIM_TRACE_LOG:0,323,-0.0383,4.0320,106.3513,-24.00,2.60,1,0.0010,False,False,78.2486,204,39.07,27.616,in_progress,0.00
+SIM_TRACE_LOG:0,324,-0.0683,4.1934,102.4692,25.00,2.50,13,0.0010,False,False,78.7909,206,39.07,27.683,off_track,3.00
+SIM_TRACE_LOG:0,325,-0.4582,4.2478,102.9187,25.00,2.50,13,0.0000,False,False,79.1871,207,39.07,27.741,pause,2.94
+SIM_TRACE_LOG:0,326,-0.4590,4.2487,103.0337,25.00,2.50,13,0.0000,False,True,79.1896,207,39.07,27.816,pause,2.86
+SIM_TRACE_LOG:0,327,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,27.877,pause,2.80
+SIM_TRACE_LOG:0,328,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,27.945,pause,2.73
+SIM_TRACE_LOG:0,329,-0.4583,4.2478,102.9732,25.00,2.50,13,0.0000,False,True,79.1870,207,39.07,28.007,pause,2.67
+SIM_TRACE_LOG:0,330,-0.4582,4.2480,102.9441,25.00,2.50,13,0.0000,False,True,79.1875,207,39.07,28.084,pause,2.59
+SIM_TRACE_LOG:0,331,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,28.141,pause,2.54
+SIM_TRACE_LOG:0,332,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,28.215,pause,2.46
+SIM_TRACE_LOG:0,333,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,28.284,pause,2.39
+SIM_TRACE_LOG:0,334,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,28.349,pause,2.33
+SIM_TRACE_LOG:0,335,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,28.411,pause,2.27
+SIM_TRACE_LOG:0,336,-0.4583,4.2476,102.9762,25.00,2.50,13,0.0000,False,True,79.1867,207,39.07,28.481,pause,2.20
+SIM_TRACE_LOG:0,337,-0.4583,4.2477,102.9648,25.00,2.50,13,0.0000,False,True,79.1870,207,39.07,28.548000000000002,pause,2.13
+SIM_TRACE_LOG:0,338,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,28.619,pause,2.06
+SIM_TRACE_LOG:0,339,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,28.68,pause,2.00
+SIM_TRACE_LOG:0,340,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,28.749,pause,1.93
+SIM_TRACE_LOG:0,341,-0.4581,4.2473,102.9266,25.00,2.50,13,0.0000,False,True,79.1858,207,39.07,28.809,pause,1.87
+SIM_TRACE_LOG:0,342,-0.4582,4.2475,102.9185,25.00,2.50,13,0.0000,False,True,79.1863,207,39.07,28.872,pause,1.81
+SIM_TRACE_LOG:0,343,-0.4580,4.2474,102.8931,25.00,2.50,13,0.0000,False,True,79.1860,207,39.07,28.95,pause,1.73
+SIM_TRACE_LOG:0,344,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,29.015,pause,1.66
+SIM_TRACE_LOG:0,345,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,29.08,pause,1.60
+SIM_TRACE_LOG:0,346,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,29.152,pause,1.53
+SIM_TRACE_LOG:0,347,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,29.213,pause,1.47
+SIM_TRACE_LOG:0,348,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,29.285,pause,1.39
+SIM_TRACE_LOG:0,349,-0.4580,4.2470,102.9369,25.00,2.50,13,0.0000,False,True,79.1851,207,39.07,29.347,pause,1.33
+SIM_TRACE_LOG:0,350,-0.4583,4.2473,102.9936,25.00,2.50,13,0.0000,False,True,79.1859,207,39.07,29.414,pause,1.26
+SIM_TRACE_LOG:0,351,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,29.478,pause,1.20
+SIM_TRACE_LOG:0,352,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,29.55,pause,1.13
+SIM_TRACE_LOG:0,353,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,29.609,pause,1.07
+SIM_TRACE_LOG:0,354,-0.4581,4.2473,102.9266,25.00,2.50,13,0.0000,False,True,79.1858,207,39.07,29.678,pause,1.00
+SIM_TRACE_LOG:0,355,-0.4580,4.2472,102.9162,25.00,2.50,13,0.0000,False,True,79.1856,207,39.07,29.746,pause,0.93
+SIM_TRACE_LOG:0,356,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,29.817,pause,0.86
+SIM_TRACE_LOG:0,357,-0.4582,4.2476,102.9385,25.00,2.50,13,0.0000,False,True,79.1865,207,39.07,29.881,pause,0.80
+SIM_TRACE_LOG:0,358,-0.4580,4.2475,102.9119,25.00,2.50,13,0.0000,False,True,79.1863,207,39.07,29.947,pause,0.73
+SIM_TRACE_LOG:0,359,-0.4583,4.2474,102.9930,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,30.014,pause,0.66
+SIM_TRACE_LOG:0,360,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,30.075,pause,0.60
+SIM_TRACE_LOG:0,361,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,30.151,pause,0.53
+SIM_TRACE_LOG:0,362,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,30.217,pause,0.46
+SIM_TRACE_LOG:0,363,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,30.275,pause,0.40
+SIM_TRACE_LOG:0,364,-0.4581,4.2471,102.9375,25.00,2.50,13,0.0000,False,True,79.1852,207,39.07,30.349,pause,0.33
+SIM_TRACE_LOG:0,365,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,30.415,pause,0.26
+SIM_TRACE_LOG:0,366,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,30.485,pause,0.19
+SIM_TRACE_LOG:0,367,-0.4581,4.2472,102.9220,25.00,2.50,13,0.0000,False,True,79.1854,207,39.07,30.546,pause,0.13
+SIM_TRACE_LOG:0,368,-0.4580,4.2472,102.9094,25.00,2.50,13,0.0000,False,True,79.1855,207,39.07,30.611,pause,0.07
+SIM_TRACE_LOG:0,369,-0.4580,4.2475,102.9194,25.00,2.50,13,0.0000,False,True,79.1862,207,39.07,30.679,pause,0.00
+SIM_TRACE_LOG:0,370,-0.4580,4.2472,102.9215,25.00,2.50,13,0.5000,False,True,79.1856,207,39.07,30.737000000000002,in_progress,0.00
+SIM_TRACE_LOG:0,371,-0.4606,4.2540,103.1620,-24.00,2.60,1,0.5000,False,True,79.2039,207,39.07,30.806,in_progress,0.00
+SIM_TRACE_LOG:0,372,-0.4673,4.2729,103.7487,25.00,2.50,13,0.5000,False,True,79.2808,207,39.07,30.871,in_progress,0.00
+SIM_TRACE_LOG:0,373,-0.4754,4.3057,103.7400,25.00,2.50,13,0.5000,False,True,79.3666,207,39.07,30.948,in_progress,0.00
+SIM_TRACE_LOG:0,374,-0.4919,4.3556,104.6511,25.00,2.50,13,0.5000,False,True,79.4986,208,39.07,31.011,in_progress,0.00
+SIM_TRACE_LOG:0,375,-0.5178,4.4174,106.6995,25.00,2.50,13,0.5000,False,True,79.6809,208,39.07,31.079,in_progress,0.00
+SIM_TRACE_LOG:0,376,-0.5548,4.4890,110.0167,25.00,2.50,13,0.5000,False,True,79.8726,209,39.07,31.144,in_progress,0.00
+SIM_TRACE_LOG:0,377,-0.6099,4.5747,114.8026,25.00,2.50,13,0.5000,False,True,80.1127,209,39.07,31.213,in_progress,0.00
+SIM_TRACE_LOG:0,378,-0.6857,4.6659,121.1778,0.00,2.80,8,1.0000,False,True,80.3611,210,39.07,31.282,in_progress,0.00
+SIM_TRACE_LOG:0,379,-0.7760,4.7545,127.7344,-24.00,2.60,1,1.0000,False,True,80.6055,211,39.07,31.344,in_progress,0.00
+SIM_TRACE_LOG:0,380,-0.8816,4.8505,132.7324,0.00,2.80,8,1.0000,False,True,80.8667,211,39.07,31.417,in_progress,0.00
+SIM_TRACE_LOG:0,381,-0.9914,4.9477,135.6307,0.00,2.80,8,0.5000,False,True,81.1319,212,39.07,31.476,in_progress,0.00
+SIM_TRACE_LOG:0,382,-1.1213,5.0534,138.5619,20.00,2.90,12,0.1000,False,True,81.4194,213,39.07,31.546,in_progress,0.00
+SIM_TRACE_LOG:0,383,-1.2613,5.1518,142.1337,0.00,2.80,8,0.1000,False,True,81.6916,213,39.07,31.611,in_progress,0.00
+SIM_TRACE_LOG:0,384,-1.4173,5.2457,146.2161,0.00,2.80,8,0.0010,False,False,81.9648,214,39.07,31.677,in_progress,0.00
+SIM_TRACE_LOG:0,385,-1.5769,5.3306,149.6588,0.00,2.80,8,0.0010,False,False,82.2076,215,39.07,31.747,off_track,3.00
+SIM_TRACE_LOG:0,386,-1.0821,5.5028,93.6578,0.00,2.80,8,0.0000,False,False,82.5797,216,39.07,31.816,pause,2.93
+SIM_TRACE_LOG:0,387,-1.0821,5.5025,93.6563,30.00,2.10,14,0.0000,False,True,82.5791,216,39.07,31.886,pause,2.86
+SIM_TRACE_LOG:0,388,-1.0821,5.5025,93.6563,30.00,2.10,14,0.0000,False,True,82.5791,216,39.07,31.938,pause,2.81
+SIM_TRACE_LOG:0,389,-1.0825,5.5030,93.7703,30.00,2.10,14,0.0000,False,True,82.5803,216,39.07,32.021,pause,2.73
+SIM_TRACE_LOG:0,390,-1.0821,5.5025,93.6563,30.00,2.10,14,0.0000,False,True,82.5791,216,39.07,32.079,pause,2.67
+SIM_TRACE_LOG:0,391,-1.0826,5.5028,93.8131,30.00,2.10,14,0.0000,False,True,82.5799,216,39.07,32.135,pause,2.61
+SIM_TRACE_LOG:0,392,-1.0822,5.5031,93.7310,30.00,2.10,14,0.0000,False,True,82.5805,216,39.07,32.214,pause,2.53
+SIM_TRACE_LOG:0,393,-1.0821,5.5025,93.6563,30.00,2.10,14,0.0000,False,True,82.5791,216,39.07,32.28,pause,2.47
+SIM_TRACE_LOG:0,394,-1.0824,5.5028,93.7745,30.00,2.10,14,0.0000,False,True,82.5798,216,39.07,32.336,pause,2.41
+SIM_TRACE_LOG:0,395,-1.0822,5.5031,93.7067,30.00,2.10,14,0.0000,False,True,82.5806,216,39.07,32.412,pause,2.34
+SIM_TRACE_LOG:0,396,-1.0821,5.5025,93.6563,30.00,2.10,14,0.0000,False,True,82.5791,216,39.07,32.479,pause,2.27
+SIM_TRACE_LOG:0,397,-1.0825,5.5026,93.7973,30.00,2.10,14,0.0000,False,True,82.5794,216,39.07,32.55,pause,2.20
+SIM_TRACE_LOG:0,398,-1.0822,5.5027,93.7245,30.00,2.10,14,0.0000,False,True,82.5795,216,39.07,32.619,pause,2.13
+SIM_TRACE_LOG:0,399,-1.0821,5.5025,93.6563,30.00,2.10,14,0.0000,False,True,82.5791,216,39.07,32.678,pause,2.07
+SIM_TRACE_LOG:0,400,-1.0822,5.5027,93.7012,30.00,2.10,14,0.0000,False,True,82.5797,216,39.07,32.749,pause,2.00
+SIM_TRACE_LOG:0,401,-1.0821,5.5025,93.7000,30.00,2.10,14,0.0000,False,True,82.5791,216,39.07,32.811,pause,1.94
+SIM_TRACE_LOG:0,402,-1.0821,5.5025,93.6886,30.00,2.10,14,0.0000,False,True,82.5791,216,39.07,32.842,pause,1.91
+SIM_TRACE_LOG:0,403,-1.0821,5.5029,93.6877,30.00,2.10,14,0.0000,False,True,82.5802,216,39.07,33.012,pause,1.73
+SIM_TRACE_LOG:0,404,-1.0821,5.5025,93.6563,30.00,2.10,14,0.0000,False,True,82.5791,216,39.07,33.079,pause,1.67
+SIM_TRACE_LOG:0,405,-1.0821,5.5025,93.6563,30.00,2.10,14,0.0000,False,True,82.5791,216,39.07,33.147,pause,1.60
+SIM_TRACE_LOG:0,406,-1.0821,5.5025,93.6563,30.00,2.10,14,0.0000,False,True,82.5791,216,39.07,33.213,pause,1.53
+SIM_TRACE_LOG:0,407,-1.0821,5.5026,93.6695,30.00,2.10,14,0.0000,False,True,82.5793,216,39.07,33.282,pause,1.47
+SIM_TRACE_LOG:0,408,-1.0820,5.5023,93.6673,30.00,2.10,14,0.0000,False,True,82.5786,216,39.07,33.352,pause,1.40
+SIM_TRACE_LOG:0,409,-1.0821,5.5024,93.6655,30.00,2.10,14,0.0000,False,True,82.5789,216,39.07,33.415,pause,1.33
+SIM_TRACE_LOG:0,410,-1.0821,5.5025,93.6563,30.00,2.10,14,0.0000,False,True,82.5791,216,39.07,33.479,pause,1.27
+SIM_TRACE_LOG:0,411,-1.0820,5.5025,93.6322,30.00,2.10,14,0.0000,False,True,82.5791,216,39.07,33.545,pause,1.20
+SIM_TRACE_LOG:0,412,-1.0820,5.5025,93.6189,30.00,2.10,14,0.0000,False,True,82.5790,216,39.07,33.61,pause,1.14
+SIM_TRACE_LOG:0,413,-1.0821,5.5028,93.6523,30.00,2.10,14,0.0000,False,True,82.5797,216,39.07,33.672,pause,1.08
+SIM_TRACE_LOG:0,414,-1.0820,5.5028,93.6356,30.00,2.10,14,0.0000,False,True,82.5798,216,39.07,33.746,pause,1.00
+SIM_TRACE_LOG:0,415,-1.0822,5.5025,93.6867,30.00,2.10,14,0.0000,False,True,82.5792,216,39.07,33.808,pause,0.94
+SIM_TRACE_LOG:0,416,-1.0821,5.5025,93.6754,30.00,2.10,14,0.0000,False,True,82.5791,216,39.07,33.876,pause,0.87
+SIM_TRACE_LOG:0,417,-1.0820,5.5024,93.6528,30.00,2.10,14,0.0000,False,True,82.5788,216,39.07,33.951,pause,0.80
+SIM_TRACE_LOG:0,418,-1.0821,5.5025,93.6563,30.00,2.10,14,0.0000,False,True,82.5791,216,39.07,34.015,pause,0.73
+SIM_TRACE_LOG:0,419,-1.0821,5.5025,93.6563,30.00,2.10,14,0.0000,False,True,82.5791,216,39.07,34.075,pause,0.67
+SIM_TRACE_LOG:0,420,-1.0822,5.5028,93.6769,30.00,2.10,14,0.0000,False,True,82.5799,216,39.07,34.145,pause,0.60
+SIM_TRACE_LOG:0,421,-1.0820,5.5027,93.6325,30.00,2.10,14,0.0000,False,True,82.5796,216,39.07,34.204,pause,0.54
+SIM_TRACE_LOG:0,422,-1.0820,5.5028,93.6218,30.00,2.10,14,0.0000,False,True,82.5799,216,39.07,34.36,pause,0.39
+SIM_TRACE_LOG:0,423,-1.0821,5.5025,93.6563,30.00,2.10,14,0.0000,False,True,82.5791,216,39.07,34.418,pause,0.33
+SIM_TRACE_LOG:0,424,-1.0822,5.5026,93.6961,30.00,2.10,14,0.0000,False,True,82.5793,216,39.07,34.476,pause,0.27
+SIM_TRACE_LOG:0,425,-1.0821,5.5023,93.6745,30.00,2.10,14,0.0000,False,True,82.5785,216,39.07,34.545,pause,0.20
+SIM_TRACE_LOG:0,426,-1.0821,5.5021,93.6673,30.00,2.10,14,0.0000,False,True,82.5780,216,39.07,34.602,pause,0.15
+SIM_TRACE_LOG:0,427,-1.0820,5.5019,93.6525,30.00,2.10,14,0.0000,False,True,82.5776,216,39.07,34.669,pause,0.08
+SIM_TRACE_LOG:0,428,-1.0823,5.5025,93.7039,30.00,2.10,14,0.0000,False,True,82.5792,216,39.07,34.741,pause,0.01
+SIM_TRACE_LOG:0,429,-1.0822,5.5026,93.6916,30.00,2.10,14,0.0000,False,True,82.5794,216,39.07,34.805,pause,-0.01
+SIM_TRACE_LOG:0,430,-1.0821,5.5025,93.6563,30.00,2.10,14,0.5000,False,True,82.5791,216,39.07,34.877,in_progress,0.00
+SIM_TRACE_LOG:0,431,-1.0813,5.5119,93.2865,30.00,2.10,14,0.5000,False,True,82.6029,216,39.07,34.948,in_progress,0.00
+SIM_TRACE_LOG:0,432,-1.0843,5.5378,93.6249,30.00,2.10,14,0.5000,False,True,82.6695,216,39.07,35.016,in_progress,0.00
+SIM_TRACE_LOG:0,433,-1.0943,5.5796,95.3763,30.00,2.10,14,0.1000,False,True,82.8066,216,39.07,35.079,in_progress,0.00
+SIM_TRACE_LOG:0,434,-1.1100,5.6279,97.9758,30.00,2.10,14,0.1000,False,True,82.9341,217,39.07,35.144,in_progress,0.00
+SIM_TRACE_LOG:0,435,-1.1398,5.6957,102.4330,30.00,2.10,14,0.1000,False,True,83.1704,217,39.07,35.213,in_progress,0.00
+SIM_TRACE_LOG:0,436,-1.1846,5.7701,108.5139,30.00,2.10,14,0.1000,False,True,83.3794,218,39.07,35.282,in_progress,0.00
+SIM_TRACE_LOG:0,437,-1.2491,5.8533,116.0143,30.00,2.10,14,0.1000,False,True,83.7220,219,39.07,35.345,in_progress,0.00
+SIM_TRACE_LOG:0,438,-1.3294,5.9333,124.0032,30.00,2.10,14,0.1000,False,True,84.1245,220,39.07,35.412,in_progress,0.00
+SIM_TRACE_LOG:0,439,-1.4240,6.0067,132.1355,30.00,2.10,14,0.1000,False,True,84.7183,221,39.07,35.479,in_progress,0.00
+SIM_TRACE_LOG:0,440,-1.5275,6.0701,139.6770,30.00,2.10,14,0.1000,False,False,85.1540,222,39.07,35.543,in_progress,0.00
+SIM_TRACE_LOG:0,441,-1.6456,6.1259,146.8017,30.00,2.10,14,0.1000,False,False,85.6005,224,39.07,35.612,in_progress,0.00
+SIM_TRACE_LOG:0,442,-1.7796,6.1737,153.5606,30.00,2.10,14,0.0010,False,False,86.0679,225,39.07,35.681,in_progress,0.00
+SIM_TRACE_LOG:0,443,-1.9070,6.2059,159.3182,30.00,2.10,14,0.0010,False,False,86.6204,226,39.07,35.746,in_progress,0.00
+SIM_TRACE_LOG:0,444,-2.0421,6.2279,164.8792,30.00,2.10,14,0.0010,False,False,87.0864,227,39.07,35.81,in_progress,0.00
+SIM_TRACE_LOG:0,445,-2.1811,6.2372,170.4198,30.00,2.10,14,0.0010,False,False,87.5725,229,39.07,35.871,in_progress,0.00
+SIM_TRACE_LOG:0,446,-2.3213,6.2335,175.8648,30.00,2.10,14,0.0010,False,False,88.2487,230,39.07,35.948,off_track,3.00
+SIM_TRACE_LOG:0,447,-2.4463,6.6268,177.7548,30.00,2.10,14,0.0000,False,False,88.6797,232,39.07,36.009,pause,2.94
+SIM_TRACE_LOG:0,448,-2.4468,6.6267,177.8392,30.00,2.10,14,0.0000,False,True,88.6809,232,39.07,36.078,pause,2.87
+SIM_TRACE_LOG:0,449,-2.4461,6.6271,177.7056,30.00,2.10,14,0.0000,False,True,88.6791,232,39.07,36.15,pause,2.80
+SIM_TRACE_LOG:0,450,-2.4461,6.6268,177.7623,30.00,2.10,14,0.0000,False,True,88.6792,232,39.07,36.212,pause,2.74
+SIM_TRACE_LOG:0,451,-2.4456,6.6271,177.6985,30.00,2.10,14,0.0000,False,True,88.6778,232,39.07,36.283,pause,2.66
+SIM_TRACE_LOG:0,452,-2.4460,6.6269,177.7281,30.00,2.10,14,0.0000,False,True,88.6790,232,39.07,36.343,pause,2.60
+SIM_TRACE_LOG:0,453,-2.4461,6.6268,177.7623,30.00,2.10,14,0.0000,False,True,88.6792,232,39.07,36.42,pause,2.53
+SIM_TRACE_LOG:0,454,-2.4458,6.6272,177.6369,30.00,2.10,14,0.0000,False,True,88.6784,232,39.07,36.482,pause,2.47
+SIM_TRACE_LOG:0,455,-2.4459,6.6270,177.7014,30.00,2.10,14,0.0000,False,True,88.6787,232,39.07,36.54,pause,2.41
+SIM_TRACE_LOG:0,456,-2.4460,6.6269,177.7201,30.00,2.10,14,0.0000,False,True,88.6788,232,39.07,36.611,pause,2.34
+SIM_TRACE_LOG:0,457,-2.4460,6.6269,177.7152,30.00,2.10,14,0.0000,False,True,88.6788,232,39.07,36.677,pause,2.27
+SIM_TRACE_LOG:0,458,-2.4461,6.6268,177.7623,30.00,2.10,14,0.0000,False,True,88.6792,232,39.07,36.748,pause,2.20
+SIM_TRACE_LOG:0,459,-2.4462,6.6269,177.7434,30.00,2.10,14,0.0000,False,True,88.6793,232,39.07,36.811,pause,2.14
+SIM_TRACE_LOG:0,460,-2.4459,6.6269,177.7245,30.00,2.10,14,0.0000,False,True,88.6785,232,39.07,36.881,pause,2.07
+SIM_TRACE_LOG:0,461,-2.4462,6.6269,177.7336,30.00,2.10,14,0.0000,False,True,88.6794,232,39.07,36.946,pause,2.00
+SIM_TRACE_LOG:0,462,-2.4461,6.6268,177.7623,30.00,2.10,14,0.0000,False,True,88.6792,232,39.07,37.01,pause,1.94
+SIM_TRACE_LOG:0,463,-2.4460,6.6269,177.7502,30.00,2.10,14,0.0000,False,True,88.6789,232,39.07,37.075,pause,1.87
+SIM_TRACE_LOG:0,464,-2.4462,6.6269,177.7370,30.00,2.10,14,0.0000,False,True,88.6794,232,39.07,37.144,pause,1.80
+SIM_TRACE_LOG:0,465,-2.4458,6.6270,177.7070,30.00,2.10,14,0.0000,False,True,88.6784,232,39.07,37.216,pause,1.73
+SIM_TRACE_LOG:0,466,-2.4461,6.6268,177.7623,30.00,2.10,14,0.0000,False,True,88.6792,232,39.07,37.276,pause,1.67
+SIM_TRACE_LOG:0,467,-2.4458,6.6269,177.6982,30.00,2.10,14,0.0000,False,True,88.6783,232,39.07,37.343,pause,1.60
+SIM_TRACE_LOG:0,468,-2.4458,6.6269,177.7079,30.00,2.10,14,0.0000,False,True,88.6782,232,39.07,37.413,pause,1.54
+SIM_TRACE_LOG:0,469,-2.4461,6.6268,177.7623,30.00,2.10,14,0.0000,False,True,88.6792,232,39.07,37.481,pause,1.47
+SIM_TRACE_LOG:0,470,-2.4461,6.6268,177.7623,30.00,2.10,14,0.0000,False,True,88.6792,232,39.07,37.544,pause,1.40
+SIM_TRACE_LOG:0,471,-2.4461,6.6268,177.7623,30.00,2.10,14,0.0000,False,True,88.6792,232,39.07,37.615,pause,1.33
+SIM_TRACE_LOG:0,472,-2.4461,6.6268,177.7623,30.00,2.10,14,0.0000,False,True,88.6792,232,39.07,37.683,pause,1.27
+SIM_TRACE_LOG:0,473,-2.4461,6.6269,177.7487,30.00,2.10,14,0.0000,False,True,88.6792,232,39.07,37.744,pause,1.20
+SIM_TRACE_LOG:0,474,-2.4461,6.6268,177.7623,30.00,2.10,14,0.0000,False,True,88.6792,232,39.07,37.816,pause,1.13
+SIM_TRACE_LOG:0,475,-2.4461,6.6268,177.7623,30.00,2.10,14,0.0000,False,True,88.6792,232,39.07,37.879,pause,1.07
+SIM_TRACE_LOG:0,476,-2.4458,6.6269,177.7198,30.00,2.10,14,0.0000,False,True,88.6783,232,39.07,37.95,pause,1.00
+SIM_TRACE_LOG:0,477,-2.4461,6.6268,177.7623,30.00,2.10,14,0.0000,False,True,88.6792,232,39.07,38.01,pause,0.94
+SIM_TRACE_LOG:0,478,-2.4458,6.6268,177.7638,30.00,2.10,14,0.0000,False,True,88.6785,232,39.07,38.082,pause,0.87
+SIM_TRACE_LOG:0,479,-2.4463,6.6270,177.7197,30.00,2.10,14,0.0000,False,True,88.6796,232,39.07,38.145,pause,0.80
+SIM_TRACE_LOG:0,480,-2.4462,6.6269,177.7496,30.00,2.10,14,0.0000,False,True,88.6793,232,39.07,38.217,pause,0.73
+SIM_TRACE_LOG:0,481,-2.4463,6.6270,177.7219,30.00,2.10,14,0.0000,False,True,88.6796,232,39.07,38.277,pause,0.67
+SIM_TRACE_LOG:0,482,-2.4460,6.6268,177.7688,30.00,2.10,14,0.0000,False,True,88.6789,232,39.07,38.349,pause,0.60
+SIM_TRACE_LOG:0,483,-2.4461,6.6268,177.7623,30.00,2.10,14,0.0000,False,True,88.6792,232,39.07,38.415,pause,0.53
+SIM_TRACE_LOG:0,484,-2.4460,6.6269,177.7257,30.00,2.10,14,0.0000,False,True,88.6788,232,39.07,38.476,pause,0.47
+SIM_TRACE_LOG:0,485,-2.4461,6.6268,177.7451,30.00,2.10,14,0.0000,False,True,88.6792,232,39.07,38.547,pause,0.40
+SIM_TRACE_LOG:0,486,-2.4459,6.6270,177.6884,30.00,2.10,14,0.0000,False,True,88.6785,232,39.07,38.615,pause,0.33
+SIM_TRACE_LOG:0,487,-2.4457,6.6269,177.7019,30.00,2.10,14,0.0000,False,True,88.6780,232,39.07,38.676,pause,0.27
+SIM_TRACE_LOG:0,488,-2.4461,6.6268,177.7623,30.00,2.10,14,0.0000,False,True,88.6792,232,39.07,38.744,pause,0.20
+SIM_TRACE_LOG:0,489,-2.4455,6.6269,177.6964,30.00,2.10,14,0.0000,False,True,88.6776,232,39.07,38.822,pause,0.13
+SIM_TRACE_LOG:0,490,-2.4461,6.6268,177.7623,30.00,2.10,14,0.0000,False,True,88.6792,232,39.07,38.88,pause,0.07
+SIM_TRACE_LOG:0,491,-2.4461,6.6268,177.7623,30.00,2.10,14,0.0000,False,True,88.6792,232,39.07,38.943,pause,0.01
+SIM_TRACE_LOG:0,492,-2.4460,6.6269,177.7278,30.00,2.10,14,0.0000,False,True,88.6789,232,39.07,39.008,pause,0.00
+SIM_TRACE_LOG:0,493,-2.4460,6.6269,177.7392,30.00,2.10,14,0.5000,False,True,88.6790,232,39.07,39.08,in_progress,0.00
+SIM_TRACE_LOG:0,494,-2.4558,6.6295,177.1401,30.00,2.10,14,0.5000,False,True,88.7033,232,39.07,39.142,in_progress,0.00
+SIM_TRACE_LOG:0,495,-2.4806,6.6275,177.8804,30.00,2.10,14,0.5000,False,True,88.7671,232,39.07,39.214,in_progress,0.00
+SIM_TRACE_LOG:0,496,-2.5196,6.6220,179.5280,0.00,2.80,8,0.5000,False,True,88.9391,232,39.07,39.281,in_progress,0.00
+SIM_TRACE_LOG:0,497,-2.5729,6.6131,-178.3265,25.00,2.50,13,0.5000,False,True,89.0774,233,39.07,39.348,in_progress,0.00
+SIM_TRACE_LOG:0,498,-2.6404,6.5989,-175.5990,0.00,4.00,5,0.5000,False,True,89.3204,233,39.07,39.404,in_progress,0.00
+SIM_TRACE_LOG:0,499,-2.7217,6.5785,-172.4920,30.00,2.10,14,0.5000,False,True,89.5348,234,39.07,39.482,in_progress,0.00
+SIM_TRACE_LOG:0,500,-2.8123,6.5451,-167.8824,25.00,2.50,13,0.5000,False,True,89.8408,235,39.07,39.545,in_progress,0.00
+SIM_TRACE_LOG:0,501,-2.9115,6.4978,-162.4184,30.00,2.10,14,0.5000,False,True,90.1814,235,39.07,39.616,in_progress,0.00
+SIM_TRACE_LOG:0,502,-3.0169,6.4309,-155.7542,-24.00,2.60,1,0.5000,False,True,90.5658,236,39.07,39.675,in_progress,0.00
+SIM_TRACE_LOG:0,503,-3.1166,6.3526,-149.1572,0.00,2.80,8,0.1000,False,True,90.9545,237,39.07,39.745,in_progress,0.00
+SIM_TRACE_LOG:0,504,-3.2232,6.2511,-141.6631,0.00,2.80,8,0.1000,False,True,91.3805,239,39.07,39.815,in_progress,0.00
+SIM_TRACE_LOG:0,505,-3.3224,6.1395,-134.4579,0.00,2.80,8,0.1000,False,True,91.7940,240,39.07,39.879,in_progress,0.00
+SIM_TRACE_LOG:0,506,-3.4160,6.0170,-127.8832,-12.00,3.30,3,0.1000,False,True,92.2058,241,39.07,39.945,in_progress,0.00
+SIM_TRACE_LOG:0,507,-3.5071,5.8783,-122.4353,-24.00,2.60,1,0.1000,False,True,92.6368,242,39.07,40.018,in_progress,0.00
+SIM_TRACE_LOG:0,508,-3.5957,5.7248,-118.1468,-12.00,3.30,3,0.1000,False,True,93.0958,243,39.07,40.078,in_progress,0.00
+SIM_TRACE_LOG:0,509,-3.6818,5.5651,-116.7574,-30.00,2.20,0,0.1000,False,True,93.5520,244,39.07,40.147,in_progress,0.00
+SIM_TRACE_LOG:0,510,-3.7739,5.4050,-118.5970,-24.00,2.60,1,0.1000,False,False,94.0187,245,39.07,40.214,in_progress,0.00
+SIM_TRACE_LOG:0,511,-3.8724,5.2560,-121.5043,-24.00,2.60,1,0.1000,False,False,94.4750,247,39.07,40.282,in_progress,0.00
+SIM_TRACE_LOG:0,512,-3.9809,5.1120,-124.8088,-24.00,2.60,1,0.1000,False,False,94.9382,248,39.07,40.342,in_progress,0.00
+SIM_TRACE_LOG:0,513,-4.0909,4.9811,-127.8419,-24.00,2.60,1,0.1000,False,False,95.3785,249,39.07,40.415,in_progress,0.00
+SIM_TRACE_LOG:0,514,-4.2152,4.8452,-130.6183,-24.00,2.60,1,0.1000,False,False,95.8545,250,39.07,40.481,in_progress,0.00
+SIM_TRACE_LOG:0,515,-4.3406,4.7245,-133.8031,25.00,2.50,13,0.1000,False,False,96.3004,251,39.07,40.534,in_progress,0.00
+SIM_TRACE_LOG:0,516,-4.4935,4.5930,-137.3738,0.00,2.80,8,0.1000,False,False,96.8131,253,39.07,40.611,in_progress,0.00
+SIM_TRACE_LOG:0,517,-4.6126,4.5020,-140.1500,-24.00,2.60,1,0.1000,False,False,97.1907,254,39.07,40.677,in_progress,0.00
+SIM_TRACE_LOG:0,518,-4.7560,4.4063,-143.6995,25.00,2.50,13,0.1000,False,True,97.6178,255,39.07,40.751,in_progress,0.00
+SIM_TRACE_LOG:0,519,-4.9122,4.3117,-146.8652,0.00,2.80,8,0.1000,False,True,98.0639,256,39.07,40.816,in_progress,0.00
+SIM_TRACE_LOG:0,520,-5.0601,4.2354,-150.2148,20.00,2.90,12,0.1000,False,True,98.4604,257,39.07,40.88,in_progress,0.00
+SIM_TRACE_LOG:0,521,-5.2238,4.1589,-153.1352,25.00,2.50,13,0.5000,False,True,98.8844,258,39.07,40.948,in_progress,0.00
+SIM_TRACE_LOG:0,522,-5.3915,4.0764,-153.5740,30.00,2.10,14,0.5000,False,True,99.3247,259,39.07,41.015,in_progress,0.00
+SIM_TRACE_LOG:0,523,-5.5314,3.9922,-150.9880,30.00,2.10,14,1.0000,False,True,99.7218,260,39.07,41.074,in_progress,0.00
+SIM_TRACE_LOG:0,524,-5.6565,3.9035,-147.5596,30.00,2.10,14,1.0000,False,True,100.0000,0,39.07,41.149,in_progress,0.00
+SIM_TRACE_LOG:1,525,-5.7783,3.8037,-143.7735,30.00,2.10,14,1.0000,False,True,0.4988,1,39.07,41.21,in_progress,0.00
+SIM_TRACE_LOG:1,526,-5.8913,3.6984,-140.2237,30.00,2.10,14,1.0000,False,True,0.8911,2,39.07,41.28,in_progress,0.00
+SIM_TRACE_LOG:1,527,-5.9862,3.5967,-136.7084,25.00,2.50,13,1.0000,False,True,1.2463,3,39.07,41.341,in_progress,0.00
+SIM_TRACE_LOG:1,528,-6.0811,3.4793,-132.6890,25.00,2.50,13,1.0000,False,True,1.6324,4,39.07,41.408,in_progress,0.00
+SIM_TRACE_LOG:1,529,-6.1718,3.3465,-128.1508,25.00,2.50,13,1.0000,False,True,2.0424,5,39.07,41.473,in_progress,0.00
+SIM_TRACE_LOG:1,530,-6.2496,3.2071,-123.2245,0.00,2.80,8,1.0000,False,True,2.4460,6,39.07,41.548,in_progress,0.00
+SIM_TRACE_LOG:1,531,-6.3172,3.0590,-118.2620,25.00,2.50,13,1.0000,False,True,2.8524,7,39.07,41.609,in_progress,0.00
+SIM_TRACE_LOG:1,532,-6.3755,2.9017,-113.7204,0.00,2.80,8,0.5000,False,True,3.2658,8,39.07,41.671,in_progress,0.00
+SIM_TRACE_LOG:1,533,-6.4225,2.7383,-109.3446,-24.00,2.60,1,0.5000,False,True,3.6792,10,39.07,41.744,in_progress,0.00
+SIM_TRACE_LOG:1,534,-6.4601,2.5639,-105.1039,0.00,2.80,8,0.5000,False,True,4.1083,11,39.07,41.812,in_progress,0.00
+SIM_TRACE_LOG:1,535,-6.4857,2.3846,-100.9291,-24.00,2.60,1,0.1000,False,True,4.5406,12,39.07,41.876,in_progress,0.00
+SIM_TRACE_LOG:1,536,-6.5049,2.2072,-98.2680,0.00,2.80,8,0.1000,False,True,4.9745,13,39.07,41.944,in_progress,0.00
+SIM_TRACE_LOG:1,537,-6.5215,2.0128,-96.0519,-24.00,2.60,1,0.1000,False,True,5.5115,14,39.07,42.014,in_progress,0.00
+SIM_TRACE_LOG:1,538,-6.5323,1.8379,-94.6359,-24.00,2.60,1,0.0010,False,False,5.9883,16,39.07,42.074,in_progress,0.00
+SIM_TRACE_LOG:1,539,-6.5492,1.6582,-95.1054,-24.00,2.60,1,0.0010,False,False,6.6117,17,39.07,42.149,in_progress,0.00
+SIM_TRACE_LOG:1,540,-6.5772,1.4808,-97.3650,25.00,2.50,13,0.0010,False,False,7.1844,19,39.07,42.211,in_progress,0.00
+SIM_TRACE_LOG:1,541,-6.6122,1.3144,-99.9124,0.00,3.60,6,0.0010,False,False,7.8892,21,39.07,42.279,in_progress,0.00
+SIM_TRACE_LOG:1,542,-6.6518,1.1407,-101.7192,30.00,2.10,14,0.0010,False,False,8.6147,22,39.07,42.345,in_progress,0.00
+SIM_TRACE_LOG:1,543,-6.6893,0.9576,-101.7042,30.00,2.10,14,0.1000,False,False,9.3050,24,39.07,42.413,in_progress,0.00
+SIM_TRACE_LOG:1,544,-6.7094,0.7896,-98.9122,30.00,2.10,14,0.1000,False,False,9.7948,25,39.07,42.481,in_progress,0.00
+SIM_TRACE_LOG:1,545,-6.7161,0.6315,-95.3740,0.00,4.00,5,0.1000,False,False,10.2378,27,39.07,42.501,in_progress,0.00
+SIM_TRACE_LOG:1,546,-6.6992,0.2923,-87.8875,30.00,2.10,14,0.5000,False,True,11.1080,29,39.07,42.629,in_progress,0.00
+SIM_TRACE_LOG:1,547,-6.6969,0.2736,-87.4683,25.00,2.50,13,0.5000,False,True,11.1822,29,39.07,42.683,in_progress,0.00
+SIM_TRACE_LOG:1,548,-6.6717,0.1203,-83.5341,30.00,2.10,14,1.0000,False,True,11.5245,30,39.07,42.748,in_progress,0.00
+SIM_TRACE_LOG:1,549,-6.6344,-0.0436,-79.9093,30.00,2.10,14,1.0000,False,True,11.9099,31,39.07,42.816,in_progress,0.00
+SIM_TRACE_LOG:1,550,-6.5874,-0.1959,-76.1230,30.00,2.10,14,1.0000,False,True,12.2631,32,39.07,42.879,in_progress,0.00
+SIM_TRACE_LOG:1,551,-6.5352,-0.3340,-72.6484,30.00,2.10,14,0.5000,False,True,12.5776,33,39.07,42.946,in_progress,0.00
+SIM_TRACE_LOG:1,552,-6.4751,-0.4654,-69.0592,30.00,2.10,14,0.5000,False,True,12.8770,33,39.07,43.015,in_progress,0.00
+SIM_TRACE_LOG:1,553,-6.4013,-0.6016,-65.1477,30.00,2.10,14,0.1000,False,True,13.1946,34,39.07,43.08,in_progress,0.00
+SIM_TRACE_LOG:1,554,-6.3242,-0.7180,-60.9560,30.00,2.10,14,0.1000,False,True,13.4795,35,39.07,43.145,in_progress,0.00
+SIM_TRACE_LOG:1,555,-6.2377,-0.8274,-56.4207,30.00,2.10,14,0.1000,False,True,13.8106,36,39.07,43.214,in_progress,0.00
+SIM_TRACE_LOG:1,556,-6.1373,-0.9389,-52.0832,25.00,2.50,13,0.1000,False,True,14.1280,37,39.07,43.278,in_progress,0.00
+SIM_TRACE_LOG:1,557,-6.0251,-1.0414,-46.9262,25.00,2.50,13,0.1000,False,False,14.4595,38,39.07,43.341,in_progress,0.00
+SIM_TRACE_LOG:1,558,-5.8984,-1.1342,-41.1637,25.00,2.50,13,0.1000,False,False,14.8233,39,39.07,43.409,in_progress,0.00
+SIM_TRACE_LOG:1,559,-5.7626,-1.2130,-34.7910,25.00,2.50,13,0.0010,False,False,15.2240,40,39.07,43.476,in_progress,0.00
+SIM_TRACE_LOG:1,560,-5.6045,-1.2866,-28.1321,25.00,2.50,13,0.0010,False,False,15.6836,41,39.07,43.539,in_progress,0.00
+SIM_TRACE_LOG:1,561,-5.4601,-1.3389,-22.4415,10.00,3.50,10,0.1000,False,False,16.0652,42,39.07,43.605,in_progress,0.00
+SIM_TRACE_LOG:1,562,-5.2811,-1.3807,-14.0392,10.00,3.50,10,0.1000,False,False,16.5019,43,39.07,43.683,in_progress,0.00
+SIM_TRACE_LOG:1,563,-5.0929,-1.4010,-3.8144,0.00,3.20,7,0.1000,False,False,16.9250,44,39.07,43.746,in_progress,0.00
+SIM_TRACE_LOG:1,564,-4.9092,-1.4024,6.9699,0.00,3.20,7,0.1000,False,False,17.3097,45,39.07,43.814,in_progress,0.00
+SIM_TRACE_LOG:1,565,-4.7095,-1.3858,18.8275,0.00,2.80,8,0.1000,False,True,17.7367,46,39.07,43.879,in_progress,0.00
+SIM_TRACE_LOG:1,566,-4.5198,-1.3574,29.9084,0.00,2.80,8,0.5000,False,True,18.1503,47,39.07,43.947,in_progress,0.00
+SIM_TRACE_LOG:1,567,-4.3382,-1.3185,39.8979,-24.00,2.60,1,0.5000,False,True,18.5563,48,39.07,44.013,in_progress,0.00
+SIM_TRACE_LOG:1,568,-4.1543,-1.2691,47.8506,-24.00,2.60,1,1.0000,False,True,18.9871,49,39.07,44.082,in_progress,0.00
+SIM_TRACE_LOG:1,569,-3.9810,-1.2098,53.8132,-24.00,2.60,1,1.0000,False,True,19.4156,50,39.07,44.141,in_progress,0.00
+SIM_TRACE_LOG:1,570,-3.8173,-1.1406,57.9708,-30.00,2.20,0,1.0000,False,True,19.8477,52,39.07,44.205,in_progress,0.00
+SIM_TRACE_LOG:1,571,-3.6560,-1.0585,61.6304,-30.00,2.20,0,1.0000,False,True,20.3041,53,39.07,44.281,in_progress,0.00
+SIM_TRACE_LOG:1,572,-3.5107,-0.9767,63.8176,-30.00,2.20,0,1.0000,False,True,20.7385,54,39.07,44.348,in_progress,0.00
+SIM_TRACE_LOG:1,573,-3.3730,-0.8875,65.2487,-30.00,2.20,0,1.0000,False,True,21.1828,56,39.07,44.41,in_progress,0.00
+SIM_TRACE_LOG:1,574,-3.2521,-0.7936,66.5619,-30.00,2.20,0,1.0000,False,True,21.5824,57,39.07,44.476,in_progress,0.00
+SIM_TRACE_LOG:1,575,-3.1347,-0.6925,65.6277,-30.00,2.20,0,0.5000,False,True,21.9833,58,39.07,44.547,in_progress,0.00
+SIM_TRACE_LOG:1,576,-3.0268,-0.5845,64.1809,-24.00,2.60,1,0.5000,False,True,22.3702,59,39.07,44.611,in_progress,0.00
+SIM_TRACE_LOG:1,577,-2.9275,-0.4806,60.9425,-24.00,2.60,1,0.5000,False,True,22.7254,60,39.07,44.668,in_progress,0.00
+SIM_TRACE_LOG:1,578,-2.8069,-0.3669,52.8559,-24.00,2.60,1,0.5000,False,True,23.1296,61,39.07,44.748,in_progress,0.00
+SIM_TRACE_LOG:1,579,-2.6764,-0.2620,44.1521,-24.00,2.60,1,0.5000,False,True,23.5292,62,39.07,44.816,in_progress,0.00
+SIM_TRACE_LOG:1,580,-2.5369,-0.1677,36.3374,-24.00,2.60,1,0.5000,False,True,23.8952,63,39.07,44.877,in_progress,0.00
+SIM_TRACE_LOG:1,581,-2.3930,-0.0851,29.6080,-24.00,2.60,1,0.5000,False,True,24.2325,64,39.07,44.944,in_progress,0.00
+SIM_TRACE_LOG:1,582,-2.2346,-0.0116,23.3828,-30.00,2.20,0,0.1000,False,True,24.6167,65,39.07,45.007,in_progress,0.00
+SIM_TRACE_LOG:1,583,-2.0779,0.0514,19.2350,-30.00,2.20,0,0.1000,False,True,24.9555,66,39.07,45.077,in_progress,0.00
+SIM_TRACE_LOG:1,584,-1.9288,0.1030,17.0466,-30.00,2.20,0,0.1000,False,True,25.2388,67,39.07,45.138,in_progress,0.00
+SIM_TRACE_LOG:1,585,-1.7692,0.1460,15.5781,-24.00,2.60,1,0.1000,False,True,25.4986,67,39.07,45.202,in_progress,0.00
+SIM_TRACE_LOG:1,586,-1.6047,0.1761,12.5399,25.00,2.50,13,0.1000,False,False,25.7700,68,39.07,45.284,in_progress,0.00
+SIM_TRACE_LOG:1,587,-1.4365,0.1905,8.1976,-12.00,3.30,3,0.0010,False,False,26.0967,69,39.07,45.337,in_progress,0.00
+SIM_TRACE_LOG:1,588,-1.2742,0.1924,3.6701,-12.00,3.30,3,0.0010,False,False,26.2202,69,39.07,45.41,in_progress,0.00
+SIM_TRACE_LOG:1,589,-1.0895,0.1774,-1.7195,-12.00,3.30,3,0.0010,False,False,26.5385,70,39.07,45.481,in_progress,0.00
+SIM_TRACE_LOG:1,590,-0.8871,0.1424,-7.8356,-12.00,3.30,3,0.0010,False,False,26.8595,71,39.07,45.547,off_track,3.00
+SIM_TRACE_LOG:1,591,-1.0844,-0.3604,-36.4366,-12.00,3.30,3,0.0000,False,False,27.1422,72,39.07,45.604,pause,2.94
+SIM_TRACE_LOG:1,592,-1.0838,-0.3614,-36.5843,0.00,2.80,8,0.0000,False,True,27.1451,72,39.07,45.678,pause,2.87
+SIM_TRACE_LOG:1,593,-1.0845,-0.3599,-36.3683,0.00,2.80,8,0.0000,False,True,27.1409,72,39.07,45.744,pause,2.80
+SIM_TRACE_LOG:1,594,-1.0845,-0.3602,-36.4156,0.00,2.80,8,0.0000,False,True,27.1414,72,39.07,45.8,pause,2.75
+SIM_TRACE_LOG:1,595,-1.0847,-0.3600,-36.3944,0.00,2.80,8,0.0000,False,True,27.1409,72,39.07,45.869,pause,2.68
+SIM_TRACE_LOG:1,596,-1.0845,-0.3602,-36.4156,0.00,2.80,8,0.0000,False,True,27.1414,72,39.07,45.942,pause,2.60
+SIM_TRACE_LOG:1,597,-1.0847,-0.3600,-36.4030,0.00,2.80,8,0.0000,False,True,27.1409,72,39.07,46.001,pause,2.55
+SIM_TRACE_LOG:1,598,-1.0846,-0.3600,-36.4021,0.00,2.80,8,0.0000,False,True,27.1410,72,39.07,46.078,pause,2.47
+SIM_TRACE_LOG:1,599,-1.0845,-0.3602,-36.4156,0.00,2.80,8,0.0000,False,True,27.1414,72,39.07,46.142,pause,2.40
+SIM_TRACE_LOG:1,600,-1.0846,-0.3601,-36.4096,0.00,2.80,8,0.0000,False,True,27.1412,72,39.07,46.215,pause,2.33
+SIM_TRACE_LOG:1,601,-1.0845,-0.3601,-36.4057,0.00,2.80,8,0.0000,False,True,27.1413,72,39.07,46.279,pause,2.27
+SIM_TRACE_LOG:1,602,-1.0845,-0.3602,-36.4122,0.00,2.80,8,0.0000,False,True,27.1417,72,39.07,46.335,pause,2.21
+SIM_TRACE_LOG:1,603,-1.0845,-0.3601,-36.4075,0.00,2.80,8,0.0000,False,True,27.1413,72,39.07,46.417,pause,2.13
+SIM_TRACE_LOG:1,604,-1.0845,-0.3602,-36.4156,0.00,2.80,8,0.0000,False,True,27.1414,72,39.07,46.481,pause,2.07
+SIM_TRACE_LOG:1,605,-1.0845,-0.3602,-36.4156,0.00,2.80,8,0.0000,False,True,27.1414,72,39.07,46.532,pause,2.02
+SIM_TRACE_LOG:1,606,-1.0845,-0.3600,-36.3976,0.00,2.80,8,0.0000,False,True,27.1412,72,39.07,46.617,pause,1.93
+SIM_TRACE_LOG:1,607,-1.0845,-0.3602,-36.4156,0.00,2.80,8,0.0000,False,True,27.1414,72,39.07,46.68,pause,1.87
+SIM_TRACE_LOG:1,608,-1.0845,-0.3602,-36.4156,0.00,2.80,8,0.0000,False,True,27.1414,72,39.07,46.74,pause,1.81
+SIM_TRACE_LOG:1,609,-1.0847,-0.3600,-36.4123,0.00,2.80,8,0.0000,False,True,27.1408,72,39.07,46.815,pause,1.73
+SIM_TRACE_LOG:1,610,-1.0847,-0.3601,-36.4218,0.00,2.80,8,0.0000,False,True,27.1410,72,39.07,46.869,pause,1.68
+SIM_TRACE_LOG:1,611,-1.0847,-0.3600,-36.4196,0.00,2.80,8,0.0000,False,True,27.1410,72,39.07,46.941,pause,1.61
+SIM_TRACE_LOG:1,612,-1.0844,-0.3601,-36.3828,0.00,2.80,8,0.0000,False,True,27.1417,72,39.07,47.012,pause,1.53
+SIM_TRACE_LOG:1,613,-1.0845,-0.3602,-36.4115,0.00,2.80,8,0.0000,False,True,27.1416,72,39.07,47.076,pause,1.47
+SIM_TRACE_LOG:1,614,-1.0845,-0.3602,-36.4156,0.00,2.80,8,0.0000,False,True,27.1414,72,39.07,47.146,pause,1.40
+SIM_TRACE_LOG:1,615,-1.0843,-0.3603,-36.4120,0.00,2.80,8,0.0000,False,True,27.1421,72,39.07,47.211,pause,1.34
+SIM_TRACE_LOG:1,616,-1.0843,-0.3601,-36.3889,0.00,2.80,8,0.0000,False,True,27.1418,72,39.07,47.28,pause,1.27
+SIM_TRACE_LOG:1,617,-1.0845,-0.3602,-36.4156,0.00,2.80,8,0.0000,False,True,27.1414,72,39.07,47.327,pause,1.22
+SIM_TRACE_LOG:1,618,-1.0850,-0.3598,-36.4484,0.00,2.80,8,0.0000,False,True,27.1400,72,39.07,47.409,pause,1.14
+SIM_TRACE_LOG:1,619,-1.0852,-0.3598,-36.4615,0.00,2.80,8,0.0000,False,True,27.1395,72,39.07,47.487,pause,1.06
+SIM_TRACE_LOG:1,620,-1.0845,-0.3602,-36.4156,0.00,2.80,8,0.0000,False,True,27.1414,72,39.07,47.552,pause,0.99
+SIM_TRACE_LOG:1,621,-1.0845,-0.3602,-36.4156,0.00,2.80,8,0.0000,False,True,27.1414,72,39.07,47.603,pause,0.94
+SIM_TRACE_LOG:1,622,-1.0850,-0.3598,-36.4289,0.00,2.80,8,0.0000,False,True,27.1400,72,39.07,47.668,pause,0.88
+SIM_TRACE_LOG:1,623,-1.0845,-0.3602,-36.4156,0.00,2.80,8,0.0000,False,True,27.1414,72,39.07,47.744,pause,0.80
+SIM_TRACE_LOG:1,624,-1.0845,-0.3602,-36.4156,0.00,2.80,8,0.0000,False,True,27.1414,72,39.07,47.816,pause,0.73
+SIM_TRACE_LOG:1,625,-1.0847,-0.3600,-36.4023,0.00,2.80,8,0.0000,False,True,27.1409,72,39.07,47.876,pause,0.67
+SIM_TRACE_LOG:1,626,-1.0847,-0.3601,-36.4029,0.00,2.80,8,0.0000,False,True,27.1410,72,39.07,47.939,pause,0.61
+SIM_TRACE_LOG:1,627,-1.0847,-0.3600,-36.4014,0.00,2.80,8,0.0000,False,True,27.1408,72,39.07,48.014,pause,0.53
+SIM_TRACE_LOG:1,628,-1.0845,-0.3602,-36.4127,0.00,2.80,8,0.0000,False,True,27.1417,72,39.07,48.072,pause,0.47
+SIM_TRACE_LOG:1,629,-1.0849,-0.3599,-36.3991,0.00,2.80,8,0.0000,False,True,27.1402,72,39.07,48.145,pause,0.40
+SIM_TRACE_LOG:1,630,-1.0850,-0.3598,-36.3935,0.00,2.80,8,0.0000,False,True,27.1398,72,39.07,48.204,pause,0.34
+SIM_TRACE_LOG:1,631,-1.0845,-0.3602,-36.4156,0.00,2.80,8,0.0000,False,True,27.1414,72,39.07,48.271,pause,0.28
+SIM_TRACE_LOG:1,632,-1.0851,-0.3598,-36.4140,0.00,2.80,8,0.0000,False,True,27.1397,72,39.07,48.34,pause,0.21
+SIM_TRACE_LOG:1,633,-1.0845,-0.3602,-36.4130,0.00,2.80,8,0.0000,False,True,27.1416,72,39.07,48.414,pause,0.13
+SIM_TRACE_LOG:1,634,-1.0845,-0.3602,-36.4156,0.00,2.80,8,0.0000,False,True,27.1414,72,39.07,48.472,pause,0.07
+SIM_TRACE_LOG:1,635,-1.0851,-0.3598,-36.4398,0.00,2.80,8,0.0000,False,True,27.1397,72,39.07,48.549,pause,-0.00
+SIM_TRACE_LOG:1,636,-1.0851,-0.3598,-36.4354,0.00,2.80,8,0.1000,False,True,27.1397,72,39.07,48.608,in_progress,0.00
+SIM_TRACE_LOG:1,637,-1.0769,-0.3638,-36.0206,-24.00,2.60,1,0.1000,False,True,27.1621,72,39.07,48.678,in_progress,0.00
+SIM_TRACE_LOG:1,638,-1.0594,-0.3759,-35.8228,0.00,2.80,8,0.1000,False,True,27.2162,72,39.07,48.747,in_progress,0.00
+SIM_TRACE_LOG:1,639,-1.0285,-0.4001,-36.2465,0.00,2.80,8,0.1000,False,True,27.3075,72,39.07,48.814,in_progress,0.00
+SIM_TRACE_LOG:1,640,-0.9870,-0.4307,-36.4027,0.00,2.80,8,0.1000,False,True,27.3960,72,39.07,48.881,in_progress,0.00
+SIM_TRACE_LOG:1,641,-0.9314,-0.4724,-36.5270,0.00,2.80,8,0.1000,False,True,27.5712,73,39.07,48.948,in_progress,0.00
+SIM_TRACE_LOG:1,642,-0.8626,-0.5229,-36.4291,0.00,2.80,8,0.1000,False,True,27.7548,73,39.07,49.011,in_progress,0.00
+SIM_TRACE_LOG:1,643,-0.7738,-0.5875,-36.2887,0.00,2.80,8,0.1000,False,True,28.0291,74,39.07,49.076,in_progress,0.00
+SIM_TRACE_LOG:1,644,-0.6854,-0.6492,-35.7486,0.00,2.80,8,0.1000,False,True,28.2808,75,39.07,49.145,in_progress,0.00
+SIM_TRACE_LOG:1,645,-0.5745,-0.7266,-35.3681,0.00,2.80,8,0.1000,False,True,28.6137,75,39.07,49.217,in_progress,0.00
+SIM_TRACE_LOG:1,646,-0.4479,-0.8137,-34.9791,-24.00,2.60,1,0.1000,False,True,29.0063,76,39.07,49.271,in_progress,0.00
+SIM_TRACE_LOG:1,647,-0.3246,-0.9027,-35.5431,-24.00,2.60,1,0.1000,False,False,29.4146,77,39.07,49.347,in_progress,0.00
+SIM_TRACE_LOG:1,648,-0.1959,-1.0099,-37.9753,25.00,2.50,13,0.1000,False,False,29.8883,79,39.07,49.409,in_progress,0.00
+SIM_TRACE_LOG:1,649,-0.0758,-1.1181,-40.2209,30.00,2.10,14,0.1000,False,False,30.4646,80,39.07,49.482,in_progress,0.00
+SIM_TRACE_LOG:1,650,0.0615,-1.2316,-39.6999,25.00,2.50,13,0.1000,False,False,31.0340,82,39.07,49.5,in_progress,0.00
+SIM_TRACE_LOG:1,651,0.2760,-1.3772,-35.4076,30.00,2.10,14,0.1000,False,False,32.0577,84,39.07,49.615,in_progress,0.00
+SIM_TRACE_LOG:1,652,0.3261,-1.4056,-33.9732,30.00,2.10,14,0.1000,False,False,32.2010,85,39.07,49.68,in_progress,0.00
+SIM_TRACE_LOG:1,653,0.4592,-1.4741,-30.4560,20.00,2.90,12,0.1000,False,False,32.6521,86,39.07,49.747,in_progress,0.00
+SIM_TRACE_LOG:1,654,0.6206,-1.5438,-26.2202,25.00,2.50,13,0.1000,False,True,33.1651,87,39.07,49.81,in_progress,0.00
+SIM_TRACE_LOG:1,655,0.7634,-1.5899,-21.5134,0.00,2.80,8,0.1000,False,True,33.5575,88,39.07,49.884,in_progress,0.00
+SIM_TRACE_LOG:1,656,0.9567,-1.6363,-15.5541,0.00,2.80,8,0.1000,False,True,34.0699,90,39.07,49.948,in_progress,0.00
+SIM_TRACE_LOG:1,657,1.1295,-1.6648,-11.0112,0.00,2.80,8,0.1000,False,True,34.5219,91,39.07,50.014,in_progress,0.00
+SIM_TRACE_LOG:1,658,1.2925,-1.6799,-7.0475,0.00,2.80,8,0.1000,False,True,34.9437,92,39.07,50.079,in_progress,0.00
+SIM_TRACE_LOG:1,659,1.4797,-1.6866,-3.8843,-12.00,3.30,3,0.1000,False,True,35.4277,93,39.07,50.146,in_progress,0.00
+SIM_TRACE_LOG:1,660,1.6729,-1.6849,-1.0902,-24.00,2.60,1,0.1000,False,True,35.9235,94,39.07,50.214,in_progress,0.00
+SIM_TRACE_LOG:1,661,1.8622,-1.6854,-0.4807,-12.00,3.30,3,0.1000,False,True,36.4106,96,39.07,50.274,in_progress,0.00
+SIM_TRACE_LOG:1,662,2.0539,-1.6913,-1.4077,-12.00,3.30,3,0.1000,False,True,36.9059,97,39.07,50.347,in_progress,0.00
+SIM_TRACE_LOG:1,663,2.2621,-1.7014,-2.4568,-24.00,2.60,1,0.1000,False,True,37.4500,98,39.07,50.407,in_progress,0.00
+SIM_TRACE_LOG:1,664,2.4638,-1.7226,-4.9606,0.00,2.80,8,0.1000,False,True,37.9738,100,39.07,50.483,in_progress,0.00
+SIM_TRACE_LOG:1,665,2.6589,-1.7539,-7.7342,0.00,2.80,8,0.1000,False,True,38.4864,101,39.07,50.547,in_progress,0.00
+SIM_TRACE_LOG:1,666,2.8481,-1.7938,-10.6870,0.00,2.80,8,0.5000,False,True,38.9782,102,39.07,50.612,in_progress,0.00
+SIM_TRACE_LOG:1,667,3.0262,-1.8404,-13.3241,0.00,2.80,8,0.5000,False,True,39.4403,104,39.07,50.68,in_progress,0.00
+SIM_TRACE_LOG:1,668,3.2096,-1.8962,-15.6374,20.00,2.90,12,0.5000,False,True,39.9148,105,39.07,50.746,in_progress,0.00
+SIM_TRACE_LOG:1,669,3.3939,-1.9535,-16.7232,20.00,2.90,12,1.0000,False,True,40.3912,106,39.07,50.817,in_progress,0.00
+SIM_TRACE_LOG:1,670,3.6003,-2.0049,-14.8728,0.00,2.80,8,1.0000,False,True,40.9188,107,39.07,50.838,in_progress,0.00
+SIM_TRACE_LOG:1,671,3.9813,-2.0814,-11.6335,0.00,2.80,8,1.0000,False,True,41.8883,110,39.07,50.962,in_progress,0.00
+SIM_TRACE_LOG:1,672,4.0039,-2.0856,-11.5229,0.00,2.80,8,1.0000,False,True,41.9445,110,39.07,51.011,in_progress,0.00
+SIM_TRACE_LOG:1,673,4.1613,-2.1132,-10.6139,0.00,2.80,8,1.0000,False,True,42.3416,111,39.07,51.077,in_progress,0.00
+SIM_TRACE_LOG:1,674,4.3575,-2.1449,-9.6730,20.00,2.90,12,0.5000,False,True,42.8346,112,39.07,51.146,in_progress,0.00
+SIM_TRACE_LOG:1,675,4.5380,-2.1687,-8.3641,15.00,3.20,11,0.5000,False,True,43.2859,114,39.07,51.217,in_progress,0.00
+SIM_TRACE_LOG:1,676,4.7403,-2.1878,-6.4455,15.00,3.20,11,0.5000,False,True,43.7906,115,39.07,51.282,in_progress,0.00
+SIM_TRACE_LOG:1,677,4.9409,-2.1948,-3.4694,30.00,2.10,14,0.5000,False,True,44.2785,116,39.07,51.344,in_progress,0.00
+SIM_TRACE_LOG:1,678,5.1256,-2.1887,-0.0607,30.00,2.10,14,0.5000,False,True,44.7347,117,39.07,51.415,in_progress,0.00
+SIM_TRACE_LOG:1,679,5.3144,-2.1688,3.9085,30.00,2.10,14,0.5000,False,True,45.2024,119,39.07,51.482,in_progress,0.00
+SIM_TRACE_LOG:1,680,5.4789,-2.1410,7.2179,30.00,2.10,14,0.5000,False,True,45.6087,120,39.07,51.547,in_progress,0.00
+SIM_TRACE_LOG:1,681,5.6356,-2.1043,10.6727,30.00,2.10,14,0.5000,False,True,45.9974,121,39.07,51.614,in_progress,0.00
+SIM_TRACE_LOG:1,682,5.7823,-2.0610,13.7619,30.00,2.10,14,0.5000,False,True,46.3629,122,39.07,51.677,in_progress,0.00
+SIM_TRACE_LOG:1,683,5.9231,-2.0097,16.9544,30.00,2.10,14,0.5000,False,True,46.7175,122,39.07,51.748,in_progress,0.00
+SIM_TRACE_LOG:1,684,6.0494,-1.9535,20.3835,30.00,2.10,14,0.5000,False,True,47.0394,123,39.07,51.815,in_progress,0.00
+SIM_TRACE_LOG:1,685,6.1923,-1.8775,24.5639,30.00,2.10,14,0.5000,False,True,47.4186,124,39.07,51.882,in_progress,0.00
+SIM_TRACE_LOG:1,686,6.3089,-1.8029,28.5899,30.00,2.10,14,0.5000,False,True,47.7352,125,39.07,51.946,in_progress,0.00
+SIM_TRACE_LOG:1,687,6.4314,-1.7117,32.9105,30.00,2.10,14,0.5000,False,True,48.0867,126,39.07,52.016,in_progress,0.00
+SIM_TRACE_LOG:1,688,6.5489,-1.6107,37.0265,30.00,2.10,14,0.5000,False,True,48.4634,127,39.07,52.081,in_progress,0.00
+SIM_TRACE_LOG:1,689,6.6501,-1.5117,40.6543,30.00,2.10,14,0.5000,False,True,48.8024,128,39.07,52.144,in_progress,0.00
+SIM_TRACE_LOG:1,690,6.7501,-1.4001,44.4993,30.00,2.10,14,0.5000,False,True,49.1477,129,39.07,52.207,in_progress,0.00
+SIM_TRACE_LOG:1,691,6.8444,-1.2792,48.4350,30.00,2.10,14,0.5000,False,True,49.5047,130,39.07,52.277,in_progress,0.00
+SIM_TRACE_LOG:1,692,6.9254,-1.1515,53.2565,25.00,2.50,13,0.5000,False,True,49.8599,131,39.07,52.348,in_progress,0.00
+SIM_TRACE_LOG:1,693,6.9920,-1.0221,58.1575,25.00,2.50,13,1.0000,False,True,50.2058,132,39.07,52.41,in_progress,0.00
+SIM_TRACE_LOG:1,694,7.0488,-0.8730,64.1650,25.00,2.50,13,1.0000,False,True,50.5923,133,39.07,52.475,in_progress,0.00
+SIM_TRACE_LOG:1,695,7.0904,-0.7167,70.6079,30.00,2.10,14,1.0000,False,True,50.9895,134,39.07,52.545,in_progress,0.00
+SIM_TRACE_LOG:1,696,7.1178,-0.5642,76.2290,30.00,2.10,14,1.0000,False,True,51.3741,135,39.07,52.616,in_progress,0.00
+SIM_TRACE_LOG:1,697,7.1371,-0.4112,79.8922,30.00,2.10,14,1.0000,False,True,51.7621,136,39.07,52.682,in_progress,0.00
+SIM_TRACE_LOG:1,698,7.1441,-0.2639,83.5970,0.00,3.60,6,1.0000,False,True,52.1351,137,39.07,52.745,in_progress,0.00
+SIM_TRACE_LOG:1,699,7.1399,-0.1098,87.9067,30.00,2.10,14,1.0000,False,True,52.5264,138,39.07,52.821,in_progress,0.00
+SIM_TRACE_LOG:1,700,7.1191,0.0623,93.7974,25.00,2.50,13,1.0000,False,True,52.9659,139,39.07,52.88,in_progress,0.00
+SIM_TRACE_LOG:1,701,7.0904,0.2050,98.2527,-30.00,2.20,0,1.0000,False,True,53.3379,140,39.07,52.941,in_progress,0.00
+SIM_TRACE_LOG:1,702,7.0470,0.3629,102.7684,30.00,2.10,14,0.5000,False,True,53.7588,141,39.07,53.01,in_progress,0.00
+SIM_TRACE_LOG:1,703,6.9988,0.5087,105.8262,30.00,2.10,14,0.5000,False,True,54.1635,142,39.07,53.076,in_progress,0.00
+SIM_TRACE_LOG:1,704,6.9464,0.6409,108.7281,30.00,2.10,14,0.5000,False,True,54.5514,143,39.07,53.14,in_progress,0.00
+SIM_TRACE_LOG:1,705,6.8810,0.7794,112.1738,30.00,2.10,14,0.5000,False,True,55.0420,144,39.07,53.214,in_progress,0.00
+SIM_TRACE_LOG:1,706,6.8101,0.9101,115.3571,30.00,2.10,14,0.1000,False,True,55.4911,145,39.07,53.281,in_progress,0.00
+SIM_TRACE_LOG:1,707,6.7294,1.0373,118.9713,30.00,2.10,14,0.1000,False,True,55.9533,146,39.07,53.348,in_progress,0.00
+SIM_TRACE_LOG:1,708,6.6435,1.1528,122.7838,0.00,2.80,8,0.1000,False,True,56.3998,148,39.07,53.412,in_progress,0.00
+SIM_TRACE_LOG:1,709,6.5399,1.2728,127.1870,0.00,2.80,8,0.1000,False,True,56.8801,149,39.07,53.478,in_progress,0.00
+SIM_TRACE_LOG:1,710,6.4246,1.3853,131.7813,10.00,3.50,10,0.1000,False,True,57.4247,150,39.07,53.552,in_progress,0.00
+SIM_TRACE_LOG:1,711,6.2961,1.4959,136.1540,10.00,3.50,10,0.5000,False,True,57.9145,152,39.07,53.613,in_progress,0.00
+SIM_TRACE_LOG:1,712,6.1474,1.6021,141.5415,30.00,2.10,14,0.5000,False,True,58.4329,153,39.07,53.681,in_progress,0.00
+SIM_TRACE_LOG:1,713,5.9917,1.6963,147.3044,0.00,2.80,8,0.5000,False,True,58.9887,154,39.07,53.748,in_progress,0.00
+SIM_TRACE_LOG:1,714,5.8335,1.7815,151.9606,25.00,2.50,13,0.5000,False,True,59.4715,156,39.07,53.813,in_progress,0.00
+SIM_TRACE_LOG:1,715,5.6696,1.8587,154.8799,0.00,3.20,7,1.0000,False,True,59.9390,157,39.07,53.874,in_progress,0.00
+SIM_TRACE_LOG:1,716,5.4988,1.9262,157.1257,0.00,2.80,8,1.0000,False,True,60.3937,158,39.07,53.949,in_progress,0.00
+SIM_TRACE_LOG:1,717,5.3183,1.9833,160.5799,0.00,2.80,8,1.0000,False,True,60.8225,159,39.07,54.014,in_progress,0.00
+SIM_TRACE_LOG:1,718,5.1381,2.0303,163.4283,25.00,2.50,13,0.5000,False,True,61.2245,160,39.07,54.074,in_progress,0.00
+SIM_TRACE_LOG:1,719,4.9590,2.0695,165.9443,25.00,2.50,13,0.5000,False,True,61.6059,161,39.07,54.148,in_progress,0.00
+SIM_TRACE_LOG:1,720,4.7890,2.0957,168.9669,15.00,3.20,11,0.1000,False,True,61.9645,162,39.07,54.211,in_progress,0.00
+SIM_TRACE_LOG:1,721,4.6034,2.1129,172.5648,-24.00,2.60,1,0.1000,False,True,62.3709,163,39.07,54.281,in_progress,0.00
+SIM_TRACE_LOG:1,722,4.4228,2.1169,176.5744,0.00,2.80,8,0.1000,False,True,62.8056,164,39.07,54.348,in_progress,0.00
+SIM_TRACE_LOG:1,723,4.2412,2.1108,179.7998,-24.00,2.60,1,0.1000,False,False,63.3332,166,39.07,54.417,in_progress,0.00
+SIM_TRACE_LOG:1,724,4.0468,2.0934,-176.9238,25.00,2.50,13,0.1000,False,False,64.8701,170,39.07,54.479,in_progress,0.00
+SIM_TRACE_LOG:1,725,3.8816,2.0741,-174.9264,0.00,2.80,8,0.1000,False,False,65.2251,171,39.07,54.549,in_progress,0.00
+SIM_TRACE_LOG:1,726,3.7052,2.0456,-172.5786,0.00,2.80,8,0.5000,False,True,65.5571,171,39.07,54.615,in_progress,0.00
+SIM_TRACE_LOG:1,727,3.5242,2.0106,-170.4151,-24.00,2.60,1,0.5000,False,True,65.9015,172,39.07,54.681,in_progress,0.00
+SIM_TRACE_LOG:1,728,3.3455,1.9769,-169.8271,-24.00,2.60,1,1.0000,False,True,66.2827,173,39.07,54.749,in_progress,0.00
+SIM_TRACE_LOG:1,729,3.1521,1.9479,-170.9367,-24.00,2.60,1,1.0000,False,True,66.7542,175,39.07,54.816,in_progress,0.00
+SIM_TRACE_LOG:1,730,2.9734,1.9309,-173.1075,-24.00,2.60,1,1.0000,False,True,67.2255,176,39.07,54.874,in_progress,0.00
+SIM_TRACE_LOG:1,731,2.7919,1.9233,-175.7856,-24.00,2.60,1,1.0000,False,True,67.7216,177,39.07,54.949,in_progress,0.00
+SIM_TRACE_LOG:1,732,2.6101,1.9247,-178.5561,-30.00,2.20,0,1.0000,False,True,68.1852,178,39.07,55.011,in_progress,0.00
+SIM_TRACE_LOG:1,733,2.4345,1.9317,179.3156,-24.00,2.60,1,1.0000,False,True,68.6255,179,39.07,55.078,in_progress,0.00
+SIM_TRACE_LOG:1,734,2.2681,1.9454,177.0192,-12.00,3.30,3,1.0000,False,True,69.0469,181,39.07,55.143,in_progress,0.00
+SIM_TRACE_LOG:1,735,2.0840,1.9759,172.8212,-12.00,3.30,3,1.0000,False,True,69.5279,182,39.07,55.211,in_progress,0.00
+SIM_TRACE_LOG:1,736,1.8952,2.0240,167.7057,-24.00,2.60,1,1.0000,False,True,70.0586,183,39.07,55.277,in_progress,0.00
+SIM_TRACE_LOG:1,737,1.7193,2.0789,163.6116,-24.00,2.60,1,1.0000,False,True,70.5409,184,39.07,55.343,in_progress,0.00
+SIM_TRACE_LOG:1,738,1.5272,2.1464,161.3220,-18.00,3.00,2,1.0000,False,True,71.0582,186,39.07,55.415,in_progress,0.00
+SIM_TRACE_LOG:1,739,1.3619,2.2166,158.6018,-18.00,3.00,2,1.0000,False,True,71.5069,187,39.07,55.479,in_progress,0.00
+SIM_TRACE_LOG:1,740,1.1811,2.3095,154.7785,-12.00,3.30,3,1.0000,False,True,72.0135,188,39.07,55.543,in_progress,0.00
+SIM_TRACE_LOG:1,741,1.0064,2.4117,151.4597,-12.00,3.30,3,1.0000,False,True,72.5288,190,39.07,55.614,in_progress,0.00
+SIM_TRACE_LOG:1,742,0.8336,2.5257,148.0139,-24.00,2.60,1,0.5000,False,True,73.0630,191,39.07,55.676,in_progress,0.00
+SIM_TRACE_LOG:1,743,0.6647,2.6500,144.9524,0.00,2.80,8,1.0000,False,True,73.6183,192,39.07,55.742,in_progress,0.00
+SIM_TRACE_LOG:1,744,0.5024,2.7791,142.7210,-18.00,3.00,2,1.0000,False,True,74.1543,194,39.07,55.812,in_progress,0.00
+SIM_TRACE_LOG:1,745,0.3520,2.9094,140.2302,-24.00,2.60,1,1.0000,False,True,74.6617,195,39.07,55.879,in_progress,0.00
+SIM_TRACE_LOG:1,746,0.2094,3.0454,137.7359,-30.00,2.20,0,1.0000,False,True,75.1431,196,39.07,55.947,in_progress,0.00
+SIM_TRACE_LOG:1,747,0.0738,3.1839,135.6836,-30.00,2.20,0,1.0000,False,True,75.6140,198,39.07,56.015,in_progress,0.00
+SIM_TRACE_LOG:1,748,-0.0384,3.3095,133.4674,-24.00,2.60,1,0.5000,False,True,76.0352,199,39.07,56.075,in_progress,0.00
+SIM_TRACE_LOG:1,749,-0.1462,3.4473,130.2067,-24.00,2.60,1,0.5000,False,True,76.4983,200,39.07,56.149,in_progress,0.00
+SIM_TRACE_LOG:1,750,-0.2463,3.6009,125.9274,-24.00,2.60,1,0.5000,False,True,77.1061,201,39.07,56.215,in_progress,0.00
+SIM_TRACE_LOG:1,751,-0.3229,3.7389,122.1363,-24.00,2.60,1,0.5000,False,True,77.5997,203,39.07,56.275,in_progress,0.00
+SIM_TRACE_LOG:1,752,-0.3973,3.8981,118.0042,-24.00,2.60,1,0.5000,False,True,78.1951,204,39.07,56.344,in_progress,0.00
+SIM_TRACE_LOG:1,753,-0.4663,4.0753,113.7664,0.00,2.80,8,0.5000,False,True,78.7243,206,39.07,56.415,in_progress,0.00
+SIM_TRACE_LOG:1,754,-0.5181,4.2408,109.9220,25.00,2.50,13,0.5000,False,True,79.1955,207,39.07,56.476,in_progress,0.00
+SIM_TRACE_LOG:1,755,-0.5591,4.4023,106.7425,25.00,2.50,13,0.5000,False,True,79.6530,208,39.07,56.549,in_progress,0.00
+SIM_TRACE_LOG:1,756,-0.6001,4.5923,103.9354,25.00,2.50,13,0.5000,False,True,80.1556,209,39.07,56.615,in_progress,0.00
+SIM_TRACE_LOG:1,757,-0.6281,4.7550,101.5720,25.00,2.50,13,0.5000,False,True,80.5813,211,39.07,56.681,in_progress,0.00
+SIM_TRACE_LOG:1,758,-0.6570,4.9193,100.6662,30.00,2.10,14,0.5000,False,True,81.0082,212,39.07,56.747,in_progress,0.00
+SIM_TRACE_LOG:1,759,-0.6936,5.0800,101.9515,30.00,2.10,14,1.0000,False,True,81.4249,213,39.07,56.819,in_progress,0.00
+SIM_TRACE_LOG:1,760,-0.7455,5.2415,105.3235,30.00,2.10,14,1.0000,False,True,81.8452,214,39.07,56.88,in_progress,0.00
+SIM_TRACE_LOG:1,761,-0.7993,5.3747,108.6478,30.00,2.10,14,1.0000,False,True,82.1932,215,39.07,56.946,in_progress,0.00
+SIM_TRACE_LOG:1,762,-0.8639,5.5091,112.1953,30.00,2.10,14,1.0000,False,True,82.5496,216,39.07,57.015,in_progress,0.00
+SIM_TRACE_LOG:1,763,-0.9366,5.6386,115.7893,30.00,2.10,14,1.0000,False,True,82.9065,217,39.07,57.081,in_progress,0.00
+SIM_TRACE_LOG:1,764,-1.0150,5.7597,119.3731,30.00,2.10,14,0.5000,False,True,83.2690,217,39.07,57.142,in_progress,0.00
+SIM_TRACE_LOG:1,765,-1.1021,5.8782,122.8580,30.00,2.10,14,0.5000,False,True,83.6708,219,39.07,57.205,in_progress,0.00
+SIM_TRACE_LOG:1,766,-1.1919,5.9847,126.3830,30.00,2.10,14,0.5000,False,True,84.0935,220,39.07,57.238,in_progress,0.00
+SIM_TRACE_LOG:1,767,-1.4123,6.1903,135.1683,30.00,2.10,14,0.1000,False,True,85.1436,222,39.07,57.408,in_progress,0.00
+SIM_TRACE_LOG:1,768,-1.5211,6.2717,138.9941,30.00,2.10,14,0.1000,False,True,85.5692,223,39.07,57.472,in_progress,0.00
+SIM_TRACE_LOG:1,769,-1.6504,6.3510,143.9387,30.00,2.10,14,0.1000,False,True,86.0278,225,39.07,57.543,in_progress,0.00
+SIM_TRACE_LOG:1,770,-1.7921,6.4221,149.1649,30.00,2.10,14,0.1000,False,True,86.4997,226,39.07,57.61,in_progress,0.00
+SIM_TRACE_LOG:1,771,-1.9154,6.4716,153.5162,25.00,2.50,13,0.1000,False,True,86.9750,227,39.07,57.676,in_progress,0.00
+SIM_TRACE_LOG:1,772,-2.0594,6.5171,158.1666,25.00,2.50,13,0.1000,False,True,87.4354,228,39.07,57.748,in_progress,0.00
+SIM_TRACE_LOG:1,773,-2.2146,6.5530,163.0089,0.00,2.80,8,0.1000,False,True,87.9224,230,39.07,57.814,in_progress,0.00
+SIM_TRACE_LOG:1,774,-2.3791,6.5775,168.0934,10.00,3.50,10,0.1000,False,True,88.5166,231,39.07,57.879,in_progress,0.00
+SIM_TRACE_LOG:1,775,-2.5353,6.5861,173.5796,25.00,2.50,13,0.1000,False,True,88.9950,232,39.07,57.944,in_progress,0.00
+SIM_TRACE_LOG:1,776,-2.7137,6.5806,-179.5736,0.00,2.80,8,0.5000,False,True,89.5136,234,39.07,57.989,in_progress,0.00
+SIM_TRACE_LOG:1,777,-3.0984,6.5275,-168.2903,25.00,2.50,13,0.5000,False,True,90.6121,237,39.07,58.138,in_progress,0.00
+SIM_TRACE_LOG:1,778,-3.2411,6.4939,-164.9589,20.00,2.90,12,1.0000,False,True,90.9885,238,39.07,58.207,in_progress,0.00
+SIM_TRACE_LOG:1,779,-3.4105,6.4457,-162.3869,25.00,2.50,13,1.0000,False,True,91.4108,239,39.07,58.282,in_progress,0.00
+SIM_TRACE_LOG:1,780,-3.5795,6.3844,-159.9819,30.00,2.10,14,1.0000,False,True,91.8328,240,39.07,58.342,in_progress,0.00
+SIM_TRACE_LOG:1,781,-3.7321,6.3184,-158.0031,-24.00,2.60,1,0.5000,False,True,92.2232,241,39.07,58.415,in_progress,0.00
+SIM_TRACE_LOG:1,782,-3.8832,6.2392,-154.7659,25.00,2.50,13,0.5000,False,True,92.6316,242,39.07,58.476,in_progress,0.00
+SIM_TRACE_LOG:1,783,-4.0264,6.1534,-151.6088,25.00,2.50,13,0.5000,False,True,93.0372,243,39.07,58.54,in_progress,0.00
+SIM_TRACE_LOG:1,784,-4.1694,6.0551,-148.0616,20.00,2.90,12,0.5000,False,True,93.4621,244,39.07,58.609,in_progress,0.00
+SIM_TRACE_LOG:1,785,-4.2925,5.9550,-143.9403,20.00,2.90,12,0.1000,False,True,93.8607,245,39.07,58.669,in_progress,0.00
+SIM_TRACE_LOG:1,786,-4.4533,5.8023,-138.6857,20.00,2.90,12,0.1000,False,True,94.4239,247,39.07,58.728,in_progress,0.00
+SIM_TRACE_LOG:1,787,-4.6009,5.6398,-133.8280,20.00,2.90,12,0.1000,False,True,94.9837,248,39.07,58.809,in_progress,0.00
+SIM_TRACE_LOG:1,788,-4.6997,5.5173,-130.4223,20.00,2.90,12,0.1000,False,True,95.3840,249,39.07,58.864,in_progress,0.00
+SIM_TRACE_LOG:1,789,-4.8304,5.3303,-124.8928,0.00,2.80,8,0.1000,False,True,95.9619,251,39.07,58.958,in_progress,0.00
+SIM_TRACE_LOG:1,790,-4.9482,5.1358,-119.8965,0.00,2.80,8,0.5000,False,True,96.5340,252,39.07,59.012,in_progress,0.00
+SIM_TRACE_LOG:1,791,-5.0250,4.9962,-117.9755,-24.00,2.60,1,0.5000,False,True,96.9307,253,39.07,59.082,in_progress,0.00
+SIM_TRACE_LOG:1,792,-5.0983,4.8455,-116.4515,-24.00,2.60,1,0.5000,False,True,97.3443,254,39.07,59.151,in_progress,0.00
+SIM_TRACE_LOG:1,793,-5.1812,4.6414,-113.5370,-12.00,3.30,3,1.0000,False,True,97.8774,255,39.07,59.218,in_progress,0.00
+SIM_TRACE_LOG:1,794,-5.2407,4.4874,-112.1456,-24.00,2.60,1,1.0000,False,True,98.2749,257,39.07,59.276,in_progress,0.00
+SIM_TRACE_LOG:1,795,-5.3041,4.3306,-112.0297,-24.00,2.60,1,1.0000,False,True,98.6847,258,39.07,59.335,in_progress,0.00
+SIM_TRACE_LOG:1,796,-5.3902,4.1446,-113.8999,-24.00,2.60,1,1.0000,False,True,99.1896,259,39.07,59.39,in_progress,0.00
+SIM_TRACE_LOG:1,797,-5.6364,3.7233,-120.7981,-24.00,2.60,1,0.5000,False,True,100.0000,1,39.07,59.501,in_progress,0.00
+SIM_TRACE_LOG:2,798,-5.6469,3.7074,-121.0294,-24.00,2.60,1,0.5000,False,True,0.4715,1,39.07,59.608,in_progress,0.00
+SIM_TRACE_LOG:2,799,-5.7674,3.5398,-124.0759,0.00,2.80,8,0.5000,False,True,1.0002,3,39.07,59.68,in_progress,0.00
+SIM_TRACE_LOG:2,800,-5.8729,3.4112,-127.0586,0.00,2.80,8,0.5000,False,True,1.4284,4,39.07,59.744,in_progress,0.00
+SIM_TRACE_LOG:2,801,-5.9917,3.2826,-130.3720,25.00,2.50,13,0.5000,False,True,1.8786,5,39.07,59.813,in_progress,0.00
+SIM_TRACE_LOG:2,802,-6.1408,3.1351,-133.5679,25.00,2.50,13,0.5000,False,True,2.4183,6,39.07,59.869,in_progress,0.00
+SIM_TRACE_LOG:2,803,-6.2466,3.0281,-134.1141,30.00,2.10,14,0.5000,False,True,2.8047,7,39.07,59.947,in_progress,0.00
+SIM_TRACE_LOG:2,804,-6.3632,2.8966,-132.4927,25.00,2.50,13,0.5000,False,True,3.2575,8,39.07,60.015,in_progress,0.00
+SIM_TRACE_LOG:2,805,-6.4594,2.7693,-129.5703,30.00,2.10,14,0.5000,False,True,3.6706,10,39.07,60.07,in_progress,0.00
+SIM_TRACE_LOG:2,806,-6.5412,2.6427,-126.0078,30.00,2.10,14,0.5000,False,True,4.0620,11,39.07,60.142,in_progress,0.00
+SIM_TRACE_LOG:2,807,-6.6234,2.4928,-121.7729,30.00,2.10,14,0.5000,False,True,4.5054,12,39.07,60.205,in_progress,0.00
+SIM_TRACE_LOG:2,808,-6.6848,2.3622,-118.4818,25.00,2.50,13,0.5000,False,True,4.8824,13,39.07,60.283,in_progress,0.00
+SIM_TRACE_LOG:2,809,-6.7426,2.2188,-115.0122,25.00,2.50,13,0.5000,False,True,5.2885,14,39.07,60.34,in_progress,0.00
+SIM_TRACE_LOG:2,810,-6.7897,2.0689,-110.9425,25.00,2.50,13,0.5000,False,True,5.7036,15,39.07,60.414,in_progress,0.00
+SIM_TRACE_LOG:2,811,-6.8275,1.8976,-105.8975,20.00,2.90,12,0.5000,False,True,6.2054,16,39.07,60.476,in_progress,0.00
+SIM_TRACE_LOG:2,812,-6.8508,1.7419,-101.9460,0.00,2.80,8,0.1000,False,True,6.6460,17,39.07,60.535,in_progress,0.00
+SIM_TRACE_LOG:2,813,-6.8654,1.5695,-97.8538,0.00,2.80,8,0.1000,False,True,7.1386,19,39.07,60.601,in_progress,0.00
+SIM_TRACE_LOG:2,814,-6.8669,1.3991,-93.6819,0.00,2.80,8,0.1000,False,True,7.6381,20,39.07,60.677,in_progress,0.00
+SIM_TRACE_LOG:2,815,-6.8588,1.2198,-90.0340,0.00,2.80,8,0.1000,False,True,8.2618,21,39.07,60.749,in_progress,0.00
+SIM_TRACE_LOG:2,816,-6.8405,1.0291,-86.6622,25.00,2.50,13,0.1000,False,True,8.9291,23,39.07,60.811,in_progress,0.00
+SIM_TRACE_LOG:2,817,-6.8145,0.8620,-83.5690,25.00,2.50,13,0.1000,False,True,9.4433,25,39.07,60.88,in_progress,0.00
+SIM_TRACE_LOG:2,818,-6.7782,0.6871,-80.4951,25.00,2.50,13,0.1000,False,True,10.0388,26,39.07,60.946,in_progress,0.00
+SIM_TRACE_LOG:2,819,-6.7324,0.5180,-77.2591,30.00,2.10,14,0.1000,False,True,10.5348,27,39.07,61.015,in_progress,0.00
+SIM_TRACE_LOG:2,820,-6.6797,0.3610,-73.7743,30.00,2.10,14,0.5000,False,True,10.9947,29,39.07,61.077,in_progress,0.00
+SIM_TRACE_LOG:2,821,-6.6206,0.2177,-70.4764,30.00,2.10,14,0.5000,False,True,11.4173,30,39.07,61.148,in_progress,0.00
+SIM_TRACE_LOG:2,822,-6.5491,0.0722,-66.8363,30.00,2.10,14,0.5000,False,True,11.8472,31,39.07,61.212,in_progress,0.00
+SIM_TRACE_LOG:2,823,-6.4737,-0.0588,-63.3566,30.00,2.10,14,1.0000,False,True,12.2413,32,39.07,61.277,in_progress,0.00
+SIM_TRACE_LOG:2,824,-6.3901,-0.1821,-59.5208,30.00,2.10,14,1.0000,False,True,12.6228,33,39.07,61.339,in_progress,0.00
+SIM_TRACE_LOG:2,825,-6.2994,-0.3006,-55.9535,25.00,2.50,13,1.0000,False,True,12.9977,34,39.07,61.399,in_progress,0.00
+SIM_TRACE_LOG:2,826,-6.1945,-0.4208,-52.1555,30.00,2.10,14,1.0000,False,True,13.3925,35,39.07,61.482,in_progress,0.00
+SIM_TRACE_LOG:2,827,-6.0836,-0.5283,-47.9160,25.00,2.50,13,1.0000,False,True,13.7731,36,39.07,61.542,in_progress,0.00
+SIM_TRACE_LOG:2,828,-5.9647,-0.6272,-43.5123,20.00,2.90,12,1.0000,False,True,14.1534,37,39.07,61.614,in_progress,0.00
+SIM_TRACE_LOG:2,829,-5.8216,-0.7213,-37.6159,20.00,2.90,12,0.5000,False,True,14.5795,38,39.07,61.682,in_progress,0.00
+SIM_TRACE_LOG:2,830,-5.6739,-0.7977,-31.2168,0.00,2.80,8,0.5000,False,True,14.9977,39,39.07,61.745,in_progress,0.00
+SIM_TRACE_LOG:2,831,-5.5008,-0.8678,-23.6199,0.00,4.00,5,0.5000,False,True,15.4784,40,39.07,61.817,in_progress,0.00
+SIM_TRACE_LOG:2,832,-5.3165,-0.9258,-16.9223,0.00,2.80,8,1.0000,False,True,15.9671,42,39.07,61.88,in_progress,0.00
+SIM_TRACE_LOG:2,833,-5.1303,-0.9706,-11.2706,0.00,2.80,8,1.0000,False,True,16.4460,43,39.07,61.948,in_progress,0.00
+SIM_TRACE_LOG:2,834,-4.9382,-1.0070,-7.4704,0.00,2.80,8,1.0000,False,True,16.9320,44,39.07,62.014,in_progress,0.00
+SIM_TRACE_LOG:2,835,-4.7541,-1.0287,-4.1603,0.00,2.80,8,1.0000,False,True,17.3964,45,39.07,62.072,in_progress,0.00
+SIM_TRACE_LOG:2,836,-4.5683,-1.0392,-1.8822,-24.00,2.60,1,1.0000,False,True,17.8665,46,39.07,62.146,in_progress,0.00
+SIM_TRACE_LOG:2,837,-4.3772,-1.0370,0.5692,20.00,2.90,12,1.0000,False,True,18.3563,48,39.07,62.208,in_progress,0.00
+SIM_TRACE_LOG:2,838,-4.1787,-1.0278,1.9343,-30.00,2.20,0,0.5000,False,True,18.9096,49,39.07,62.272,in_progress,0.00
+SIM_TRACE_LOG:2,839,-4.0123,-1.0142,3.4078,-30.00,2.20,0,0.5000,False,True,19.3730,50,39.07,62.344,in_progress,0.00
+SIM_TRACE_LOG:2,840,-3.8337,-1.0035,3.2573,0.00,2.80,8,0.5000,False,True,19.8696,52,39.07,62.408,in_progress,0.00
+SIM_TRACE_LOG:2,841,-3.6701,-0.9984,2.4114,-24.00,2.60,1,1.0000,False,True,20.3136,53,39.07,62.475,in_progress,0.00
+SIM_TRACE_LOG:2,842,-3.4975,-1.0009,0.4824,15.00,3.20,11,1.0000,False,True,20.7459,54,39.07,62.546,in_progress,0.00
+SIM_TRACE_LOG:2,843,-3.3086,-1.0099,-1.5148,0.00,2.80,8,1.0000,False,True,21.1615,56,39.07,62.615,in_progress,0.00
+SIM_TRACE_LOG:2,844,-3.1191,-1.0259,-3.7288,25.00,2.50,13,0.5000,False,True,21.5403,57,39.07,62.677,in_progress,0.00
+SIM_TRACE_LOG:2,845,-2.9325,-1.0412,-4.2839,30.00,2.10,14,0.1000,False,True,21.9111,58,39.07,62.75,in_progress,0.00
+SIM_TRACE_LOG:2,846,-2.7552,-1.0441,-2.2579,25.00,2.50,13,0.1000,False,True,22.2594,59,39.07,62.811,in_progress,0.00
+SIM_TRACE_LOG:2,847,-2.5884,-1.0341,1.0672,-18.00,3.00,2,0.1000,False,True,22.6164,60,39.07,62.88,in_progress,0.00
+SIM_TRACE_LOG:2,848,-2.4126,-1.0139,4.3177,-24.00,2.60,1,0.0010,False,False,23.0339,61,39.07,62.943,in_progress,0.00
+SIM_TRACE_LOG:2,849,-2.2291,-0.9917,6.1399,-24.00,2.60,1,0.0010,False,False,23.5861,62,39.07,62.999,in_progress,0.00
+SIM_TRACE_LOG:2,850,-2.0477,-0.9759,5.3963,-24.00,2.60,1,0.0010,False,False,24.7906,65,39.07,63.083,off_track,2.99
+SIM_TRACE_LOG:2,851,-1.9477,-0.5332,5.2308,-24.00,2.60,1,0.0000,False,False,25.2263,67,39.07,63.146,pause,2.93
+SIM_TRACE_LOG:2,852,-1.9481,-0.5331,5.2529,-30.00,2.20,0,0.0000,False,True,25.2253,67,39.07,63.203,pause,2.87
+SIM_TRACE_LOG:2,853,-1.9486,-0.5329,5.2859,-30.00,2.20,0,0.0000,False,True,25.2240,67,39.07,63.277,pause,2.80
+SIM_TRACE_LOG:2,854,-1.9485,-0.5329,5.2812,-30.00,2.20,0,0.0000,False,True,25.2245,67,39.07,63.34,pause,2.73
+SIM_TRACE_LOG:2,855,-1.9481,-0.5332,5.1847,-30.00,2.20,0,0.0000,False,True,25.2255,67,39.07,63.41,pause,2.67
+SIM_TRACE_LOG:2,856,-1.9481,-0.5331,5.2529,-30.00,2.20,0,0.0000,False,True,25.2253,67,39.07,63.467,pause,2.61
+SIM_TRACE_LOG:2,857,-1.9482,-0.5332,5.1946,-30.00,2.20,0,0.0000,False,True,25.2253,67,39.07,63.534,pause,2.54
+SIM_TRACE_LOG:2,858,-1.9481,-0.5331,5.2529,-30.00,2.20,0,0.0000,False,True,25.2253,67,39.07,63.616,pause,2.46
+SIM_TRACE_LOG:2,859,-1.9486,-0.5332,5.1788,-30.00,2.20,0,0.0000,False,True,25.2241,67,39.07,63.683,pause,2.39
+SIM_TRACE_LOG:2,860,-1.9485,-0.5333,5.1685,-30.00,2.20,0,0.0000,False,True,25.2245,67,39.07,63.74,pause,2.34
+SIM_TRACE_LOG:2,861,-1.9487,-0.5333,5.1426,-30.00,2.20,0,0.0000,False,True,25.2238,67,39.07,63.814,pause,2.26
+SIM_TRACE_LOG:2,862,-1.9483,-0.5333,5.1653,-30.00,2.20,0,0.0000,False,True,25.2250,67,39.07,63.882,pause,2.19
+SIM_TRACE_LOG:2,863,-1.9481,-0.5331,5.2529,-30.00,2.20,0,0.0000,False,True,25.2253,67,39.07,63.943,pause,2.13
+SIM_TRACE_LOG:2,864,-1.9482,-0.5332,5.1970,-30.00,2.20,0,0.0000,False,True,25.2251,67,39.07,64.012,pause,2.06
+SIM_TRACE_LOG:2,865,-1.9485,-0.5332,5.2013,-30.00,2.20,0,0.0000,False,True,25.2243,67,39.07,64.069,pause,2.01
+SIM_TRACE_LOG:2,866,-1.9483,-0.5333,5.1859,-30.00,2.20,0,0.0000,False,True,25.2249,67,39.07,64.142,pause,1.93
+SIM_TRACE_LOG:2,867,-1.9486,-0.5333,5.1856,-30.00,2.20,0,0.0000,False,True,25.2241,67,39.07,64.208,pause,1.87
+SIM_TRACE_LOG:2,868,-1.9479,-0.5332,5.2374,-30.00,2.20,0,0.0000,False,True,25.2259,67,39.07,64.275,pause,1.80
+SIM_TRACE_LOG:2,869,-1.9481,-0.5331,5.2529,-30.00,2.20,0,0.0000,False,True,25.2253,67,39.07,64.339,pause,1.74
+SIM_TRACE_LOG:2,870,-1.9480,-0.5331,5.2459,-30.00,2.20,0,0.0000,False,True,25.2256,67,39.07,64.402,pause,1.67
+SIM_TRACE_LOG:2,871,-1.9487,-0.5333,5.1638,-30.00,2.20,0,0.0000,False,True,25.2238,67,39.07,64.472,pause,1.60
+SIM_TRACE_LOG:2,872,-1.9484,-0.5333,5.1810,-30.00,2.20,0,0.0000,False,True,25.2245,67,39.07,64.543,pause,1.53
+SIM_TRACE_LOG:2,873,-1.9486,-0.5333,5.1987,-30.00,2.20,0,0.0000,False,True,25.2240,67,39.07,64.612,pause,1.46
+SIM_TRACE_LOG:2,874,-1.9483,-0.5333,5.2041,-30.00,2.20,0,0.0000,False,True,25.2249,67,39.07,64.681,pause,1.39
+SIM_TRACE_LOG:2,875,-1.9485,-0.5332,5.2570,-30.00,2.20,0,0.0000,False,True,25.2245,67,39.07,64.737,pause,1.34
+SIM_TRACE_LOG:2,876,-1.9487,-0.5332,5.2614,-30.00,2.20,0,0.0000,False,True,25.2240,67,39.07,64.806,pause,1.27
+SIM_TRACE_LOG:2,877,-1.9485,-0.5332,5.2522,-30.00,2.20,0,0.0000,False,True,25.2244,67,39.07,64.868,pause,1.21
+SIM_TRACE_LOG:2,878,-1.9483,-0.5332,5.2199,-30.00,2.20,0,0.0000,False,True,25.2250,67,39.07,64.949,pause,1.13
+SIM_TRACE_LOG:2,879,-1.9485,-0.5333,5.2090,-30.00,2.20,0,0.0000,False,True,25.2243,67,39.07,65.014,pause,1.06
+SIM_TRACE_LOG:2,880,-1.9481,-0.5331,5.2529,-30.00,2.20,0,0.0000,False,True,25.2253,67,39.07,65.083,pause,0.99
+SIM_TRACE_LOG:2,881,-1.9485,-0.5332,5.2178,-30.00,2.20,0,0.0000,False,True,25.2243,67,39.07,65.141,pause,0.93
+SIM_TRACE_LOG:2,882,-1.9480,-0.5331,5.2489,-30.00,2.20,0,0.0000,False,True,25.2257,67,39.07,65.206,pause,0.87
+SIM_TRACE_LOG:2,883,-1.9486,-0.5332,5.2120,-30.00,2.20,0,0.0000,False,True,25.2241,67,39.07,65.278,pause,0.80
+SIM_TRACE_LOG:2,884,-1.9481,-0.5331,5.2529,-30.00,2.20,0,0.0000,False,True,25.2253,67,39.07,65.345,pause,0.73
+SIM_TRACE_LOG:2,885,-1.9481,-0.5331,5.2529,-30.00,2.20,0,0.0000,False,True,25.2253,67,39.07,65.416,pause,0.66
+SIM_TRACE_LOG:2,886,-1.9488,-0.5333,5.2130,-30.00,2.20,0,0.0000,False,True,25.2237,67,39.07,65.476,pause,0.60
+SIM_TRACE_LOG:2,887,-1.9485,-0.5332,5.2099,-30.00,2.20,0,0.0000,False,True,25.2244,67,39.07,65.547,pause,0.53
+SIM_TRACE_LOG:2,888,-1.9485,-0.5333,5.1845,-30.00,2.20,0,0.0000,False,True,25.2244,67,39.07,65.618,pause,0.46
+SIM_TRACE_LOG:2,889,-1.9481,-0.5331,5.2529,-30.00,2.20,0,0.0000,False,True,25.2253,67,39.07,65.673,pause,0.40
+SIM_TRACE_LOG:2,890,-1.9485,-0.5332,5.2253,-30.00,2.20,0,0.0000,False,True,25.2245,67,39.07,65.739,pause,0.34
+SIM_TRACE_LOG:2,891,-1.9481,-0.5331,5.2529,-30.00,2.20,0,0.0000,False,True,25.2253,67,39.07,65.799,pause,0.28
+SIM_TRACE_LOG:2,892,-1.9483,-0.5331,5.2394,-30.00,2.20,0,0.0000,False,True,25.2248,67,39.07,65.882,pause,0.19
+SIM_TRACE_LOG:2,893,-1.9481,-0.5331,5.2529,-30.00,2.20,0,0.0000,False,True,25.2253,67,39.07,65.948,pause,0.13
+SIM_TRACE_LOG:2,894,-1.9485,-0.5332,5.2422,-30.00,2.20,0,0.0000,False,True,25.2245,67,39.07,66.004,pause,0.07
+SIM_TRACE_LOG:2,895,-1.9485,-0.5332,5.2490,-30.00,2.20,0,0.0000,False,True,25.2243,67,39.07,66.085,pause,-0.00
+SIM_TRACE_LOG:2,896,-1.9484,-0.5332,5.2503,-30.00,2.20,0,0.5000,False,True,25.2247,67,39.07,66.141,in_progress,0.00
+SIM_TRACE_LOG:2,897,-1.9408,-0.5322,5.3004,-24.00,2.60,1,0.5000,False,True,25.2440,67,39.07,66.209,in_progress,0.00
+SIM_TRACE_LOG:2,898,-1.9228,-0.5312,5.1171,-30.00,2.20,0,0.5000,False,True,25.2902,67,39.07,66.308,in_progress,0.00
+SIM_TRACE_LOG:2,899,-1.8695,-0.5325,3.7095,-30.00,2.20,0,0.5000,False,True,25.5126,67,39.07,66.34,in_progress,0.00
+SIM_TRACE_LOG:2,900,-1.8284,-0.5374,1.9103,-24.00,2.60,1,0.5000,False,True,25.6186,68,39.07,66.415,in_progress,0.00
+SIM_TRACE_LOG:2,901,-1.7663,-0.5490,-1.1771,-24.00,2.60,1,0.5000,False,True,25.8838,68,39.07,66.479,in_progress,0.00
+SIM_TRACE_LOG:2,902,-1.6898,-0.5706,-5.6797,-30.00,2.20,0,0.5000,False,True,26.0870,69,39.07,66.545,in_progress,0.00
+SIM_TRACE_LOG:2,903,-1.6035,-0.6091,-12.1819,-30.00,2.20,0,0.5000,False,True,26.4356,70,39.07,66.61,in_progress,0.00
+SIM_TRACE_LOG:2,904,-1.5099,-0.6659,-19.8308,0.00,2.80,8,0.5000,False,True,26.8067,71,39.07,66.679,in_progress,0.00
+SIM_TRACE_LOG:2,905,-1.4185,-0.7364,-27.5743,0.00,2.80,8,0.5000,False,True,27.1662,72,39.07,66.745,in_progress,0.00
+SIM_TRACE_LOG:2,906,-1.3163,-0.8327,-36.2088,25.00,2.50,13,0.5000,False,True,27.5651,73,39.07,66.814,in_progress,0.00
+SIM_TRACE_LOG:2,907,-1.2170,-0.9434,-44.2033,25.00,2.50,13,0.5000,False,True,27.9670,74,39.07,66.878,in_progress,0.00
+SIM_TRACE_LOG:2,908,-1.1241,-1.0608,-50.8775,30.00,2.10,14,0.5000,False,True,28.3596,75,39.07,66.947,in_progress,0.00
+SIM_TRACE_LOG:2,909,-1.0325,-1.1773,-54.3258,30.00,2.10,14,0.5000,False,True,28.7395,76,39.07,67.002,in_progress,0.00
+SIM_TRACE_LOG:2,910,-0.9340,-1.2904,-53.7125,30.00,2.10,14,0.5000,False,True,29.1164,77,39.07,67.079,in_progress,0.00
+SIM_TRACE_LOG:2,911,-0.8394,-1.3881,-50.1643,30.00,2.10,14,0.5000,False,True,29.4503,78,39.07,67.146,in_progress,0.00
+SIM_TRACE_LOG:2,912,-0.7318,-1.4844,-45.9583,30.00,2.10,14,0.5000,False,True,29.7973,78,39.07,67.206,in_progress,0.00
+SIM_TRACE_LOG:2,913,-0.6124,-1.5755,-41.5295,30.00,2.10,14,0.5000,False,True,30.1507,79,39.07,67.284,in_progress,0.00
+SIM_TRACE_LOG:2,914,-0.4844,-1.6576,-36.9704,25.00,2.50,13,0.5000,False,True,30.5029,80,39.07,67.344,in_progress,0.00
+SIM_TRACE_LOG:2,915,-0.3683,-1.7196,-32.8243,30.00,2.10,14,0.5000,False,True,30.8001,81,39.07,67.415,in_progress,0.00
+SIM_TRACE_LOG:2,916,-0.2275,-1.7799,-27.7734,25.00,2.50,13,0.5000,False,True,31.1539,82,39.07,67.475,in_progress,0.00
+SIM_TRACE_LOG:2,917,-0.0896,-1.8282,-23.5085,25.00,2.50,13,1.0000,False,True,31.5238,83,39.07,67.55,in_progress,0.00
+SIM_TRACE_LOG:2,918,0.0694,-1.8664,-18.0101,0.00,3.20,7,1.0000,False,True,31.9104,84,39.07,67.563,in_progress,0.00
+SIM_TRACE_LOG:2,919,0.2564,-1.8919,-11.0358,0.00,2.80,8,1.0000,False,True,32.3588,85,39.07,67.674,in_progress,0.00
+SIM_TRACE_LOG:2,920,0.3976,-1.8989,-5.4864,0.00,2.80,8,1.0000,False,True,32.7125,86,39.07,67.743,in_progress,0.00
+SIM_TRACE_LOG:2,921,0.5784,-1.8976,-0.7558,0.00,2.80,8,1.0000,False,True,33.1687,87,39.07,67.815,in_progress,0.00
+SIM_TRACE_LOG:2,922,0.7554,-1.8866,1.9508,0.00,2.80,8,1.0000,False,True,33.6162,88,39.07,67.879,in_progress,0.00
+SIM_TRACE_LOG:2,923,0.9332,-1.8642,4.9222,-12.00,3.30,3,1.0000,False,True,34.0646,90,39.07,67.944,in_progress,0.00
+SIM_TRACE_LOG:2,924,1.1130,-1.8368,7.1757,-18.00,3.00,2,0.5000,False,True,34.5181,91,39.07,68.016,in_progress,0.00
+SIM_TRACE_LOG:2,925,1.3112,-1.8047,8.5292,-24.00,2.60,1,0.5000,False,True,35.0193,92,39.07,68.08,in_progress,0.00
+SIM_TRACE_LOG:2,926,1.4929,-1.7861,6.8099,-24.00,2.60,1,0.5000,False,True,35.4806,93,39.07,68.145,in_progress,0.00
+SIM_TRACE_LOG:2,927,1.6879,-1.7770,4.1597,-24.00,2.60,1,0.5000,False,True,35.9788,95,39.07,68.217,in_progress,0.00
+SIM_TRACE_LOG:2,928,1.8740,-1.7776,1.5116,-12.00,3.30,3,0.5000,False,True,36.4566,96,39.07,68.276,in_progress,0.00
+SIM_TRACE_LOG:2,929,2.0533,-1.7875,-1.3477,-12.00,3.30,3,0.5000,False,True,36.9195,97,39.07,68.349,in_progress,0.00
+SIM_TRACE_LOG:2,930,2.2541,-1.8132,-5.3477,0.00,2.80,8,0.5000,False,True,37.4436,98,39.07,68.413,in_progress,0.00
+SIM_TRACE_LOG:2,931,2.4591,-1.8529,-9.2780,0.00,2.80,8,0.5000,False,True,37.9757,100,39.07,68.477,in_progress,0.00
+SIM_TRACE_LOG:2,932,2.6404,-1.8978,-12.1038,0.00,2.80,8,0.5000,False,True,38.4467,101,39.07,68.551,in_progress,0.00
+SIM_TRACE_LOG:2,933,2.8358,-1.9539,-14.5953,0.00,2.80,8,1.0000,False,True,38.9551,102,39.07,68.615,in_progress,0.00
+SIM_TRACE_LOG:2,934,3.0188,-2.0145,-16.9551,0.00,2.80,8,1.0000,False,True,39.4271,104,39.07,68.68,in_progress,0.00
+SIM_TRACE_LOG:2,935,3.1854,-2.0762,-18.9635,25.00,2.50,13,1.0000,False,True,39.8553,105,39.07,68.744,in_progress,0.00
+SIM_TRACE_LOG:2,936,3.3507,-2.1361,-19.4325,20.00,2.90,12,1.0000,False,True,40.2774,106,39.07,68.81,in_progress,0.00
+SIM_TRACE_LOG:2,937,3.5280,-2.1961,-18.9280,25.00,2.50,13,0.5000,False,True,40.7278,107,39.07,68.883,in_progress,0.00
+SIM_TRACE_LOG:2,938,3.7035,-2.2464,-17.0819,30.00,2.10,14,0.5000,False,True,41.1672,108,39.07,68.949,in_progress,0.00
+SIM_TRACE_LOG:2,939,3.8671,-2.2801,-14.0609,25.00,2.50,13,0.5000,False,True,41.5779,109,39.07,69.014,in_progress,0.00
+SIM_TRACE_LOG:2,940,4.0290,-2.3020,-10.5901,20.00,2.90,12,0.5000,False,True,41.9833,110,39.07,69.083,in_progress,0.00
+SIM_TRACE_LOG:2,941,4.2091,-2.3129,-6.2013,20.00,2.90,12,0.1000,False,True,42.4350,111,39.07,69.15,in_progress,0.00
+SIM_TRACE_LOG:2,942,4.3867,-2.3074,-1.4669,20.00,2.90,12,0.1000,False,True,42.8809,112,39.07,69.207,in_progress,0.00
+SIM_TRACE_LOG:2,943,4.5662,-2.2889,3.2171,20.00,2.90,12,0.1000,False,True,43.3331,114,39.07,69.28,in_progress,0.00
+SIM_TRACE_LOG:2,944,4.7682,-2.2537,8.1620,0.00,2.80,8,0.1000,False,True,43.8457,115,39.07,69.347,in_progress,0.00
+SIM_TRACE_LOG:2,945,4.9617,-2.2081,12.4115,0.00,2.80,8,0.5000,False,True,44.3268,116,39.07,69.412,in_progress,0.00
+SIM_TRACE_LOG:2,946,5.1514,-2.1533,15.1978,25.00,2.50,13,0.5000,False,True,44.8138,118,39.07,69.475,in_progress,0.00
+SIM_TRACE_LOG:2,947,5.3169,-2.0980,17.0292,25.00,2.50,13,0.5000,False,True,45.2413,119,39.07,69.548,in_progress,0.00
+SIM_TRACE_LOG:2,948,5.4961,-2.0336,18.6634,25.00,2.50,13,0.5000,False,True,45.7095,120,39.07,69.614,in_progress,0.00
+SIM_TRACE_LOG:2,949,5.6575,-1.9659,21.0259,25.00,2.50,13,0.5000,False,True,46.1380,121,39.07,69.679,in_progress,0.00
+SIM_TRACE_LOG:2,950,5.8182,-1.8885,23.7528,25.00,2.50,13,0.5000,False,True,46.5629,122,39.07,69.744,in_progress,0.00
+SIM_TRACE_LOG:2,951,5.9722,-1.8031,26.8750,30.00,2.10,14,1.0000,False,True,46.9967,123,39.07,69.808,in_progress,0.00
+SIM_TRACE_LOG:2,952,6.1142,-1.7108,30.4593,30.00,2.10,14,1.0000,False,True,47.4150,124,39.07,69.88,in_progress,0.00
+SIM_TRACE_LOG:2,953,6.2395,-1.6181,33.6613,25.00,2.50,13,1.0000,False,True,47.8030,125,39.07,69.947,in_progress,0.00
+SIM_TRACE_LOG:2,954,6.3603,-1.5150,37.4074,30.00,2.10,14,1.0000,False,True,48.2028,126,39.07,70.018,in_progress,0.00
+SIM_TRACE_LOG:2,955,6.4761,-1.4001,41.4223,30.00,2.10,14,1.0000,False,True,48.6202,127,39.07,70.079,in_progress,0.00
+SIM_TRACE_LOG:2,956,6.5678,-1.2982,44.5640,30.00,2.10,14,1.0000,False,True,48.9806,128,39.07,70.143,in_progress,0.00
+SIM_TRACE_LOG:2,957,6.6623,-1.1787,48.2822,30.00,2.10,14,1.0000,False,True,49.3879,129,39.07,70.213,in_progress,0.00
+SIM_TRACE_LOG:2,958,6.7417,-1.0584,52.4629,30.00,2.10,14,1.0000,False,True,49.7790,130,39.07,70.271,in_progress,0.00
+SIM_TRACE_LOG:2,959,6.8065,-0.9377,57.0375,30.00,2.10,14,0.5000,False,True,50.1546,131,39.07,70.349,in_progress,0.00
+SIM_TRACE_LOG:2,960,6.8673,-0.7954,62.2990,30.00,2.10,14,0.5000,False,True,50.5762,132,39.07,70.415,in_progress,0.00
+SIM_TRACE_LOG:2,961,6.9138,-0.6538,67.2355,25.00,2.50,13,0.5000,False,True,50.9832,134,39.07,70.48,in_progress,0.00
+SIM_TRACE_LOG:2,962,6.9467,-0.5119,72.2563,30.00,2.10,14,0.5000,False,True,51.3795,135,39.07,70.547,in_progress,0.00
+SIM_TRACE_LOG:2,963,6.9675,-0.3666,77.4540,-30.00,2.20,0,0.5000,False,True,51.7773,136,39.07,70.615,in_progress,0.00
+SIM_TRACE_LOG:2,964,6.9784,-0.2113,81.9492,30.00,2.10,14,0.5000,False,True,52.1961,137,39.07,70.669,in_progress,0.00
+SIM_TRACE_LOG:2,965,6.9820,-0.0723,85.1241,30.00,2.10,14,0.5000,False,True,52.5729,138,39.07,70.748,in_progress,0.00
+SIM_TRACE_LOG:2,966,6.9784,0.0758,88.3442,30.00,2.10,14,0.5000,False,True,52.9737,139,39.07,70.812,in_progress,0.00
+SIM_TRACE_LOG:2,967,6.9650,0.2217,91.8046,30.00,2.10,14,0.5000,False,True,53.3721,140,39.07,70.88,in_progress,0.00
+SIM_TRACE_LOG:2,968,6.9423,0.3713,95.3225,30.00,2.10,14,0.5000,False,True,53.7874,141,39.07,70.948,in_progress,0.00
+SIM_TRACE_LOG:2,969,6.9118,0.5122,98.7959,30.00,2.10,14,0.1000,False,True,54.1916,142,39.07,71.016,in_progress,0.00
+SIM_TRACE_LOG:2,970,6.8680,0.6615,102.7895,30.00,2.10,14,0.1000,False,True,54.6956,143,39.07,71.079,in_progress,0.00
+SIM_TRACE_LOG:2,971,6.8170,0.7970,106.7952,30.00,2.10,14,0.1000,False,True,55.1384,144,39.07,71.149,in_progress,0.00
+SIM_TRACE_LOG:2,972,6.7532,0.9365,110.8985,30.00,2.10,14,0.1000,False,True,55.6142,146,39.07,71.215,in_progress,0.00
+SIM_TRACE_LOG:2,973,6.6812,1.0692,114.8082,30.00,2.10,14,0.1000,False,True,56.0872,147,39.07,71.277,in_progress,0.00
+SIM_TRACE_LOG:2,974,6.6016,1.1918,118.9853,30.00,2.10,14,0.1000,False,True,56.6210,148,39.07,71.349,in_progress,0.00
+SIM_TRACE_LOG:2,975,6.5125,1.3082,123.2400,30.00,2.10,14,0.1000,False,True,57.0618,149,39.07,71.412,in_progress,0.00
+SIM_TRACE_LOG:2,976,6.4119,1.4209,127.6078,30.00,2.10,14,0.5000,False,True,57.5044,151,39.07,71.476,in_progress,0.00
+SIM_TRACE_LOG:2,977,6.3056,1.5224,132.1835,30.00,2.10,14,0.5000,False,True,57.9284,152,39.07,71.541,in_progress,0.00
+SIM_TRACE_LOG:2,978,6.1859,1.6194,136.8544,30.00,2.10,14,0.5000,False,True,58.3634,153,39.07,71.614,in_progress,0.00
+SIM_TRACE_LOG:2,979,6.0605,1.7056,141.3876,25.00,2.50,13,0.5000,False,True,58.7867,154,39.07,71.684,in_progress,0.00
+SIM_TRACE_LOG:2,980,5.9322,1.7779,146.1459,25.00,2.50,13,0.5000,False,True,59.1903,155,39.07,71.743,in_progress,0.00
+SIM_TRACE_LOG:2,981,5.7866,1.8407,151.8305,30.00,2.10,14,1.0000,False,True,59.6370,156,39.07,71.807,in_progress,0.00
+SIM_TRACE_LOG:2,982,5.6447,1.8911,156.3490,30.00,2.10,14,1.0000,False,True,60.0203,157,39.07,71.882,in_progress,0.00
+SIM_TRACE_LOG:2,983,5.4917,1.9338,160.6921,0.00,2.80,8,1.0000,False,True,60.4097,158,39.07,71.947,in_progress,0.00
+SIM_TRACE_LOG:2,984,5.3377,1.9649,165.0021,0.00,2.80,8,1.0000,False,True,60.7826,159,39.07,72.008,in_progress,0.00
+SIM_TRACE_LOG:2,985,5.1754,1.9826,170.1546,0.00,2.80,8,1.0000,False,True,61.1642,160,39.07,72.076,in_progress,0.00
+SIM_TRACE_LOG:2,986,4.9978,1.9853,175.7850,0.00,2.80,8,0.5000,False,True,61.5798,161,39.07,72.146,in_progress,0.00
+SIM_TRACE_LOG:2,987,4.8231,1.9748,-179.6489,0.00,2.80,8,0.5000,False,True,61.9924,162,39.07,72.215,in_progress,0.00
+SIM_TRACE_LOG:2,988,4.6499,1.9527,-175.6315,0.00,2.80,8,0.5000,False,True,62.4139,163,39.07,72.277,in_progress,0.00
+SIM_TRACE_LOG:2,989,4.4720,1.9182,-171.6019,-24.00,2.60,1,0.1000,False,True,62.8749,164,39.07,72.346,in_progress,0.00
+SIM_TRACE_LOG:2,990,4.2924,1.8734,-167.9274,-6.00,3.70,4,0.1000,False,True,63.3932,166,39.07,72.415,in_progress,0.00
+SIM_TRACE_LOG:2,991,4.1034,1.8159,-164.5610,-24.00,2.60,1,0.5000,False,True,64.3556,168,39.07,72.479,in_progress,0.00
+SIM_TRACE_LOG:2,992,3.9294,1.7573,-162.3732,-24.00,2.60,1,1.0000,False,True,64.7131,169,39.07,72.54,in_progress,0.00
+SIM_TRACE_LOG:2,993,3.7479,1.6987,-162.2473,-30.00,2.20,0,1.0000,False,True,65.0441,170,39.07,72.613,in_progress,0.00
+SIM_TRACE_LOG:2,994,3.5591,1.6487,-164.0461,-24.00,2.60,1,0.5000,False,True,65.4187,171,39.07,72.675,in_progress,0.00
+SIM_TRACE_LOG:2,995,3.4006,1.6148,-166.2487,-30.00,2.20,0,0.1000,False,True,65.7386,172,39.07,72.748,in_progress,0.00
+SIM_TRACE_LOG:2,996,3.2323,1.5877,-168.8194,-30.00,2.20,0,0.1000,False,True,66.2828,173,39.07,72.809,in_progress,0.00
+SIM_TRACE_LOG:2,997,3.0599,1.5642,-170.7268,-30.00,2.20,0,0.1000,False,True,66.8372,175,39.07,72.874,in_progress,0.00
+SIM_TRACE_LOG:2,998,2.8995,1.5468,-172.3518,-30.00,2.20,0,0.1000,False,True,67.5012,177,39.07,72.942,in_progress,0.00
+SIM_TRACE_LOG:2,999,2.7455,1.5393,-174.9745,-30.00,2.20,0,0.1000,False,True,67.9689,178,39.07,73.009,in_progress,0.00
+SIM_TRACE_LOG:2,1000,2.5975,1.5412,-177.9076,-30.00,2.20,0,0.1000,False,True,68.3673,179,39.07,73.076,in_progress,0.00
+SIM_TRACE_LOG:2,1001,2.4501,1.5537,178.5136,-30.00,2.20,0,0.1000,False,True,68.7071,180,39.07,73.142,in_progress,0.00
+SIM_TRACE_LOG:2,1002,2.3018,1.5779,174.4557,-24.00,2.60,1,0.1000,False,True,69.0054,180,39.07,73.214,in_progress,0.00
+SIM_TRACE_LOG:2,1003,2.1496,1.6166,169.6874,-12.00,3.30,3,0.1000,False,True,69.2950,181,39.07,73.282,in_progress,0.00
+SIM_TRACE_LOG:2,1004,1.9905,1.6743,163.7879,-12.00,3.30,3,0.1000,False,True,69.6157,182,39.07,73.343,in_progress,0.00
+SIM_TRACE_LOG:2,1005,1.8344,1.7485,157.2371,-24.00,2.60,1,0.5000,False,True,69.9999,183,39.07,73.412,in_progress,0.00
+SIM_TRACE_LOG:2,1006,1.6825,1.8343,150.7308,-12.00,3.30,3,0.5000,False,True,70.3844,184,39.07,73.48,in_progress,0.00
+SIM_TRACE_LOG:2,1007,1.5260,1.9364,144.9952,-12.00,3.30,3,0.5000,False,True,70.7773,185,39.07,73.542,in_progress,0.00
+SIM_TRACE_LOG:2,1008,1.3777,2.0515,139.2029,0.00,2.80,8,0.5000,False,True,71.2294,186,39.07,73.606,in_progress,0.00
+SIM_TRACE_LOG:2,1009,1.2244,2.1826,134.4013,0.00,2.80,8,0.5000,False,True,71.7304,187,39.07,73.675,in_progress,0.00
+SIM_TRACE_LOG:2,1010,1.0914,2.3069,131.9666,0.00,2.80,8,0.5000,False,True,72.1903,189,39.07,73.747,in_progress,0.00
+SIM_TRACE_LOG:2,1011,0.9552,2.4539,129.2155,0.00,2.80,8,1.0000,False,True,72.7037,190,39.07,73.804,in_progress,0.00
+SIM_TRACE_LOG:2,1012,0.8422,2.5952,126.2789,30.00,2.10,14,1.0000,False,True,73.1550,191,39.07,73.876,in_progress,0.00
+SIM_TRACE_LOG:2,1013,0.7337,2.7509,123.8087,25.00,2.50,13,1.0000,False,True,73.6087,192,39.07,73.951,in_progress,0.00
+SIM_TRACE_LOG:2,1014,0.6423,2.8953,122.7179,30.00,2.10,14,1.0000,False,True,73.9959,193,39.07,74.019,in_progress,0.00
+SIM_TRACE_LOG:2,1015,0.5360,3.0438,124.4739,25.00,2.50,13,0.5000,False,True,74.4068,194,39.07,74.075,in_progress,0.00
+SIM_TRACE_LOG:2,1016,0.4451,3.1532,127.1011,25.00,2.50,13,0.5000,False,True,74.7279,195,39.07,74.139,in_progress,0.00
+SIM_TRACE_LOG:2,1017,0.3280,3.2800,130.2523,0.00,2.80,8,0.1000,False,True,75.1328,196,39.07,74.211,in_progress,0.00
+SIM_TRACE_LOG:2,1018,0.2069,3.3956,133.6688,-24.00,2.60,1,0.1000,False,True,75.5553,197,39.07,74.274,in_progress,0.00
+SIM_TRACE_LOG:2,1019,0.0767,3.5127,136.1633,-30.00,2.20,0,0.1000,False,True,76.0399,199,39.07,74.339,in_progress,0.00
+SIM_TRACE_LOG:2,1020,-0.0442,3.6280,136.1913,-30.00,2.20,0,0.1000,False,True,76.6822,200,39.07,74.407,in_progress,0.00
+SIM_TRACE_LOG:2,1021,-0.1555,3.7497,134.1088,-24.00,2.60,1,0.1000,False,True,77.4054,202,39.07,74.483,in_progress,0.00
+SIM_TRACE_LOG:2,1022,-0.2567,3.8754,131.1139,-24.00,2.60,1,0.1000,False,True,77.9362,204,39.07,74.544,in_progress,0.00
+SIM_TRACE_LOG:2,1023,-0.3498,4.0072,127.8281,-6.00,3.70,4,0.1000,False,True,78.4255,205,39.07,74.602,in_progress,0.00
+SIM_TRACE_LOG:2,1024,-0.4471,4.1666,123.6778,0.00,2.80,8,0.5000,False,True,78.9774,206,39.07,74.677,in_progress,0.00
+SIM_TRACE_LOG:2,1025,-0.5250,4.3212,118.8103,25.00,2.50,13,0.5000,False,True,79.4225,207,39.07,74.748,in_progress,0.00
+SIM_TRACE_LOG:2,1026,-0.6061,4.4851,116.5557,0.00,2.80,8,0.5000,False,True,79.8761,209,39.07,74.811,in_progress,0.00
+SIM_TRACE_LOG:2,1027,-0.6794,4.6349,116.2855,0.00,2.80,8,1.0000,False,True,80.2805,210,39.07,74.876,in_progress,0.00
+SIM_TRACE_LOG:2,1028,-0.7627,4.8129,115.5544,25.00,2.50,13,1.0000,False,True,80.7522,211,39.07,74.936,in_progress,0.00
+SIM_TRACE_LOG:2,1029,-0.8440,4.9730,116.3511,25.00,2.50,13,1.0000,False,True,81.1735,212,39.07,75.001,in_progress,0.00
+SIM_TRACE_LOG:2,1030,-0.9297,5.1195,118.6253,25.00,2.50,13,0.5000,False,True,81.5604,213,39.07,75.073,in_progress,0.00
+SIM_TRACE_LOG:2,1031,-1.0262,5.2666,121.3370,-24.00,2.60,1,0.5000,False,True,81.9541,214,39.07,75.145,in_progress,0.00
+SIM_TRACE_LOG:2,1032,-1.1316,5.4115,124.0482,-24.00,2.60,1,0.1000,False,True,82.3575,215,39.07,75.209,in_progress,0.00
+SIM_TRACE_LOG:2,1033,-1.2351,5.5514,125.3512,-24.00,2.60,1,0.1000,False,True,82.7797,216,39.07,75.281,in_progress,0.00
+SIM_TRACE_LOG:2,1034,-1.3351,5.6920,125.2968,25.00,2.50,13,0.1000,False,False,83.2580,217,39.07,75.347,in_progress,0.00
+SIM_TRACE_LOG:2,1035,-1.4395,5.8410,125.1163,30.00,2.10,14,0.0010,False,False,84.0310,219,39.07,75.409,in_progress,0.00
+SIM_TRACE_LOG:2,1036,-1.5383,5.9673,126.7319,30.00,2.10,14,0.0010,False,False,84.8347,222,39.07,75.476,in_progress,0.00
+SIM_TRACE_LOG:2,1037,-1.6421,6.0816,129.5997,30.00,2.10,14,0.0010,False,False,85.5253,223,39.07,75.548,in_progress,0.00
+SIM_TRACE_LOG:2,1038,-1.7531,6.1912,132.6947,30.00,2.10,14,0.1000,False,False,86.0342,225,39.07,75.599,in_progress,0.00
+SIM_TRACE_LOG:2,1039,-1.8656,6.2894,135.8942,30.00,2.10,14,0.1000,False,False,86.6064,226,39.07,75.673,in_progress,0.00
+SIM_TRACE_LOG:2,1040,-1.9789,6.3783,138.8409,30.00,2.10,14,0.1000,False,False,87.0541,227,39.07,75.75,in_progress,0.00
+SIM_TRACE_LOG:2,1041,-2.0985,6.4595,142.3521,25.00,2.50,13,0.1000,False,False,87.4986,228,39.07,75.816,in_progress,0.00
+SIM_TRACE_LOG:2,1042,-2.2301,6.5356,146.3372,25.00,2.50,13,0.1000,False,True,87.9556,230,39.07,75.872,in_progress,0.00
+SIM_TRACE_LOG:2,1043,-2.3674,6.6005,150.7132,30.00,2.10,14,0.1000,False,True,88.4033,231,39.07,75.945,in_progress,0.00
+SIM_TRACE_LOG:2,1044,-2.5063,6.6561,154.5311,25.00,2.50,13,0.5000,False,True,88.8904,232,39.07,76.011,in_progress,0.00
+SIM_TRACE_LOG:2,1045,-2.6619,6.7047,159.0909,25.00,2.50,13,0.5000,False,True,89.2991,233,39.07,76.078,in_progress,0.00
+SIM_TRACE_LOG:2,1046,-2.7986,6.7342,163.4249,25.00,2.50,13,1.0000,False,True,89.6336,234,39.07,76.148,in_progress,0.00
+SIM_TRACE_LOG:2,1047,-2.9502,6.7547,168.2156,20.00,2.90,12,1.0000,False,True,89.9768,235,39.07,76.203,in_progress,0.00
+SIM_TRACE_LOG:2,1048,-3.1231,6.7651,173.2171,10.00,3.50,10,1.0000,False,True,90.3634,236,39.07,76.28,in_progress,0.00
+SIM_TRACE_LOG:2,1049,-3.3039,6.7587,178.9451,30.00,2.10,14,0.5000,False,True,90.7454,237,39.07,76.342,in_progress,0.00
+SIM_TRACE_LOG:2,1050,-3.4795,6.7370,-174.2510,30.00,2.10,14,0.5000,False,True,91.0965,238,39.07,76.41,in_progress,0.00
+SIM_TRACE_LOG:2,1051,-3.6428,6.7080,-168.8182,30.00,2.10,14,0.1000,False,True,91.4134,239,39.07,76.481,in_progress,0.00
+SIM_TRACE_LOG:2,1052,-3.7911,6.6747,-165.5681,25.00,2.50,13,0.1000,False,True,91.7070,239,39.07,76.55,in_progress,0.00
+SIM_TRACE_LOG:2,1053,-3.9445,6.6281,-163.2431,25.00,2.50,13,0.1000,False,True,92.0393,240,39.07,76.612,in_progress,0.00
+SIM_TRACE_LOG:2,1054,-4.0893,6.5688,-160.2675,25.00,2.50,13,0.0010,False,False,92.3841,241,39.07,76.681,in_progress,0.00
+SIM_TRACE_LOG:2,1055,-4.2285,6.4980,-156.3461,25.00,2.50,13,0.0010,False,False,92.7445,242,39.07,76.746,in_progress,0.00
+SIM_TRACE_LOG:2,1056,-4.3674,6.4111,-151.5672,25.00,2.50,13,0.0010,False,False,93.1373,243,39.07,76.816,in_progress,0.00
+SIM_TRACE_LOG:2,1057,-4.5103,6.3047,-146.6442,25.00,2.50,13,0.0010,False,False,93.5757,244,39.07,76.88,off_track,3.00
+SIM_TRACE_LOG:2,1058,-4.2987,5.9231,-132.2117,25.00,2.50,13,0.0000,False,False,93.9320,245,39.07,76.942,pause,2.94
+SIM_TRACE_LOG:2,1059,-4.2986,5.9234,-132.2346,0.00,2.80,8,0.0000,False,True,93.9312,245,39.07,77.016,pause,2.86
+SIM_TRACE_LOG:2,1060,-4.2986,5.9238,-132.2811,0.00,2.80,8,0.0000,False,True,93.9304,245,39.07,77.074,pause,2.81
+SIM_TRACE_LOG:2,1061,-4.2986,5.9234,-132.2346,0.00,2.80,8,0.0000,False,True,93.9312,245,39.07,77.152,pause,2.73
+SIM_TRACE_LOG:2,1062,-4.2986,5.9234,-132.2346,0.00,2.80,8,0.0000,False,True,93.9312,245,39.07,77.21,pause,2.67
+SIM_TRACE_LOG:2,1063,-4.2985,5.9236,-132.2429,0.00,2.80,8,0.0000,False,True,93.9308,245,39.07,77.278,pause,2.60
+SIM_TRACE_LOG:2,1064,-4.2986,5.9234,-132.2346,0.00,2.80,8,0.0000,False,True,93.9312,245,39.07,77.342,pause,2.54
+SIM_TRACE_LOG:2,1065,-4.2984,5.9234,-132.1647,0.00,2.80,8,0.0000,False,True,93.9310,245,39.07,77.399,pause,2.48
+SIM_TRACE_LOG:2,1066,-4.2985,5.9236,-132.2000,0.00,2.80,8,0.0000,False,True,93.9307,245,39.07,77.474,pause,2.41
+SIM_TRACE_LOG:2,1067,-4.2984,5.9237,-132.2084,0.00,2.80,8,0.0000,False,True,93.9304,245,39.07,77.541,pause,2.34
+SIM_TRACE_LOG:2,1068,-4.2985,5.9234,-132.1974,0.00,2.80,8,0.0000,False,True,93.9311,245,39.07,77.609,pause,2.27
+SIM_TRACE_LOG:2,1069,-4.2986,5.9234,-132.2346,0.00,2.80,8,0.0000,False,True,93.9312,245,39.07,77.681,pause,2.20
+SIM_TRACE_LOG:2,1070,-4.2986,5.9234,-132.2346,0.00,2.80,8,0.0000,False,True,93.9312,245,39.07,77.746,pause,2.13
+SIM_TRACE_LOG:2,1071,-4.2988,5.9232,-132.2216,0.00,2.80,8,0.0000,False,True,93.9319,245,39.07,77.809,pause,2.07
+SIM_TRACE_LOG:2,1072,-4.2984,5.9236,-132.2123,0.00,2.80,8,0.0000,False,True,93.9306,245,39.07,77.879,pause,2.00
+SIM_TRACE_LOG:2,1073,-4.2986,5.9234,-132.2346,0.00,2.80,8,0.0000,False,True,93.9312,245,39.07,77.936,pause,1.94
+SIM_TRACE_LOG:2,1074,-4.2986,5.9235,-132.2250,0.00,2.80,8,0.0000,False,True,93.9309,245,39.07,78.0,pause,1.88
+SIM_TRACE_LOG:2,1075,-4.2987,5.9231,-132.1712,0.00,2.80,8,0.0000,False,True,93.9319,245,39.07,78.073,pause,1.81
+SIM_TRACE_LOG:2,1076,-4.2986,5.9232,-132.1821,0.00,2.80,8,0.0000,False,True,93.9316,245,39.07,78.143,pause,1.74
+SIM_TRACE_LOG:2,1077,-4.2986,5.9234,-132.2346,0.00,2.80,8,0.0000,False,True,93.9312,245,39.07,78.207,pause,1.67
+SIM_TRACE_LOG:2,1078,-4.2986,5.9235,-132.2301,0.00,2.80,8,0.0000,False,True,93.9309,245,39.07,78.27,pause,1.61
+SIM_TRACE_LOG:2,1079,-4.2986,5.9234,-132.2346,0.00,2.80,8,0.0000,False,True,93.9312,245,39.07,78.342,pause,1.54
+SIM_TRACE_LOG:2,1080,-4.2985,5.9236,-132.2335,0.00,2.80,8,0.0000,False,True,93.9307,245,39.07,78.408,pause,1.47
+SIM_TRACE_LOG:2,1081,-4.2985,5.9235,-132.2243,0.00,2.80,8,0.0000,False,True,93.9308,245,39.07,78.476,pause,1.40
+SIM_TRACE_LOG:2,1082,-4.2987,5.9234,-132.2376,0.00,2.80,8,0.0000,False,True,93.9313,245,39.07,78.545,pause,1.33
+SIM_TRACE_LOG:2,1083,-4.2986,5.9234,-132.2346,0.00,2.80,8,0.0000,False,True,93.9312,245,39.07,78.611,pause,1.27
+SIM_TRACE_LOG:2,1084,-4.2988,5.9236,-132.3107,0.00,2.80,8,0.0000,False,True,93.9313,245,39.07,78.672,pause,1.21
+SIM_TRACE_LOG:2,1085,-4.2987,5.9236,-132.2787,0.00,2.80,8,0.0000,False,True,93.9311,245,39.07,78.745,pause,1.13
+SIM_TRACE_LOG:2,1086,-4.2986,5.9234,-132.2346,0.00,2.80,8,0.0000,False,True,93.9312,245,39.07,78.816,pause,1.06
+SIM_TRACE_LOG:2,1087,-4.2986,5.9234,-132.2346,0.00,2.80,8,0.0000,False,True,93.9312,245,39.07,78.882,pause,1.00
+SIM_TRACE_LOG:2,1088,-4.2988,5.9235,-132.2582,0.00,2.80,8,0.0000,False,True,93.9315,245,39.07,78.936,pause,0.94
+SIM_TRACE_LOG:2,1089,-4.2986,5.9234,-132.2346,0.00,2.80,8,0.0000,False,True,93.9312,245,39.07,79.007,pause,0.87
+SIM_TRACE_LOG:2,1090,-4.2983,5.9237,-132.2033,0.00,2.80,8,0.0000,False,True,93.9302,245,39.07,79.08,pause,0.80
+SIM_TRACE_LOG:2,1091,-4.2984,5.9237,-132.2033,0.00,2.80,8,0.0000,False,True,93.9303,245,39.07,79.152,pause,0.73
+SIM_TRACE_LOG:2,1092,-4.2986,5.9234,-132.2346,0.00,2.80,8,0.0000,False,True,93.9312,245,39.07,79.218,pause,0.66
+SIM_TRACE_LOG:2,1093,-4.2986,5.9234,-132.2346,0.00,2.80,8,0.0000,False,True,93.9312,245,39.07,79.272,pause,0.61
+SIM_TRACE_LOG:2,1094,-4.2986,5.9234,-132.2346,0.00,2.80,8,0.0000,False,True,93.9312,245,39.07,79.35,pause,0.53
+SIM_TRACE_LOG:2,1095,-4.2983,5.9237,-132.2050,0.00,2.80,8,0.0000,False,True,93.9301,245,39.07,79.402,pause,0.48
+SIM_TRACE_LOG:2,1096,-4.2986,5.9234,-132.2346,0.00,2.80,8,0.0000,False,True,93.9312,245,39.07,79.48,pause,0.40
+SIM_TRACE_LOG:2,1097,-4.2984,5.9236,-132.2101,0.00,2.80,8,0.0000,False,True,93.9305,245,39.07,79.537,pause,0.34
+SIM_TRACE_LOG:2,1098,-4.2985,5.9235,-132.2264,0.00,2.80,8,0.0000,False,True,93.9309,245,39.07,79.609,pause,0.27
+SIM_TRACE_LOG:2,1099,-4.2986,5.9233,-132.2070,0.00,2.80,8,0.0000,False,True,93.9315,245,39.07,79.673,pause,0.21
+SIM_TRACE_LOG:2,1100,-4.2985,5.9233,-132.1768,0.00,2.80,8,0.0000,False,True,93.9313,245,39.07,79.738,pause,0.14
+SIM_TRACE_LOG:2,1101,-4.2983,5.9233,-132.1532,0.00,2.80,8,0.0000,False,True,93.9310,245,39.07,79.808,pause,0.07
+SIM_TRACE_LOG:2,1102,-4.2984,5.9233,-132.1566,0.00,2.80,8,0.0000,False,True,93.9311,245,39.07,79.883,pause,-0.00
+SIM_TRACE_LOG:2,1103,-4.2986,5.9234,-132.2346,0.00,2.80,8,0.1000,False,True,93.9312,245,39.07,79.949,in_progress,0.00
+SIM_TRACE_LOG:2,1104,-4.3048,5.9163,-132.1943,0.00,2.80,8,0.5000,False,True,93.9553,245,39.07,80.013,in_progress,0.00
+SIM_TRACE_LOG:2,1105,-4.3206,5.9002,-132.4303,0.00,2.80,8,0.1000,False,True,94.0129,245,39.07,80.083,in_progress,0.00
+SIM_TRACE_LOG:2,1106,-4.3458,5.8713,-132.2487,0.00,2.80,8,0.1000,False,True,94.1111,246,39.07,80.147,in_progress,0.00
+SIM_TRACE_LOG:2,1107,-4.3789,5.8321,-131.8840,0.00,2.80,8,0.5000,False,True,94.2402,246,39.07,80.217,in_progress,0.00
+SIM_TRACE_LOG:2,1108,-4.4237,5.7779,-131.3165,0.00,2.80,8,0.5000,False,True,94.4199,246,39.07,80.279,in_progress,0.00
+SIM_TRACE_LOG:2,1109,-4.4740,5.7188,-131.1246,0.00,2.80,8,0.5000,False,True,94.6169,247,39.07,80.348,in_progress,0.00
+SIM_TRACE_LOG:2,1110,-4.5391,5.6434,-131.0303,0.00,2.80,8,0.5000,False,True,94.8716,248,39.07,80.415,in_progress,0.00
+SIM_TRACE_LOG:2,1111,-4.6144,5.5537,-130.7435,0.00,2.80,8,0.5000,False,True,95.1698,248,39.07,80.477,in_progress,0.00
+SIM_TRACE_LOG:2,1112,-4.6923,5.4602,-130.3881,0.00,2.80,8,0.5000,False,True,95.4800,249,39.07,80.545,in_progress,0.00
+SIM_TRACE_LOG:2,1113,-4.7782,5.3552,-129.8697,0.00,2.80,8,0.5000,False,True,95.8259,250,39.07,80.61,in_progress,0.00
+SIM_TRACE_LOG:2,1114,-4.8755,5.2328,-129.0897,0.00,2.80,8,0.5000,False,True,96.2246,251,39.07,80.681,in_progress,0.00
+SIM_TRACE_LOG:2,1115,-4.9812,5.1002,-128.8267,0.00,2.80,8,0.5000,False,True,96.6574,252,39.07,80.746,in_progress,0.00
+SIM_TRACE_LOG:2,1116,-5.0866,4.9700,-128.9314,0.00,2.80,8,0.5000,False,True,97.0850,253,39.07,80.815,in_progress,0.00
+SIM_TRACE_LOG:2,1117,-5.2040,4.8245,-128.9659,0.00,2.80,8,0.5000,False,True,97.5624,255,39.07,80.879,in_progress,0.00
+SIM_TRACE_LOG:2,1118,-5.3120,4.6899,-128.9216,0.00,2.80,8,0.5000,False,True,98.0029,256,39.07,80.946,in_progress,0.00
+SIM_TRACE_LOG:2,1119,-5.4276,4.5385,-127.9653,-24.00,2.60,1,0.5000,False,True,98.4881,257,39.07,81.011,in_progress,0.00
+SIM_TRACE_LOG:2,1120,-5.5419,4.4015,-129.1321,0.00,3.20,7,0.5000,False,True,98.9436,258,39.07,81.08,in_progress,0.00
+SIM_TRACE_LOG:2,1121,-5.6648,4.2636,-130.7704,0.00,2.80,8,0.5000,False,True,99.4150,259,39.07,81.149,in_progress,0.00
+SIM_TRACE_LOG:2,1122,-5.8024,4.1163,-132.3461,0.00,2.80,8,0.5000,False,True,99.9292,261,39.07,81.213,in_progress,0.00
+SIM_TRACE_LOG:2,1123,-5.9306,3.9872,-133.8236,-24.00,2.60,1,0.5000,True,True,100.0000,1,39.07,81.279,lap_complete,0.00
+[s3] Successfully uploaded metrics to                  s3 bucket aws-deepracer-data-us-east-1-1 with s3 key leaderboard/private/acct-424669432633/02ab026e-cc20-4945-9adb-d0a8957f7519/metrics/evaluation-20211101040510-QnYF11H_Trqrattb-jc9pA.json.
+Testing - Name: main_level/agent Worker: 0 Episode: 0 Total reward: 328.05 Steps: 0 Training iteration: 0 
+agent: Finished evaluation phase. Success rate = 0.0, Avg Total Reward = 328.05
+Waiting to flush the Mp4 queue for racecar_0...
+Done flushing the Mp4 queue for racecar_0...
+[s3] Successfully uploaded simtrace_eval to              s3 bucket aws-deepracer-data-us-east-1-1 with s3 key leaderboard/private/acct-424669432633/02ab026e-cc20-4945-9adb-d0a8957f7519/sim-trace/evaluation-20211101040510-QnYF11H_Trqrattb-jc9pA/evaluation-simtrace/0-iteration.csv.
+[s3] Successfully uploaded pip to              s3 bucket aws-deepracer-data-us-east-1-1 with s3 key leaderboard/private/acct-424669432633/02ab026e-cc20-4945-9adb-d0a8957f7519/videos/evaluation-20211101040510-QnYF11H_Trqrattb-jc9pA/camera-pip/0-video.mp4.
+[s3] Successfully uploaded degree45 to              s3 bucket aws-deepracer-data-us-east-1-1 with s3 key leaderboard/private/acct-424669432633/02ab026e-cc20-4945-9adb-d0a8957f7519/videos/evaluation-20211101040510-QnYF11H_Trqrattb-jc9pA/camera-45degree/0-video.mp4.
+[s3] Successfully uploaded topview to              s3 bucket aws-deepracer-data-us-east-1-1 with s3 key leaderboard/private/acct-424669432633/02ab026e-cc20-4945-9adb-d0a8957f7519/videos/evaluation-20211101040510-QnYF11H_Trqrattb-jc9pA/camera-topview/0-video.mp4.
+Exception when checking for DEEPRACER_JOB_TYPE_ENV None is not a valid DeepRacerJobType
+cancel_simulation_job from ros service call response: True
+[AWS RoboMaker][INFO] Sent signal terminated to "/home/robomaker/entry_script.sh /bin/bash -c BUNDLE_CURRENT_PREFIX=/home/robomaker/workspace/applications/simulation-application/bundle source /home/robomaker/workspace/applications/simulation-application/bundle/setup.sh; cd $HOME; roslaunch deepracer_simulation_environment evaluation.launch; ".... logging to /home/robomaker/.ros/log/1513a4a0-3ac9-11ec-8f6c-0242a9fe0102/roslaunch-036d208c45d6-161.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/robomaker/workspace/applications/simulation-application/bundle/opt/install/deepracer_simulation_environment/share/deepracer_simulation_environment/launch/evaluation.launch
+started roslaunch server http://169.254.1.2:42617/
+SUMMARY
+========
+PARAMETERS
+ * /rosdistro: melodic
+ * /rosversion: 1.14.12
+NODES
+  /
+    download_params_and_roslaunch_agent_node (deepracer_simulation_environment/download_params_and_roslaunch_agent.py)
+auto-starting new master
+process[master]: started with pid [235]
+ROS_MASTER_URI=http://169.254.1.2:11311
+]2;/home/robomaker/workspace/applications/simulation-application/bundle/opt/install/deepracer_simulation_environment/share/deepracer_simulation_environment/launch/evaluation.launch http://169.254.1.2:11311
+setting /run_id to 1513a4a0-3ac9-11ec-8f6c-0242a9fe0102
+process[rosout-1]: started with pid [248]
+started core service [/rosout]
+process[download_params_and_roslaunch_agent_node-2]: started with pid [265]
+[download_params_and_roslaunch_agent_node-2] killing on exit
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+done
