@@ -2,7 +2,7 @@
 
 ## Reward Function
 
-Rewards calculation is based on a number of conditional points, which are all configurabTHatle. Sum of all conditional
+Rewards calculation is based on a number of conditional points, which are all configurabale. Sum of all conditional
 points contributes to the final score. Conditional points also have sensitivity parameter to control rewards curve. 
 
 #### The points are:
