@@ -1,0 +1,5 @@
+Oval Track
+Inspired by Indy Speedway, the Oval Track is simple and gives the agent space to learn different strategies. It’s a good choice for getting started.
+
+Length: 19.55 m (64.14')
+Width: 76 cm (30")
