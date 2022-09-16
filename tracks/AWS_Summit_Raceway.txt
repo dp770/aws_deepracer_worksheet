@@ -1,0 +1,5 @@
+AWS Summit Raceway
+Created to prepare racers for the 2020 AWS DeepRacer League, the AWS Summit Raceway provides a solid training warm up for any agent.
+
+Length: 22.57 m (74')
+Width: 91 cm (36")

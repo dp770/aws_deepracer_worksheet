@@ -1,0 +1,5 @@
+The 2019 DeepRacer Championship Cup
+The official track for the 2019 AWS DeepRacer Championship Cup finals, this is a moderately challenging track ideal for stepping up your training and experimentation.
+
+Length: 23.12 m (75.85')
+Width: 107 cm (42")
